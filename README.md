@@ -1,47 +1,67 @@
 # Personal Academic Website
 
-This is the personal academic website of Alia I. Abdelmoty, hosted at [https://Aliaia.github.io](https://Aliaia.github.io).  
-It is intended to serve as a professional profile linked to my university and academic work.
+This repository contains the source code for a personal academic website designed to showcase the professional profile of an individual, including their biography, projects, publications, and students.
 
-## 🌐 Website Features
+## Project Structure
 
-- Biography and research interests
-- List of current and past research projects
-- Publications
-- Student supervision
-- Areas of research focus
-- Contact information
-- Clean, responsive design suitable for desktop and mobile
-
-## 🚀 Live Site
-
-🔗 [https://yourusername.github.io](https://Aliaia.github.io)
-
-## 📁 Repository Structure
+The project is organized as follows:
 
 ```
-📦 root/
-├── index.html            # Homepage
-├── about.html            # About/Bio
-├── publications.html     # List of publications
-├── projects.html         # Research projects
-├── students.html         # Students supervised
-├── area1.html - area4.html # Research areas
-├── assets/
-│   ├── css/style.css     # Styling
-│   └── images/           # Profile photo, project diagrams, etc.
+personal-academic-website
+├── index.html          # Main entry point of the website
+├── about.html          # Biography and professional background
+├── projects.html       # Showcase of projects
+├── publications.html    # List of publications
+├── students.html       # Information about students
+├── assets
+│   ├── css
+│   │   └── style.css   # CSS styles for the website
+│   └── images
+│       └── profile.jpg  # Profile picture
+├── README.md           # Documentation for the project
 ```
 
-## 📌 How It's Built
+## Getting Started
 
-This site is built using only HTML and CSS for simplicity and fast loading.  
-It is fully static and hosted via GitHub Pages.
+To set up the project locally, follow these steps:
 
-## 🧩 License
+1. **Clone the repository:**
+   ```
+   git clone https://github.com/yourusername/personal-academic-website.git
+   ```
 
-This website is distributed under the [MIT License](https://opensource.org/licenses/MIT).  
-Feel free to fork or adapt it for academic use.
+2. **Navigate to the project directory:**
+   ```
+   cd personal-academic-website
+   ```
 
-## 📫 Contact
+3. **Open `index.html` in your web browser to view the website.**
 
-For academic inquiries, please visit the [Contact](https://yourusername.github.io/about.html) page on the website.
+## Hosting on GitHub Pages
+
+To host this website on GitHub Pages, follow these steps:
+
+1. **Push your code to GitHub:**
+   ```
+   git add .
+   git commit -m "Initial commit"
+   git push origin main
+   ```
+
+2. **Go to your GitHub repository settings.**
+
+3. **Scroll down to the "GitHub Pages" section.**
+
+4. **Select the branch you want to use for GitHub Pages (usually `main` or `gh-pages`).**
+
+5. **Click "Save".**
+
+6. **Your website will be published at `https://yourusername.github.io/personal-academic-website`.**
+
+## Contributing
+
+Feel free to submit issues or pull requests if you have suggestions for improvements or additional features.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
