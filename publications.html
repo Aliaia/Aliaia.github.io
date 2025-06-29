@@ -5,45 +5,234 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publications - Alia I. Abdelmoty</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+      body {
+        background: #f4f7fb;
+        margin: 0;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        color: #234375;
+      }
+      .banner {
+        background: #234375;
+        padding: 0;
+        margin: 0;
+      }
+      nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.7rem 0;
+      }
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 1.1rem;
+        font-weight: 500;
+        font-size: 1.08rem;
+        padding: 0.35em 0.8em;
+        border-radius: 6px;
+        transition: background 0.2s, color 0.2s;
+      }
+      nav a:hover, nav a:focus {
+        background: #e3eaff;
+        color: #234375;
+        outline: none;
+      }
+      main {
+        max-width: 900px;
+        margin: 2.5rem auto 0 auto;
+        background: linear-gradient(90deg, #f4f7fb 80%, #e3eaff 100%);
+        border-radius: 14px;
+        box-shadow: 0 2px 8px rgba(60,42,86,0.05);
+        padding: 2.5rem 2rem 2rem 2rem;
+      }
+      h1 {
+        color: #234375;
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        letter-spacing: 0.2px;
+      }
+      ul.publication-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      ul.publication-list li {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(60,42,86,0.07);
+        margin-bottom: 1.3rem;
+        padding: 1.3rem 1.2rem 1.1rem 1.2rem;
+      }
+      ul.publication-list h2 {
+        font-size: 1.18rem;
+        color: #234375;
+        margin: 0 0 0.5rem 0;
+        font-weight: 600;
+      }
+      ul.publication-list p {
+        margin: 0.2rem 0 0.2rem 0;
+        color: #3a4a6b;
+        font-size: 1rem;
+      }
+      ul.publication-list a {
+        color: #b8860b;
+        text-decoration: underline;
+        font-weight: 500;
+        font-size: 1rem;
+      }
+      footer {
+        text-align: center;
+        color: #234375;
+        font-size: 1rem;
+        margin: 2.5rem 0 1.2rem 0;
+        opacity: 0.7;
+      }
+      @media (max-width: 700px) {
+        main {
+          padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+        }
+        nav a {
+          margin: 0 0.5rem;
+          font-size: 1rem;
+        }
+      }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="students.html">Students</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="banner" style="display: flex; align-items: center; background: #234375; padding: 0; margin: 0;">
+      <a href="index.html" style="display: flex; align-items: center; margin-right: 2rem; text-decoration: none; cursor: pointer;">
+        <img src="./assets/images/Cardiff_University_(logo).svg.png" alt="Cardiff University Logo" style="height: 32px; width: auto; margin-right: 0.7rem; border-radius: 6px; box-shadow: 0 1px 4px rgba(60,42,86,0.07);">
+        <span style="font-family: 'Georgia', 'Times New Roman', serif; font-size: 1.35rem; font-weight: 500; color: #fff; letter-spacing: 0.5px;">
+          Alia I. Abdelmoty
+        </span>
+      </a>
+      <nav style="flex: 1;">
+        <a href="index.html#biography">Profile</a>
+        <a href="index.html#research-areas">Research Areas</a>
+        <a href="projects.html">Research Projects</a>
+        <a href="publications.html">Publications</a>
+        <a href="students.html">Students</a>
+      </nav>
+    </div>
     <main>
-        <section>
-            <h1>Publications</h1>
-            <ul>
-                <li>
-                    <h2>Title of Publication 1</h2>
-                    <p>Authors: Alia I. Abdelmoty, Co-author Name</p>
-                    <p>Published in: Journal Name, Year</p>
-                    <a href="link-to-publication-1.pdf" target="_blank">View Publication</a>
-                </li>
-                <li>
-                    <h2>Title of Publication 2</h2>
-                    <p>Authors: Alia I. Abdelmoty, Co-author Name</p>
-                    <p>Published in: Journal Name, Year</p>
-                    <a href="link-to-publication-2.pdf" target="_blank">View Publication</a>
-                </li>
-                <li>
-                    <h2>Title of Publication 3</h2>
-                    <p>Authors: Alia I. Abdelmoty, Co-author Name</p>
-                    <p>Published in: Journal Name, Year</p>
-                    <a href="link-to-publication-3.pdf" target="_blank">View Publication</a>
-                </li>
-                <!-- Add more publications as needed -->
-            </ul>
-        </section>
-    </main>
+    <section>
+        <h1>Publications</h1>
+        <ul class="publication-list">
+            <li>
+                <h2>2025</h2>
+                <p><strong>Darwish, R., Abdelmoty, A. and Turner, L.</strong> (2025). Investigating social network structures and interests on X audio spaces. In: Cherifi, H. et al. (eds) <em>Complex Networks & Their Applications XIII</em>. Studies in Computational Intelligence Vol. 1187. Springer, pp. 397-408. <a href="https://doi.org/10.1007/978-3-031-82431-9_33" target="_blank">DOI</a></p>
+            </li>
+            <li>
+                <h2>2024</h2>
+                <p><strong>Abdelmoty, A. I. and Satoti, A.</strong> (2024). A homogeneous approach to reasoning over global geographic data. In: Bramer, M. and Stahl, F. (eds) <em>Artificial Intelligence XLI</em>. Lecture Notes in Computer Science Vol. 15446. Springer Cham, pp. 285-298. <a href="https://doi.org/10.1007/978-3-031-77915-2_20" target="_blank">DOI</a></p>
+                <p><strong>Alrayes, F. S., Abdelmoty, A. I. and El-Geresy, W.</strong> (2024). User profile visualisation for privacy awareness on Geo-Social Networks. <em>Journal of Location Based Services</em>. <a href="https://doi.org/10.1080/17489725.2024.2399512" target="_blank">DOI</a></p>
+                <p><strong>Abdelmoty, A. I., Muhajab, H. and Satoti, A.</strong> (2024). Spatial semantics for the evaluation of administrative geospatial ontologies. <em>ISPRS International Journal of Geo-Information</em> 13(8), article number: 291. <a href="https://doi.org/10.3390/ijgi13080291" target="_blank">DOI</a></p>
+            </li>
+            <li>
+                <h2>2023</h2>
+                <p><strong>Muhajab, A. N., Abdelmoty, A. and Hassoulas, A.</strong> (2023). Reuse and enrichment for building an ontology for Obsessive-Compulsive Disorder. In: <em>International Conference on Biomedical Ontology</em>, Brazil, 28 August - 1 September 2023, Vol. 360. CEUR Workshop Proceedings, pp. 142-153.</p>
+            </li>
+            <li>
+                <h2>2020</h2>
+                <p><strong>Alrayes, F., Abdelmoty, A. and Theodorakopoulos, G.</strong> (2020). Modelling perceived risks to personal privacy from location disclosure on online social networks. <em>International Journal of Geographical Information Science</em> 34(1), pp. 150-176. <a href="https://doi.org/10.1080/13658816.2019.1654109" target="_blank">DOI</a></p>
+            </li>
+            <li>
+                <h2>2018</h2>
+                <p><strong>Abdelmoty, A.</strong> (2018). Towards modelling privacy risks in geo-social networks. In: <em>The Tenth International Conference on Advanced Geographic Information Systems, Applications, and Services</em>, Rome, Italy, 25 - 29 March 2018.</p>
+            </li>
+            <li>
+                <h2>2017</h2>
+                <p><strong>Mohamed, S. and Abdelmoty, A.</strong> (2017). Spatio-semantic user profiles in location-based social networks. <em>International Journal of Data Science and Analytics</em> 4(2), pp. 127-142. <a href="https://doi.org/10.1007/s41060-017-0059-9" target="_blank">DOI</a></p>
+                <p><strong>Abdelmoty, A. and Alrayes, F.</strong> (2017). Towards understanding location privacy awareness on geo-social networks. <em>ISPRS International Journal of Geo-Information</em> 6(4), pp. 109. <a href="https://doi.org/10.3390/ijgi6040109" target="_blank">DOI</a></p>
+            </li>
+            <li>
+                <h2>2016</h2>
+                <p><strong>Alrayes, F. and Abdelmoty, A.</strong> (2016). Towards location privacy awareness on geo-social networks. In: <em>2016 10th International Conference on Next Generation Mobile Applications, Security and Technologies (NGMAST)</em>, Cardiff, UK, 24-26 August 2016. IEEE, pp. 105. <a href="https://doi.org/10.1109/NGMAST.2016.26" target="_blank">DOI</a></p>
+                <p><strong>Abdelmoty, A. and Almuzaini, K.</strong> (2016). A computational model of place on the linked data web. <em>International Journal on Advances in Software</em> 9(3&4), pp. 238-247.</p>
+                <p><strong>Mohamed, S. and Abdelmoty, A.</strong> (2016). Computing similarity between users on location-based social networks. <em>International Journal on Advances in Intelligent Systems</em> 9(3&4), pp. 542-553.</p>
+                <p><strong>Mohamed, S. and Abdelmoty, A.</strong> (2016). Uncovering user profiles in location-based social networks. In: <em>GEOProcessing 2016: The Eighth International Conference on Advanced Geographic Information Systems, Applications, and Services</em>, Venice, Italy, 24-28 April 2016, pp. 14-21.</p>
+                <p><strong>Abdelmoty, A. and Almuzaini, K.</strong> (2016). Reasoning with place information on the Linked Data Web. In: <em>Second International Conference on Big Data, Small Data, Linked Data and Open Data (ALLDATA 2016)</em>, Lisbon, Portugal, 21-25 February 2016, pp. 48-53.</p>
+            </li>
+            <li>
+                <h2>2014</h2>
+                <p><strong>Smart, P. D., Abdelmoty, A. I. and El-Geresy, B.</strong> (2014). Spatial reasoning with place information on the semantic Web. <em>International Journal on Artificial Intelligence Tools</em> 23(5), article number: 1450011. <a href="https://doi.org/10.1142/S0218213014500110" target="_blank">DOI</a></p>
+                <p><strong>ElGindy, E. and Abdelmoty, A.</strong> (2014). Enriching user profiles using geo-social place semantics in geo-folksonomies. <em>International Journal of Geographical Information Science</em> 28(7), pp. 1439-1458. <a href="https://doi.org/10.1080/13658816.2014.894194" target="_blank">DOI</a></p>
+                <p><strong>ElGindy, E. and Abdelmoty, A.</strong> (2014). Capturing place semantics on the GeoSocial web. <em>Journal on Data Semantics</em> 3(4), pp. 207-223. <a href="https://doi.org/10.1007/s13740-014-0034-8" target="_blank">DOI</a></p>
+                <p><strong>Alrayes, F. and Abdelmoty, A.</strong> (2014). No place to hide: a study of privacy concerns due to location sharing on geo-social networks. <em>International Journal On Advances in Security</em> 7(3/4), pp. 62-75.</p>
+                <p><strong>Mohamed, S. and Abdelmoty, A.</strong> (2014). Dynamic place profiles from geo-folksonomies on the geosocial web. In: <em>Research and Development in Intelligent Systems XXXI</em>. Springer, pp. 239-251. <a href="https://doi.org/10.1007/978-3-319-12069-0_18" target="_blank">DOI</a></p>
+                <p><strong>Alrayes, F. and Abdelmoty, A.</strong> (2014). Privacy concerns in location-based social networks. In: <em>The Sixth International Conference on Advanced Geographic Information Systems, Applications, and Services, GEOProcessing 2014</em>, Barcelona, Spain, 23-27 March 2014.</p>
+            </li>
+            <li>
+                <h2>2012</h2>
+                <p><strong>Makki al-Azzawi, A. N., Abdelmoty, A. and Jones, C. B.</strong> (2012). What can I do there? Towards the automatic discovery of place-related services and activities. <em>International Journal of Geographical Information Science</em> 26(2), pp. 345-364. <a href="https://doi.org/10.1080/13658816.2011.595954" target="_blank">DOI</a></p>
+                <p><strong>ElGindy, E. and Abdelmoty, A.</strong> (2012). Enhancing the quality of place resources in geo-folksonomies. In: <em>WAIM 2011: International Conference on Web-Age Information Management</em>, Wuhan, China, 14-16 September 2011. Lecture Notes in Computer Science Vol. 7142. Springer, pp. 1-12. <a href="https://doi.org/10.1007/978-3-642-28635-3_1" target="_blank">DOI</a></p>
+                <p><strong>Younis, E. E. G., Jones, C. B., Tanasescu, V. and Abdelmoty, A.</strong> (2012). Hybrid geo-spatial query methods on the semantic web with a spatially-enhanced index of DBpedia. In: <em>GIScience 2012: 7th International Conference on Geographic Information Science</em>, Columbus, OH, USA, 18-21 September 2012. Lecture Notes in Computer Science Vol. 7478. Springer, pp. 340-353. <a href="https://doi.org/10.1007/978-3-642-33024-7_25" target="_blank">DOI</a></p>
+            </li>
+            <li>
+                <h2>2010</h2>
+                <p><strong>Makki al-Azzawi, A. N., Abdelmoty, A. and Jones, C. B.</strong> (2010). An ontology of place and service types to facilitate place-affordance geographic information retrieval. In: <em>6th ACM Workshop on Geographic Information Retrieval (GIR'10)</em>, Zurich, Switzerland, 18-19th February 2010. ACM. <a href="https://doi.org/10.1145/1722080.1722085" target="_blank">DOI</a></p>
+                <p><strong>El-Geresy, B. A., Abdelmoty, A. and Ware, A. J.</strong> (2010). Deriving extensional spatial composition tables. In: <em>29th SGAI International Conference on Innovative Techniques and Applications of Artificial Intelligence</em>, Cambridge, England. Springer, pp. 93-106. <a href="https://doi.org/10.1007/978-1-84882-983-1_7" target="_blank">DOI</a></p>
+            </li>
+            <li>
+                <h2>2009</h2>
+                <p><strong>Reitsma, F., Laxton, J., Ballard, S., Kuhn, W. and Abdelmoty, A.</strong> (2009). Semantics, ontologies and eScience for the geosciences. <em>Computers & Geosciences</em> 35(4), pp. 706-709. <a href="https://doi.org/10.1016/j.cageo.2008.03.014" target="_blank">DOI</a></p>
+                <p><strong>Abdelmoty, A., Smart, P. D., El-Geresy, B. A. and Jones, C. B.</strong> (2009). Supporting frameworks for the geospatial semantic web. In: <em>11th international symposium, SSTD 2009</em>, Aalborg, Denmark, 8-10 July 2009. Springer, pp. 355-372. <a href="https://doi.org/10.1007/978-3-642-02982-0_23" target="_blank">DOI</a></p>
+                <p><strong>Smart, P. D., Abdelmoty, A. and El-Geresy, B. A.</strong> (2009). Semantic web rule languages for geospatial ontologies. In: Giurca, A., Gasevic, D. and Taveter, K. (eds) <em>Handbook of Research on Emerging Rule-Based Languages and Technologies: Open Solutions and Approaches</em>. IGI Global, pp. 149-169. <a href="https://doi.org/10.4018/978-1-60566-402-6.ch007" target="_blank">DOI</a></p>
+            </li>
+            <li>
+                <h2>2008</h2>
+                <p><strong>Schockaert, S., Smart, P. D., Abdelmoty, A. and Jones, C. B.</strong> (2008). Mining topological relations from the Web. In: <em>DEXA 2008: 19th International Conference on Database and Expert Systems Applications</em>, Turin, Italy, 1-5 September 2008. IEEE, pp. 652-656. <a href="https://doi.org/10.1109/DEXA.2008.15" target="_blank">DOI</a></p>
+                <p><strong>Abdelmoty, A. and El-Geresy, B. A.</strong> (2008). Modeling spatial relations between places to support geographic information retrieval. In: <em>International Conference on Knowledge-Based Intelligent Information and Engineering Systems</em>, Zagreb, Croatia, 3-5 September 2008. Springer, pp. 689-694.</p>
+            </li>
+            <li>
+                <h2>2007</h2>
+                <p><strong>Abdelmoty, A., Smart, P. D. and Jones, C. B.</strong> (2007). Building place ontologies for the semantic web: Issues and approaches. In: <em>GIR 2007 4th ACM Workshop On Geographic Information Retrieval</em>, Lisbon, Portugal, 9 November 2007. ACM, pp. 7-12. <a href="https://doi.org/10.1145/1316948.1316951" target="_blank">DOI</a></p>
+                <p><strong>Alazzawi, A. N., Abdelmoty, A. and Jones, C. B.</strong> (2007). Spatio-temporal Personalised Web Search. In: <em>GISRUK 15th Annual Conference 2007</em>, Maynooth, Ireland, 11-13 April 2007, pp. 457-459.</p>
+                <p><strong>Smart, P. D., Abdelmoty, A., El-Geresy, B. A. and Jones, C. B.</strong> (2007). A framework for combining rules and geo-ontologies. <em>Lecture Notes in Computer Science</em> 4524, pp. 133-147. <a href="https://doi.org/10.1007/978-3-540-72982-2_10" target="_blank">DOI</a></p>
+            </li>
+            <li>
+                <h2>2006</h2>
+                <p><strong>Smart, P., Abdelmoty, A. and Jones, C.</strong> (2006). A visual editor for validating Geo-Ontologies in OWL. In: <em>GISRUK 2006: 14th Annual GIS Research UK Conference</em>, Nottingham, UK, 5-7 April 2006, pp. 222-226.</p>
+                <p><strong>Abdelmoty, A., Smart, P. and El-Geresy, B. A.</strong> (2006). Towards the practical use of qualitative spatial reasoning in geographic information retrieval. In: <em>3rd International IEEE Conference "Intelligent Systems"</em>, London, UK, 4-6 September 2006, Vol. 1. IEEE, pp. 67-72. <a href="https://doi.org/10.1109/IS.2006.348396" target="_blank">DOI</a></p>
+                <p><strong>Cudré-Mauroux, P. et al.</strong> (2006). Viewpoints on emergent semantics. <em>Lecture Notes in Computer Science</em> 4090, pp. 1-27. <a href="https://doi.org/10.1007/11803034_1" target="_blank">DOI</a></p>
+                <p><strong>El-Geresy, B. A. and Abdelmoty, A.</strong> (2006). Qualitative representation and reasoning with uncertainty in space and time. In: <em>Proceedings of AI-2005, the Twenty-fifth SGAI International Conference on Innovative Techniques and Applications of Artificial Intelligence</em>, Cambridge, UK, December 2005. Springer, pp. 345-355. <a href="https://doi.org/10.1007/978-1-84628-226-3_26" target="_blank">DOI</a></p>
+            </li>
+            <li>
+                <h2>2005</h2>
+                <p><strong>Fu, G., Jones, C. B. and Abdelmoty, A.</strong> (2005). Building a geographical ontology for intelligent spatial search on the web. In: <em>The IASTED International Conference on Databases and Applications - DBA 2005</em>, Innsbruck, Austria, 14-16 February 2005, pp. 167-172.</p>
+                <p><strong>Fu, G., Jones, C. B. and Abdelmoty, A.</strong> (2005). Ontology-based spatial query expansion in information retrieval. <em>Lecture Notes in Computer Science</em> 3761, pp. 1466-1482. <a href="https://doi.org/10.1007/11575801_33" target="_blank">DOI</a></p>
+                <p><strong>El-Geresy, B. A. and Abdelmoty, A. I.</strong> (2005). Imprecise qualitative spatial reasoning. In: <em>SGAI International Conference on Innovative Techniques and Applications of Artificial Intelligence</em>, Cambridge, UK, 13-15 December 2004. Springer, pp. 299-312. <a href="https://doi.org/10.1007/b138783" target="_blank">DOI</a></p>
+            </li>
+            <li>
+                <h2>2004</h2>
+                <p><strong>Morris, A. J., Abdelmoty, A., El-Geresy, B. A. and Jones, C. B.</strong> (2004). A filter flow visual querying language and interface for spatial databases. <em>GeoInformatica</em> 8(2), pp. 107-141. <a href="https://doi.org/10.1023/B:GEIN.0000017744.85002.4c" target="_blank">DOI</a></p>
+                <p><strong>Abdelmoty, A. and El-Geresy, B.</strong> (2004). SPARQS: a Qualitative Spatial Reasoning Engine. <em>Knowledge-Based Systems</em> 17(2-4), pp. 89-102. <a href="https://doi.org/10.1016/j.knosys.2004.03.004" target="_blank">DOI</a></p>
+                <p><strong>Jones, C. B., Abdelmoty, A., Finch, D. J., Fu, G. and Vaid, S.</strong> (2004). The SPIRIT spatial search engine: Architecture, ontologies and spatial indexing. <em>Lecture Notes in Computer Science</em> 3234, pp. 125-139. <a href="https://doi.org/10.1007/978-3-540-30231-5_9" target="_blank">DOI</a></p>
+                <p><strong>Abdelmoty, A. and El-geresy, B. A.</strong> (2004). Schema visualisation using a metadata approach for GIS. In: <em>GIS Research UK 12th annual conference GISRUK 2004</em>, Norwich, UK, 28-30 April 2004.</p>
+                <p><strong>Smart, P. D., Abdelmoty, A. and Jones, C. B.</strong> (2004). An evaluation of geo-ontology representation languages for supporting web retrieval of geographical information. In: <em>GIS Research UK 12th annual conference (GISRUK 2004)</em>, Norwich, UK, 28-30 April 2004.</p>
+            </li>
+            <li>
+                <h2>2002</h2>
+                <p><strong>Abdelmoty, A. and El-Geresy, B.</strong> (2002). Towards a general theory for modelling qualitative space. <em>International Journal on Artificial Intelligence Tools</em> 11(3), pp. 347-367. <a href="https://doi.org/10.1142/S0218213002000939" target="_blank">DOI</a></p>
+                <p><strong>Morris, A. J., Abdelmoty, A., Tudhope, D. S. and El-Geresy, B. A.</strong> (2002). Design and implementation of a visual query language for large spatial databases. In: <em>Sixth International Conference on Information Visualisation</em>, London, UK, 10-12 July 2002. IEEE, pp. 226-233. <a href="https://doi.org/10.1109/IV.2002.1028781" target="_blank">DOI</a></p>
+            </li>
+            <li>
+                <h2>2001</h2>
+                <p><strong>El-Geresy, B. A. and Abdelmoty, A.</strong> (2001). Towards a general theory for qualitative space. In: <em>13th International Conference on Tools with Artificial Intelligence</em>, Dallas, TX, USA, 7-9 November 2001. IEEE, pp. 111-118. <a href="https://doi.org/10.1109/ICTAI.2001.974455" target="_blank">DOI</a></p>
+            </li>
+            <li>
+                <h2>2000</h2>
+                <p><strong>El-Geresy, B. A., Abdelmoty, A. and Jones, C. B.</strong> (2000). Episodes in space: qualitative representation and reasoning over spatio-temporal objects. <em>International Journal on Artificial Intelligence Tools</em> 9(1), article number: 131. <a href="https://doi.org/10.1142/S0218213000000100" target="_blank">DOI</a></p>
+            </li>
+            <li>
+                <h2>1997</h2>
+                <p><strong>El-Geresy, B. A. and Abdelmoty, A.</strong> (1997). Order in space: a general formalism for spatial reasoning. <em>International Journal on Artificial Intelligence Tools</em> 6(4), pp. 423-445. <a href="https://doi.org/10.1142/S0218213097000232" target="_blank">DOI</a></p>
+            </li>
+        </ul>
+    </section>
+</main>
     <footer>
         <p>&copy; 2023 Alia I. Abdelmoty. All rights reserved.</p>
     </footer>

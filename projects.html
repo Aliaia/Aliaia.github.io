@@ -1,48 +1,291 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Personal Academic Website</title>
+    <title>Projects - Alia I. Abdelmoty</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+      body {
+        background: #f4f7fb;
+        margin: 0;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        color: #234375;
+      }
+      .banner {
+        background: #234375;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+      }
+      .banner a {
+        display: flex;
+        align-items: center;
+        margin-right: 2rem;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .banner img {
+        height: 32px;
+        width: auto;
+        margin-right: 0.7rem;
+        border-radius: 6px;
+        box-shadow: 0 1px 4px rgba(60,42,86,0.07);
+      }
+      .banner span {
+        font-family: 'Georgia', 'Times New Roman', serif;
+        font-size: 1.35rem;
+        font-weight: 500;
+        color: #fff;
+        letter-spacing: 0.5px;
+      }
+      nav {
+        flex: 1;
+        display: flex;
+        align-items: center;
+      }
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 1.1rem;
+        font-weight: 500;
+        font-size: 1.08rem;
+        padding: 0.35em 0.8em;
+        border-radius: 6px;
+        transition: background 0.2s, color 0.2s;
+      }
+      nav a:hover, nav a:focus {
+        background: #e3eaff;
+        color: #234375;
+        outline: none;
+      }
+      main {
+        max-width: 1100px;
+        margin: 2.5rem auto 0 auto;
+        background: linear-gradient(90deg, #f4f7fb 80%, #e3eaff 100%);
+        border-radius: 14px;
+        box-shadow: 0 2px 8px rgba(60,42,86,0.05);
+        padding: 2.5rem 2rem 2rem 2rem;
+      }
+      h1 {
+        color: #234375;
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 2rem;
+        letter-spacing: 0.2px;
+      }
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+        gap: 2rem;
+      }
+      .project-card {
+        background: #fff;
+        border-radius: 14px;
+        box-shadow: 0 2px 8px rgba(60,42,86,0.07);
+        display: flex;
+        flex-direction: column;
+        padding: 0 0 1.2rem 0;
+        transition: box-shadow 0.2s;
+      }
+      .project-card:hover {
+        box-shadow: 0 4px 16px rgba(60,42,86,0.13);
+      }
+      .project-thumb {
+        background-size: cover;
+        background-position: center;
+        min-height: 140px;
+        border-radius: 14px 14px 0 0;
+        width: 100%;
+      }
+      .project-content {
+        padding: 1.1rem 1.2rem 0.5rem 1.2rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .project-content h2 {
+        margin: 0 0 0.6rem 0;
+        font-size: 1.18rem;
+        font-weight: 600;
+        color: #234375;
+      }
+      .project-content p {
+        margin: 0 0 0.7rem 0;
+        color: #3a4a6b;
+        font-size: 1.04rem;
+        flex: 1;
+      }
+      .project-tags, .project-people {
+        margin: 0.3rem 0 0 0;
+        font-size: 0.99rem;
+        color: #3a4a6b;
+        font-weight: 400;
+        letter-spacing: 0.1px;
+      }
+      .project-tags {
+        font-style: italic;
+        margin-bottom: 0.1rem;
+      }
+      .project-tags span {
+        background: none;
+        color: #6b7a99;
+        border-radius: 0;
+        padding: 0;
+        margin-right: 0.7em;
+        font-size: 1em;
+        font-style: italic;
+        font-weight: 400;
+        display: inline;
+      }
+      .project-people {
+        margin-top: 0.15rem;
+        font-style: normal;
+        color: #234375;
+        font-weight: 500;
+      }
+      .project-people span {
+        background: none;
+        color: #234375;
+        border-radius: 0;
+        padding: 0;
+        margin-right: 0.7em;
+        font-size: 1em;
+        font-weight: 500;
+        display: inline;
+      }
+      @media (max-width: 700px) {
+        main {
+          padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+        }
+        .projects-grid {
+          gap: 1.1rem;
+        }
+      }
+    </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="students.html">Students</a></li>
-            </ul>
+    <div class="banner" style="background: #234375; padding: 0; margin: 0;">
+      <div style="max-width: 1100px; margin: 0 auto; display: flex; align-items: center;">
+        <a href="index.html" style="display: flex; align-items: center; margin-right: 2rem; text-decoration: none; cursor: pointer;">
+          <img src="./assets/images/Cardiff_University_(logo).svg.png" alt="Cardiff University Logo" style="height: 32px; width: auto; margin-right: 0.7rem; border-radius: 6px; box-shadow: 0 1px 4px rgba(60,42,86,0.07);">
+          <span style="font-family: 'Georgia', 'Times New Roman', serif; font-size: 1.35rem; font-weight: 500; color: #fff; letter-spacing: 0.5px;">
+            Alia I. Abdelmoty
+          </span>
+        </a>
+        <nav style="flex: 1;">
+          <a href="index.html#biography">Profile</a>
+          <a href="index.html#research-areas">Research Areas</a>
+          <a href="projects.html">Research Projects</a>
+          <a href="publications.html">Publications</a>
+          <a href="students.html">Students</a>
         </nav>
-    </header>
+      </div>
+    </div>
     <main>
-        <section id="projects">
-            <h1>Projects</h1>
-            <div class="project-list">
-                <article class="project-card">
-                    <img src="assets/images/project1.jpg" alt="Project 1">
-                    <h2>Project Title 1</h2>
-                    <p>Short description of project 1. This project focuses on...</p>
-                    <a href="project1.html">Learn More</a>
-                </article>
-                <article class="project-card">
-                    <img src="assets/images/project2.jpg" alt="Project 2">
-                    <h2>Project Title 2</h2>
-                    <p>Short description of project 2. This project aims to...</p>
-                    <a href="project2.html">Learn More</a>
-                </article>
-                <article class="project-card">
-                    <img src="assets/images/project3.jpg" alt="Project 3">
-                    <h2>Project Title 3</h2>
-                    <p>Short description of project 3. The goal of this project is...</p>
-                    <a href="project3.html">Learn More</a>
-                </article>
-                <!-- Add more project cards as needed -->
+         <!-- <h1>Projects</h1> -->
+        <div class="projects-grid">
+          <a class="project-card" href="project1.html" style="text-decoration:none;">
+            <div class="project-thumb" style="background-image:url('assets/images/ResearchProjects/HananMuhajab/LA_Wales.png');"></div>
+            <div class="project-content">
+              <h2>Linked Place Data Infrastructure</h2>
+              <p>Building interoperable, semantic-rich place data for research and applications, enabling new forms of spatial analysis and knowledge integration.</p>
+              <div class="project-tags">
+                <span>Linked Data</span>
+                <span>Place Semantics</span>
+                <span>GIS</span>
+              </div>
+              <div class="project-people">
+                <span>Alia I. Abdelmoty</span>
+                <span>Collaborators</span>
+              </div>
             </div>
-        </section>
+          </a>
+          <a class="project-card" href="project2.html" style="text-decoration:none;">
+            <div class="project-thumb" style="background-image:url('assets/images/project2.jpg');"></div>
+            <div class="project-content">
+              <h2>Audio-based Social Platforms</h2>
+              <p>Exploring user interaction and profiling in audio-first social networks, focusing on privacy, recommendation, and user experience.</p>
+              <div class="project-tags">
+                <span>Audio Social Media</span>
+                <span>User Profiling</span>
+                <span>Privacy</span>
+              </div>
+              <div class="project-people">
+                <span>Alia I. Abdelmoty</span>
+                <span>R. Darwish</span>
+                <span>L. Turner</span>
+              </div>
+            </div>
+          </a>
+          <a class="project-card" href="project3.html" style="text-decoration:none;">
+            <div class="project-thumb" style="background-image:url('assets/images/PlaceSemantics.png');"></div>
+            <div class="project-content">
+              <h2>Multimodal Profiling & Semantics</h2>
+              <p>Integrating speech, text, and context for richer user models and improved understanding of social signals in digital environments.</p>
+              <div class="project-tags">
+                <span>Multimodal Data</span>
+                <span>Semantics</span>
+                <span>AI</span>
+              </div>
+              <div class="project-people">
+                <span>Alia I. Abdelmoty</span>
+                <span>Collaborators</span>
+              </div>
+            </div>
+          </a>
+          <a class="project-card" href="project4.html" style="text-decoration:none;">
+            <div class="project-thumb" style="background-image:url('assets/images/project4.jpg');"></div>
+            <div class="project-content">
+              <h2>Empathetic & Context-aware AI</h2>
+              <p>Designing AI systems that understand social signals and context, aiming for more empathetic and human-centric technology.</p>
+              <div class="project-tags">
+                <span>AI</span>
+                <span>Context Awareness</span>
+                <span>Social Signals</span>
+              </div>
+              <div class="project-people">
+                <span>Alia I. Abdelmoty</span>
+                <span>Collaborators</span>
+              </div>
+            </div>
+          </a>
+          <a class="project-card" href="project5.html" style="text-decoration:none;">
+            <div class="project-thumb" style="background-image:url('assets/images/project5.jpg');"></div>
+            <div class="project-content">
+              <h2>Privacy-aware User Modelling</h2>
+              <p>Developing techniques for privacy protection and secure data sharing in spatial and social applications.</p>
+              <div class="project-tags">
+                <span>Privacy</span>
+                <span>User Modelling</span>
+                <span>Security</span>
+              </div>
+              <div class="project-people">
+                <span>Alia I. Abdelmoty</span>
+                <span>F. Alrayes</span>
+                <span>W. El-Geresy</span>
+              </div>
+            </div>
+          </a>
+          <a class="project-card" href="project6.html" style="text-decoration:none;">
+            <div class="project-thumb" style="background-image:url('assets/images/project6.jpg');"></div>
+            <div class="project-content">
+              <h2>Location-Based Social Networks</h2>
+              <p>Modelling user activity and privacy in LBSNs and geosocial platforms, with a focus on spatio-semantic user profiles.</p>
+              <div class="project-tags">
+                <span>LBSN</span>
+                <span>Geo-Social</span>
+                <span>User Profiles</span>
+              </div>
+              <div class="project-people">
+                <span>Alia I. Abdelmoty</span>
+                <span>Collaborators</span>
+              </div>
+            </div>
+          </a>
+        </div>
     </main>
     <footer>
         <p>&copy; 2023 Alia I. Abdelmoty. All rights reserved.</p>
