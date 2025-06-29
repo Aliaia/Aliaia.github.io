@@ -1,0 +1,17 @@
+# macOS system files
+.DS_Store
+
+# IDE/editor junk
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Logs
+*.log
+
+# Python local server cache (if used)
+__pycache__/
+
+# Intructions
+instructions.txt
