@@ -176,8 +176,45 @@
         font-size: 0.95rem;
         margin-top: 0.3rem;
       }
+      .student-card .role-badge {
+        display: inline-block;
+        background: #e3eaff;
+        color: #234375;
+        font-size: 0.85rem;
+        padding: 0.2rem 0.6rem;
+        border-radius: 4px;
+        margin-left: 0.5rem;
+        font-weight: 500;
+      }
+      .student-card .role-badge.co-supervisor {
+        background: #fff3cd;
+        color: #856404;
+      }
       .alumni-section {
         margin-top: 2rem;
+      }
+      .stats-box {
+        background: #fff;
+        border-radius: 12px;
+        padding: 1.2rem 1.5rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 2px 8px rgba(60,42,86,0.07);
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      .stat-item {
+        text-align: center;
+      }
+      .stat-number {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #234375;
+      }
+      .stat-label {
+        font-size: 0.95rem;
+        color: #6b7a99;
       }
       footer {
         text-align: center;
@@ -201,6 +238,10 @@
           flex-direction: column;
           gap: 0.8rem;
         }
+        .stats-box {
+          flex-direction: column;
+          align-items: center;
+        }
       }
     </style>
 </head>
@@ -222,6 +263,21 @@
     </div>
     <main>
         <h1>Students</h1>
+
+        <div class="stats-box">
+            <div class="stat-item">
+                <div class="stat-number">14</div>
+                <div class="stat-label">PhD Graduates</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">6</div>
+                <div class="stat-label">Current PhD Students</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">1</div>
+                <div class="stat-label">MPhil Graduate</div>
+            </div>
+        </div>
 
         <div class="prospective-box">
             <h2>Prospective PhD Students</h2>
@@ -245,13 +301,45 @@
 
             <div class="student-card">
                 <div class="student-info">
-                    <h3>Rawan Darwish</h3>
-                    <p class="thesis-title">Audio-based Social Media Analytics and User Profiling</p>
-                    <p class="student-meta">PhD Student, Cardiff University</p>
+                    <h3>Abdurauf Satoti</h3>
+                    <p class="student-meta">PhD Student, Cardiff University (Submitting 2025)</p>
                 </div>
             </div>
 
-            <!-- Add more current students as needed -->
+            <div class="student-card">
+                <div class="student-info">
+                    <h3>Roba Darwish</h3>
+                    <p class="student-meta">PhD Student, Cardiff University (Year 3)</p>
+                </div>
+            </div>
+
+            <div class="student-card">
+                <div class="student-info">
+                    <h3>Falha Alkhuzayyim</h3>
+                    <p class="student-meta">PhD Student, Cardiff University (Year 2)</p>
+                </div>
+            </div>
+
+            <div class="student-card">
+                <div class="student-info">
+                    <h3>Sarah Parry <span class="role-badge co-supervisor">Co-Supervisor</span></h3>
+                    <p class="student-meta">PhD Student, Cardiff University (Year 2)</p>
+                </div>
+            </div>
+
+            <div class="student-card">
+                <div class="student-info">
+                    <h3>Ogechukwu Ukwandu <span class="role-badge co-supervisor">Co-Supervisor</span></h3>
+                    <p class="student-meta">PhD Student, Cardiff University (Year 2)</p>
+                </div>
+            </div>
+
+            <div class="student-card">
+                <div class="student-info">
+                    <h3>Nouf Albalawi</h3>
+                    <p class="student-meta">PhD Student, Cardiff University (Year 1)</p>
+                </div>
+            </div>
         </section>
 
         <section class="alumni-section">
@@ -259,46 +347,100 @@
 
             <div class="student-card">
                 <div class="student-info">
-                    <h3>Fatma Alrayes</h3>
-                    <p class="thesis-title">Privacy-aware User Modelling in Location-Based Social Networks</p>
-                    <p class="student-meta">PhD 2020</p>
-                    <p class="current-position">Now: Assistant Professor, King Saud University, Saudi Arabia</p>
+                    <h3>Hanan Muhajab</h3>
+                    <p class="student-meta">PhD 2025</p>
                 </div>
             </div>
 
             <div class="student-card">
                 <div class="student-info">
-                    <h3>Shrooq Mohamed</h3>
-                    <p class="thesis-title">Spatio-Semantic User Profiles in Location-Based Social Networks</p>
+                    <h3>Areej Nasser</h3>
+                    <p class="student-meta">PhD 2024</p>
+                </div>
+            </div>
+
+            <div class="student-card">
+                <div class="student-info">
+                    <h3>Fatma Al-rayes</h3>
+                    <p class="thesis-title">Location Privacy Awareness on Geo-Social Networks: Enhancing Awareness with Feedback Solutions</p>
                     <p class="student-meta">PhD 2017</p>
                 </div>
             </div>
 
             <div class="student-card">
                 <div class="student-info">
-                    <h3>Eslam ElGindy</h3>
-                    <p class="thesis-title">Place Semantics in Geo-Social Networks</p>
+                    <h3>Khalid Al-Muzaini</h3>
+                    <p class="thesis-title">Qualitative Modelling of Place on the Linked Data Web and GIS</p>
+                    <p class="student-meta">PhD 2017</p>
+                </div>
+            </div>
+
+            <div class="student-card">
+                <div class="student-info">
+                    <h3>Soha M.A. Ehsan</h3>
+                    <p class="thesis-title">Spatiotemporal User and Place Modelling in the Geo-Social Web</p>
+                    <p class="student-meta">PhD 2016</p>
+                </div>
+            </div>
+
+            <div class="student-card">
+                <div class="student-info">
+                    <h3>Eman M.G. Younis <span class="role-badge co-supervisor">Co-Supervisor</span></h3>
+                    <p class="thesis-title">Hybrid Geospatial Query Processing on the Semantic Web</p>
                     <p class="student-meta">PhD 2014</p>
                 </div>
             </div>
 
             <div class="student-card">
                 <div class="student-info">
-                    <h3>Ahmed Al-Azzawi</h3>
-                    <p class="thesis-title">Place-Related Services and Activity Discovery</p>
-                    <p class="student-meta">PhD 2012</p>
+                    <h3>Ehab El-Gindy</h3>
+                    <p class="thesis-title">Extracting Place Semantics from Geo-Folksonomies</p>
+                    <p class="student-meta">PhD 2013</p>
                 </div>
             </div>
 
             <div class="student-card">
                 <div class="student-info">
-                    <h3>Philip Smart</h3>
-                    <p class="thesis-title">Spatial Reasoning on the Semantic Web</p>
-                    <p class="student-meta">PhD 2008</p>
+                    <h3>Ahmed Al-Azzawi</h3>
+                    <p class="thesis-title">Extracting Profiles from Human Activities and Services of Visited Places in Mobility Logs</p>
+                    <p class="student-meta">PhD 2011</p>
                 </div>
             </div>
 
-            <!-- Note: These entries are based on publications. Please update with accurate information. -->
+            <div class="student-card">
+                <div class="student-info">
+                    <h3>Mark M. Hall <span class="role-badge co-supervisor">Co-Supervisor</span></h3>
+                    <p class="thesis-title">Modelling and Reasoning with Quantitative Representations of Vague Spatial Language Used in Photographic Image Captions</p>
+                    <p class="student-meta">PhD 2011</p>
+                </div>
+            </div>
+
+            <div class="student-card">
+                <div class="student-info">
+                    <h3>Phil Smart</h3>
+                    <p class="thesis-title">A Semantic Web Rule Language for Geospatial Domains</p>
+                    <p class="student-meta">PhD 2009</p>
+                </div>
+            </div>
+
+            <div class="student-card">
+                <div class="student-info">
+                    <h3>Andrew J. Morris</h3>
+                    <p class="thesis-title">A Visual Approach to the Development of Spatial Query Languages for GIS</p>
+                    <p class="student-meta">PhD 2003</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="alumni-section">
+            <h2>MPhil Alumni</h2>
+
+            <div class="student-card">
+                <div class="student-info">
+                    <h3>Nathan Jones</h3>
+                    <p class="student-meta">MPhil 2022</p>
+                </div>
+            </div>
         </section>
     </main>
     <footer>
