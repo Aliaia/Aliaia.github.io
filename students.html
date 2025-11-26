@@ -3,39 +3,306 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Students - Personal Academic Website</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <meta name="description" content="PhD students and alumni supervised by Dr. Alia I. Abdelmoty at Cardiff University. Information for prospective PhD students.">
+    <title>Students - Alia I. Abdelmoty</title>
+    <style>
+      body {
+        background: #f4f7fb;
+        margin: 0;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        color: #234375;
+      }
+      .banner {
+        background: #234375;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+      }
+      .banner-inner {
+        max-width: 900px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        width: 100%;
+      }
+      .banner a.site-link {
+        display: flex;
+        align-items: center;
+        margin-right: 2rem;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .banner img {
+        height: 32px;
+        width: auto;
+        margin-right: 0.7rem;
+        border-radius: 6px;
+        box-shadow: 0 1px 4px rgba(60,42,86,0.07);
+      }
+      .banner .site-name {
+        font-family: 'Georgia', 'Times New Roman', serif;
+        font-size: 1.35rem;
+        font-weight: 500;
+        color: #fff;
+        letter-spacing: 0.5px;
+      }
+      nav {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.7rem 0;
+      }
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 1.1rem;
+        font-weight: 500;
+        font-size: 1.08rem;
+        padding: 0.35em 0.8em;
+        border-radius: 6px;
+        transition: background 0.2s, color 0.2s;
+      }
+      nav a:hover, nav a:focus {
+        background: #e3eaff;
+        color: #234375;
+        outline: none;
+      }
+      main {
+        max-width: 900px;
+        margin: 2.5rem auto 0 auto;
+        background: linear-gradient(90deg, #f4f7fb 80%, #e3eaff 100%);
+        border-radius: 14px;
+        box-shadow: 0 2px 8px rgba(60,42,86,0.05);
+        padding: 2.5rem 2rem 2rem 2rem;
+      }
+      h1 {
+        color: #234375;
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        letter-spacing: 0.2px;
+      }
+      h2 {
+        color: #234375;
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid #b8860b;
+        padding-bottom: 0.3rem;
+        display: inline-block;
+      }
+      .prospective-box {
+        background: linear-gradient(135deg, #234375 0%, #3a5a9b 100%);
+        color: #fff;
+        border-radius: 14px;
+        padding: 1.8rem 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 4px 16px rgba(35,67,117,0.18);
+      }
+      .prospective-box h2 {
+        color: #fff;
+        border-bottom-color: #b8860b;
+        margin-top: 0;
+      }
+      .prospective-box p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        margin-bottom: 1rem;
+      }
+      .prospective-box ul {
+        margin: 1rem 0 1rem 1.5rem;
+        line-height: 1.8;
+      }
+      .prospective-box li {
+        margin-bottom: 0.5rem;
+      }
+      .prospective-box a {
+        color: #b8860b;
+        text-decoration: underline;
+      }
+      .prospective-box a:hover {
+        color: #fff;
+      }
+      .contact-btn {
+        display: inline-block;
+        background: #b8860b;
+        color: #fff;
+        padding: 0.7rem 1.5rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        margin-top: 0.5rem;
+        transition: background 0.2s, transform 0.2s;
+      }
+      .contact-btn:hover {
+        background: #9a7209;
+        transform: translateY(-2px);
+      }
+      .student-card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(60,42,86,0.07);
+        padding: 1.3rem 1.5rem;
+        margin-bottom: 1.2rem;
+        display: flex;
+        gap: 1.2rem;
+        align-items: flex-start;
+      }
+      .student-card .student-info {
+        flex: 1;
+      }
+      .student-card h3 {
+        margin: 0 0 0.4rem 0;
+        color: #234375;
+        font-size: 1.15rem;
+        font-weight: 600;
+      }
+      .student-card .thesis-title {
+        color: #3a4a6b;
+        font-style: italic;
+        margin-bottom: 0.4rem;
+        font-size: 1rem;
+      }
+      .student-card .student-meta {
+        color: #6b7a99;
+        font-size: 0.95rem;
+      }
+      .student-card .current-position {
+        color: #b8860b;
+        font-weight: 500;
+        font-size: 0.95rem;
+        margin-top: 0.3rem;
+      }
+      .alumni-section {
+        margin-top: 2rem;
+      }
+      footer {
+        text-align: center;
+        color: #234375;
+        font-size: 1rem;
+        margin: 2.5rem 0 1.2rem 0;
+        opacity: 0.7;
+      }
+      @media (max-width: 700px) {
+        main {
+          padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+        }
+        .prospective-box {
+          padding: 1.2rem 1rem;
+        }
+        nav a {
+          margin: 0 0.5rem;
+          font-size: 1rem;
+        }
+        .student-card {
+          flex-direction: column;
+          gap: 0.8rem;
+        }
+      }
+    </style>
 </head>
 <body>
-    <header>
+    <div class="banner">
+      <div class="banner-inner">
+        <a href="index.html" class="site-link">
+          <img src="./assets/images/Cardiff_University_(logo).svg.png" alt="Cardiff University Logo">
+          <span class="site-name">Alia I. Abdelmoty</span>
+        </a>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="students.html">Students</a></li>
-            </ul>
+          <a href="index.html#biography">Profile</a>
+          <a href="index.html#research-areas">Research Areas</a>
+          <a href="projects.html">Research Projects</a>
+          <a href="publications.html">Publications</a>
+          <a href="students.html">Students</a>
         </nav>
-    </header>
+      </div>
+    </div>
     <main>
         <h1>Students</h1>
-        <section>
-            <h2>Current Students</h2>
+
+        <div class="prospective-box">
+            <h2>Prospective PhD Students</h2>
+            <p>
+                I am always interested in hearing from motivated students who wish to pursue a PhD in areas related to my research interests. Potential research topics include:
+            </p>
             <ul>
-               
-                </li>
+                <li><strong>Semantic and Qualitative Place Modelling</strong> - Place knowledge graphs, linked geospatial data, qualitative spatial reasoning</li>
+                <li><strong>Human-Centred AI</strong> - Audio-based social media analytics, multimodal user profiling, bias in AI systems</li>
+                <li><strong>Location-Based Social Networks</strong> - Privacy-aware systems, geo-semantic user profiling, place affordance</li>
+                <li><strong>Ontologies and Knowledge Representation</strong> - Domain ontologies (health, geography), geographic question answering</li>
             </ul>
+            <p>
+                If you are interested in working with me, please send your CV and a brief research statement to:
+            </p>
+            <a href="mailto:abdelmotyai@cardiff.ac.uk" class="contact-btn">Contact Me</a>
+        </div>
+
+        <section>
+            <h2>Current PhD Students</h2>
+
+            <div class="student-card">
+                <div class="student-info">
+                    <h3>Rawan Darwish</h3>
+                    <p class="thesis-title">Audio-based Social Media Analytics and User Profiling</p>
+                    <p class="student-meta">PhD Student, Cardiff University</p>
+                </div>
+            </div>
+
+            <!-- Add more current students as needed -->
         </section>
-        <section>
-            <h2>Alumni</h2>
-            <ul>
-                
-            </ul>
+
+        <section class="alumni-section">
+            <h2>PhD Alumni</h2>
+
+            <div class="student-card">
+                <div class="student-info">
+                    <h3>Fatma Alrayes</h3>
+                    <p class="thesis-title">Privacy-aware User Modelling in Location-Based Social Networks</p>
+                    <p class="student-meta">PhD 2020</p>
+                    <p class="current-position">Now: Assistant Professor, King Saud University, Saudi Arabia</p>
+                </div>
+            </div>
+
+            <div class="student-card">
+                <div class="student-info">
+                    <h3>Shrooq Mohamed</h3>
+                    <p class="thesis-title">Spatio-Semantic User Profiles in Location-Based Social Networks</p>
+                    <p class="student-meta">PhD 2017</p>
+                </div>
+            </div>
+
+            <div class="student-card">
+                <div class="student-info">
+                    <h3>Eslam ElGindy</h3>
+                    <p class="thesis-title">Place Semantics in Geo-Social Networks</p>
+                    <p class="student-meta">PhD 2014</p>
+                </div>
+            </div>
+
+            <div class="student-card">
+                <div class="student-info">
+                    <h3>Ahmed Al-Azzawi</h3>
+                    <p class="thesis-title">Place-Related Services and Activity Discovery</p>
+                    <p class="student-meta">PhD 2012</p>
+                </div>
+            </div>
+
+            <div class="student-card">
+                <div class="student-info">
+                    <h3>Philip Smart</h3>
+                    <p class="thesis-title">Spatial Reasoning on the Semantic Web</p>
+                    <p class="student-meta">PhD 2008</p>
+                </div>
+            </div>
+
+            <!-- Note: These entries are based on publications. Please update with accurate information. -->
         </section>
     </main>
     <footer>
-        <p>&copy; 2023 Alia I. Abdelmoty. All rights reserved.</p>
+        <p>&copy; 2025 Alia I. Abdelmoty. All rights reserved.</p>
     </footer>
 </body>
 </html>
