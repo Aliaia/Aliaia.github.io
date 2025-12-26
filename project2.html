@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qualitative GIS - Research Project</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="./assets/images/Cardiff_University_(logo).svg.png" alt="Cardiff University Logo">
+                <span>Alia I. Abdelmoty</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#biography">Profile</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="index.html#research-areas">Research Areas</a></li>
+                <li><a href="projects.html">Research Projects</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="students.html">Students</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="project-page">
+        <h1>A GIS-Native Framework for Qualitative Place Models</h1>
+
+        <p class="project-summary">
+            This project develops the Qualitative Place Model (QPM) — a GIS-native framework that transforms standard boundary datasets into structured knowledge bases of Qualitative Place Descriptions (QPDs). The QPM enables human-centric spatial concepts such as <strong>"near"</strong>, <strong>"north of"</strong>, and <strong>"inside"</strong> to be represented as explicit, first-class, queryable entities within native GIS workflows. This bridges the fundamental gap between how humans naturally describe and understand places through qualitative relationships and how conventional Geographic Information Systems represent space primarily through geometric coordinates.
+        </p>
+
+        <h2>Research Questions</h2>
+        <ul>
+            <li><strong>Main Question:</strong> How can qualitative place descriptions be systematically generated, represented, and queried within Geographic Information Systems across both traditional and DGGS-based spatial hierarchies to complement geometric representations, support qualitative place creation, enable cross-hierarchy reasoning, and facilitate human-centric spatial understanding?</li>
+            <li>How can qualitative spatial relationships (directional, proximity, and containment) be represented as explicit, first-class entities within GIS to enable the systematic generation of Unique Qualitative Place Descriptions?</li>
+            <li>How can Discrete Global Grid Systems (DGGS), such as H3 and S2, be integrated within GIS to provide globally consistent hierarchical representations of place that complement or substitute traditional administrative hierarchies?</li>
+            <li>How can new or relative places be created and managed qualitatively within GIS using relational expressions (e.g., <em>inside</em>, <em>next to</em>, <em>east of</em>) while maintaining spatial consistency, geometric validity, and provenance?</li>
+            <li>How can qualitative spatial relationships be computed across multiple hierarchies (administrative, postal, electoral) based on DGGS representations to enable cross-hierarchy reasoning?</li>
+            <li>How can the proposed Qualitative Place Model be evaluated for correctness, completeness, and semantic interoperability through competency-based queries and logical reasoning?</li>
+        </ul>
+
+        <h2>Key Contributions</h2>
+        <ul>
+            <li><strong>GIS-Native Framework for Unique Qualitative Place Descriptions:</strong> The first comprehensive framework for generating unique QPDs natively within GIS, formalising place representation through explicit qualitative spatial relationships.</li>
+            <li><strong>Integration of Discrete Global Grid Systems (DGGS):</strong> Demonstrates how H3 and S2 grid systems can provide alternative, scalable hierarchical representations independent of traditional administrative boundaries.</li>
+            <li><strong>Qualitative Place Creation and Management:</strong> Novel methods for defining and managing "relative places" using structured qualitative spatial expressions, with automatic spatial footprint estimation and provenance recording.</li>
+            <li><strong>H3-Based Cross-Hierarchy Relationship Computation:</strong> Algorithms for computing comprehensive qualitative spatial relationships (near, close, neighbour, far) across multiple spatial hierarchies.</li>
+            <li><strong>Semantic Integration and Reasoning:</strong> Export mechanism transforming GIS representations into OWL/RDF graphs, enabling logical closure operations and interoperability with the Semantic Web.</li>
+            <li><strong>Comprehensive Real-World Evaluation:</strong> Validated using Wales datasets comprising 3,242 spatial units and 52,821 basic places across three hierarchies, demonstrating 95.8% completeness and 100% uniqueness of generated QPDs.</li>
+        </ul>
+
+        <section class="project-meta">
+            <div class="meta-item">
+                <h3>Tags</h3>
+                <span class="tag">Qualitative Spatial Reasoning</span>
+                <span class="tag">GIS</span>
+                <span class="tag">Place Models</span>
+                <span class="tag">Geo-ontology</span>
+                <span class="tag">Naïve Geography</span>
+                <span class="tag">DGGS</span>
+            </div>
+
+            <div class="meta-item">
+                <h3>People</h3>
+                <p>Dr. Alia I. Abdelmoty (Supervisor)<br>
+                Abdurauf M H Satoti (PhD Student)</p>
+            </div>
+
+            <div class="meta-item">
+                <h3>Time Scale</h3>
+                <p>2021 – 2026 (PhD Project)</p>
+            </div>
+
+            <div class="meta-item">
+                <h3>Research Outputs</h3>
+                <ul class="publications-list">
+                    <li>
+                        <strong>Satoti, A.</strong> and <strong>Abdelmoty, A.I.</strong> (2025). 
+                        <em>A GIS-Native framework for qualitative place models: Implementation and evaluation.</em> 
+                        ISPRS International Journal of Geo-Information, 14(12), 474. 
+                        <a href="https://doi.org/10.3390/ijgi14120474" target="_blank">DOI: 10.3390/ijgi14120474</a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Alia I. Abdelmoty. All rights reserved.</p>
+    </footer>
+</body>
+</html>
