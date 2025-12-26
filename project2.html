@@ -1,94 +1,390 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qualitative GIS - Research Project</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>A GIS-Native Framework for Qualitative Place Models</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #234375;
+      background: #f4f7fb;
+    }
+    .banner {
+      background: #234375;
+      padding: 0;
+      margin: 0;
+      min-height: 84px;
+      display: flex;
+      align-items: center;
+    }
+    .banner-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      min-height: 84px;
+    }
+    .banner a {
+      display: flex;
+      align-items: center;
+      margin-right: 1.2rem;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .banner img {
+      height: 44px;
+      width: auto;
+      margin-right: 1rem;
+      border-radius: 6px;
+      box-shadow: 0 1px 4px rgba(60,42,86,0.07);
+    }
+    .banner span {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: 1.55rem;
+      font-weight: 500;
+      color: #fff;
+      letter-spacing: 0.5px;
+    }
+    nav {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 1.2rem;
+      font-weight: 500;
+      font-size: 1.13rem;
+      padding: 0.45em 1em;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+    nav a:hover, nav a:focus {
+      background: #e3eaff;
+      color: #234375;
+      outline: none;
+    }
+
+    /* HERO CAROUSEL */
+    .hero-carousel {
+      position: relative;
+      height: 320px;
+      width: 100%;
+      max-width: 100%;
+      margin: 2.5rem 0 2.5rem 0;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 6px 32px rgba(35,67,117,0.13), 0 2px 8px rgba(60,42,86,0.10);
+      display: flex;
+      align-items: flex-end;
+      background: #e3eaff;
+    }
+    .carousel-slide {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 0.7s;
+      z-index: 1;
+    }
+    .carousel-slide.active {
+      opacity: 1;
+      z-index: 2;
+    }
+    .carousel-title {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: 3;
+      background: rgba(35,67,117,0.78);
+      padding: 0.85rem 1.6rem 0.85rem 1.6rem;
+      border-radius: 0 0 22px 22px;
+      width: 100%;
+      box-sizing: border-box;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: #fff;
+      display: flex;
+      align-items: flex-end;
+      min-height: unset;
+      max-height: 4.2rem;
+    }
+    .carousel-controls {
+      position: absolute;
+      right: 22px;
+      bottom: 22px;
+      z-index: 4;
+      display: flex;
+      gap: 0.7rem;
+    }
+    .carousel-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #fff;
+      opacity: 0.5;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.2s, background 0.2s;
+      box-shadow: 0 1px 4px rgba(35,67,117,0.10);
+    }
+    .carousel-dot.active {
+      opacity: 1;
+      background: #e3eaff;
+      border: 2px solid #234375;
+    }
+    @media (max-width: 950px) {
+      .hero-carousel {
+        max-width: 98vw;
+        height: 200px;
+        border-radius: 16px;
+      }
+      .carousel-title {
+        font-size: 1.08rem;
+        padding: 0.7rem 1.1rem;
+        border-radius: 0 0 16px 16px;
+        max-height: 2.7rem;
+        background: rgba(255, 255, 255, 0.85);
+      }
+      .carousel-controls {
+        right: 12px;
+        bottom: 12px;
+      }
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto 2.5rem auto;
+      background: linear-gradient(90deg, #f4f7fb 80%, #e3eaff 100%);
+      border-radius: 14px;
+      box-shadow: 0 2px 8px rgba(60,42,86,0.05);
+      padding: 2.2rem 2rem 2rem 2rem;
+      display: flex;
+      gap: 2.5rem;
+    }
+    .project-main {
+      flex: 2;
+      min-width: 0;
+    }
+    .project-meta {
+      flex: 1;
+      min-width: 260px;
+      max-width: 340px;
+      background: #f8fafd;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(35,67,117,0.07);
+      padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.3rem;
+      height: fit-content;
+    }
+    .project-meta h3 {
+      font-size: 1.08rem;
+      color: #234375;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+    .project-meta .project-tags {
+      font-size: 0.98rem;
+      color: #6b7a99;
+      font-style: italic;
+      margin-bottom: 0.2rem;
+    }
+    .project-meta .project-tags span {
+      margin-right: 0.7em;
+      font-size: 1em;
+      font-style: italic;
+      font-weight: 400;
+      display: inline;
+    }
+    .project-meta .project-people {
+      font-size: 1rem;
+      color: #234375;
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+    }
+    .project-meta .project-people span {
+      margin-right: 0.7em;
+      font-size: 1em;
+      font-weight: 500;
+      display: inline;
+    }
+    .project-meta .project-timescale {
+      font-size: 0.97rem;
+      color: #3a4a6b;
+      margin-bottom: 0.2rem;
+    }
+    .project-meta .project-outputs {
+      font-size: 0.97rem;
+      color: #234375;
+      margin-top: 1.1rem;
+    }
+    .project-meta .project-outputs a {
+      color: #234375;
+      text-decoration: underline;
+    }
+    .project-meta .project-outputs a:hover {
+      color: #1a5276;
+    }
+    h2 {
+      color: #234375;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 2.2rem;
+      margin-bottom: 0.7rem;
+      letter-spacing: 0.1px;
+    }
+    ul {
+      padding-left: 1.3rem;
+      margin-bottom: 1.2rem;
+    }
+    @media (max-width: 900px) {
+      main {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+      }
+      .project-meta {
+        max-width: 100%;
+        width: 100%;
+        margin: 0;
+      }
+      .hero-carousel {
+        height: 160px;
+        border-radius: 16px;
+      }
+      .carousel-title {
+        font-size: 1.2rem;
+        padding: 0.7rem 1rem;
+        border-radius: 0 0 16px 16px;
+      }
+    }
+    .main-hero-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="index.html" class="logo">
-                <img src="./assets/images/Cardiff_University_(logo).svg.png" alt="Cardiff University Logo">
-                <span>Alia I. Abdelmoty</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="index.html#biography">Profile</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="index.html#research-areas">Research Areas</a></li>
-                <li><a href="projects.html">Research Projects</a></li>
-                <li><a href="publications.html">Publications</a></li>
-                <li><a href="students.html">Students</a></li>
-            </ul>
-        </nav>
-    </header>
+  <div class="banner">
+    <div class="banner-inner">
+      <a href="index.html">
+        <img src="./assets/images/Cardiff_University_(logo).svg.png" alt="Cardiff University Logo">
+        <span>Alia I. Abdelmoty</span>
+      </a>
+      <nav>
+        <a href="index.html#biography">Profile</a>
+        <a href="about.html">About</a>
+        <a href="index.html#research-areas">Research Areas</a>
+        <a href="projects.html">Research Projects</a>
+        <a href="publications.html">Publications</a>
+        <a href="students.html">Students</a>
+      </nav>
+    </div>
+  </div>
+  <div class="main-hero-wrapper">
+    <div class="hero-carousel">
+      <!-- Images can be added here: assets/images/ResearchProjects/AbduraufSatoti/ -->
+      <div class="carousel-slide active" style="background-image: url('assets/images/ResearchProjects/AbduraufSatoti/QPM_architecture.png');"></div>
+      <div class="carousel-slide" style="background-image: url('assets/images/ResearchProjects/AbduraufSatoti/QPD_example.png');"></div>
+      <div class="carousel-slide" style="background-image: url('assets/images/ResearchProjects/AbduraufSatoti/Wales_hierarchies.png');"></div>
+      <div class="carousel-title">
+        A GIS-Native Framework for Qualitative Place Models
+      </div>
+      <div class="carousel-controls">
+        <button class="carousel-dot active" aria-label="Show image 1"></button>
+        <button class="carousel-dot" aria-label="Show image 2"></button>
+        <button class="carousel-dot" aria-label="Show image 3"></button>
+      </div>
+    </div>
+  </div>
+  <main>
+    <section class="project-main">
+      <p>
+        This project develops the Qualitative Place Model (QPM) — a GIS-native framework that transforms standard boundary datasets into structured knowledge bases of Qualitative Place Descriptions (QPDs). The QPM enables human-centric spatial concepts such as <strong>"near"</strong>, <strong>"north of"</strong>, and <strong>"inside"</strong> to be represented as explicit, first-class, queryable entities within native GIS workflows. This bridges the fundamental gap between how humans naturally describe and understand places through qualitative relationships and how conventional Geographic Information Systems represent space primarily through geometric coordinates.
+      </p>
 
-    <main class="project-page">
-        <h1>A GIS-Native Framework for Qualitative Place Models</h1>
+      <h2>Research Questions</h2>
+      <ul>
+        <li><strong>Main Question:</strong> How can qualitative place descriptions be systematically generated, represented, and queried within Geographic Information Systems across both traditional and DGGS-based spatial hierarchies to complement geometric representations, support qualitative place creation, enable cross-hierarchy reasoning, and facilitate human-centric spatial understanding?</li>
+        <li>How can qualitative spatial relationships (directional, proximity, and containment) be represented as explicit, first-class entities within GIS to enable the systematic generation of Unique Qualitative Place Descriptions?</li>
+        <li>How can Discrete Global Grid Systems (DGGS), such as H3 and S2, be integrated within GIS to provide globally consistent hierarchical representations of place?</li>
+        <li>How can new or relative places be created and managed qualitatively within GIS using relational expressions (e.g., <em>inside</em>, <em>next to</em>, <em>east of</em>)?</li>
+        <li>How can qualitative spatial relationships be computed across multiple hierarchies (administrative, postal, electoral)?</li>
+        <li>How can the proposed Qualitative Place Model be evaluated for correctness, completeness, and semantic interoperability?</li>
+      </ul>
 
-        <p class="project-summary">
-            This project develops the Qualitative Place Model (QPM) — a GIS-native framework that transforms standard boundary datasets into structured knowledge bases of Qualitative Place Descriptions (QPDs). The QPM enables human-centric spatial concepts such as <strong>"near"</strong>, <strong>"north of"</strong>, and <strong>"inside"</strong> to be represented as explicit, first-class, queryable entities within native GIS workflows. This bridges the fundamental gap between how humans naturally describe and understand places through qualitative relationships and how conventional Geographic Information Systems represent space primarily through geometric coordinates.
-        </p>
-
-        <h2>Research Questions</h2>
+      <h2>Key Contributions</h2>
+      <ul>
+        <li><strong>GIS-Native Framework for Unique Qualitative Place Descriptions:</strong> The first comprehensive framework for generating unique QPDs natively within GIS, formalising place representation through explicit qualitative spatial relationships.</li>
+        <li><strong>Integration of Discrete Global Grid Systems (DGGS):</strong> Demonstrates how H3 and S2 grid systems can provide alternative, scalable hierarchical representations independent of traditional administrative boundaries.</li>
+        <li><strong>Qualitative Place Creation and Management:</strong> Novel methods for defining and managing "relative places" using structured qualitative spatial expressions, with automatic spatial footprint estimation and provenance recording.</li>
+        <li><strong>H3-Based Cross-Hierarchy Relationship Computation:</strong> Algorithms for computing comprehensive qualitative spatial relationships (near, close, neighbour, far) across multiple spatial hierarchies.</li>
+        <li><strong>Semantic Integration and Reasoning:</strong> Export mechanism transforming GIS representations into OWL/RDF graphs, enabling logical closure operations and interoperability with the Semantic Web.</li>
+        <li><strong>Comprehensive Real-World Evaluation:</strong> Validated using Wales datasets comprising 3,242 spatial units and 52,821 basic places across three hierarchies, demonstrating 95.8% completeness and 100% uniqueness of generated QPDs.</li>
+      </ul>
+    </section>
+    <aside class="project-meta">
+      <h3>Tags</h3>
+      <div class="project-tags">
+        <span>Qualitative Spatial Reasoning</span>
+        <span>GIS</span>
+        <span>Place Models</span>
+        <span>Geo-ontology</span>
+        <span>Naïve Geography</span>
+        <span>DGGS</span>
+      </div>
+      <h3>People</h3>
+      <div class="project-people">
+        <span>Dr. Alia I. Abdelmoty</span>
+        <span>Abdurauf M H Satoti</span>
+      </div>
+      <h3>Time Scale</h3>
+      <div class="project-timescale">
+        2021 – 2026 (PhD Project)
+      </div>
+      <h3>Research Outputs</h3>
+      <div class="project-outputs">
         <ul>
-            <li><strong>Main Question:</strong> How can qualitative place descriptions be systematically generated, represented, and queried within Geographic Information Systems across both traditional and DGGS-based spatial hierarchies to complement geometric representations, support qualitative place creation, enable cross-hierarchy reasoning, and facilitate human-centric spatial understanding?</li>
-            <li>How can qualitative spatial relationships (directional, proximity, and containment) be represented as explicit, first-class entities within GIS to enable the systematic generation of Unique Qualitative Place Descriptions?</li>
-            <li>How can Discrete Global Grid Systems (DGGS), such as H3 and S2, be integrated within GIS to provide globally consistent hierarchical representations of place that complement or substitute traditional administrative hierarchies?</li>
-            <li>How can new or relative places be created and managed qualitatively within GIS using relational expressions (e.g., <em>inside</em>, <em>next to</em>, <em>east of</em>) while maintaining spatial consistency, geometric validity, and provenance?</li>
-            <li>How can qualitative spatial relationships be computed across multiple hierarchies (administrative, postal, electoral) based on DGGS representations to enable cross-hierarchy reasoning?</li>
-            <li>How can the proposed Qualitative Place Model be evaluated for correctness, completeness, and semantic interoperability through competency-based queries and logical reasoning?</li>
+          <li><strong>Satoti, A.</strong> and <strong>Abdelmoty, A.I.</strong> (2025). <em>A GIS-Native framework for qualitative place models: Implementation and evaluation.</em> ISPRS International Journal of Geo-Information, 14(12), 474. <a href="https://doi.org/10.3390/ijgi14120474" target="_blank">DOI: 10.3390/ijgi14120474</a></li>
         </ul>
-
-        <h2>Key Contributions</h2>
-        <ul>
-            <li><strong>GIS-Native Framework for Unique Qualitative Place Descriptions:</strong> The first comprehensive framework for generating unique QPDs natively within GIS, formalising place representation through explicit qualitative spatial relationships.</li>
-            <li><strong>Integration of Discrete Global Grid Systems (DGGS):</strong> Demonstrates how H3 and S2 grid systems can provide alternative, scalable hierarchical representations independent of traditional administrative boundaries.</li>
-            <li><strong>Qualitative Place Creation and Management:</strong> Novel methods for defining and managing "relative places" using structured qualitative spatial expressions, with automatic spatial footprint estimation and provenance recording.</li>
-            <li><strong>H3-Based Cross-Hierarchy Relationship Computation:</strong> Algorithms for computing comprehensive qualitative spatial relationships (near, close, neighbour, far) across multiple spatial hierarchies.</li>
-            <li><strong>Semantic Integration and Reasoning:</strong> Export mechanism transforming GIS representations into OWL/RDF graphs, enabling logical closure operations and interoperability with the Semantic Web.</li>
-            <li><strong>Comprehensive Real-World Evaluation:</strong> Validated using Wales datasets comprising 3,242 spatial units and 52,821 basic places across three hierarchies, demonstrating 95.8% completeness and 100% uniqueness of generated QPDs.</li>
-        </ul>
-
-        <section class="project-meta">
-            <div class="meta-item">
-                <h3>Tags</h3>
-                <span class="tag">Qualitative Spatial Reasoning</span>
-                <span class="tag">GIS</span>
-                <span class="tag">Place Models</span>
-                <span class="tag">Geo-ontology</span>
-                <span class="tag">Naïve Geography</span>
-                <span class="tag">DGGS</span>
-            </div>
-
-            <div class="meta-item">
-                <h3>People</h3>
-                <p>Dr. Alia I. Abdelmoty (Supervisor)<br>
-                Abdurauf M H Satoti (PhD Student)</p>
-            </div>
-
-            <div class="meta-item">
-                <h3>Time Scale</h3>
-                <p>2021 – 2026 (PhD Project)</p>
-            </div>
-
-            <div class="meta-item">
-                <h3>Research Outputs</h3>
-                <ul class="publications-list">
-                    <li>
-                        <strong>Satoti, A.</strong> and <strong>Abdelmoty, A.I.</strong> (2025). 
-                        <em>A GIS-Native framework for qualitative place models: Implementation and evaluation.</em> 
-                        ISPRS International Journal of Geo-Information, 14(12), 474. 
-                        <a href="https://doi.org/10.3390/ijgi14120474" target="_blank">DOI: 10.3390/ijgi14120474</a>
-                    </li>
-                </ul>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Alia I. Abdelmoty. All rights reserved.</p>
-    </footer>
+      </div>
+    </aside>
+  </main>
+  <script>
+    // Carousel JS
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.carousel-dot');
+    let current = 0;
+    function showSlide(idx) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === idx);
+        dots[i].classList.toggle('active', i === idx);
+      });
+      current = idx;
+    }
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => showSlide(i));
+    });
+    setInterval(() => {
+      showSlide((current + 1) % slides.length);
+    }, 6000);
+  </script>
 </body>
 </html>
