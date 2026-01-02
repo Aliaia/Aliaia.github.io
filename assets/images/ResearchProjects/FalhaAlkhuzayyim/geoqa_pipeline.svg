@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 450">
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#234375;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3a5a8a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="traditionalGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8f4f8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d0e8f0;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="llmGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#fff8e8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffeccc;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="hybridGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8ffe8;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#c8f0c8;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1100" height="450" fill="#f8fafc"/>
+  
+  <!-- Title -->
+  <rect x="0" y="0" width="1100" height="50" fill="url(#headerGrad)"/>
+  <text x="550" y="32" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" fill="white" text-anchor="middle">Geographic Question Answering: Approaches</text>
+  
+  <!-- Traditional GeoQA Section -->
+  <rect x="30" y="70" width="340" height="360" rx="12" fill="url(#traditionalGrad)" filter="url(#shadow)"/>
+  <text x="200" y="100" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="600" fill="#234375" text-anchor="middle">Traditional GeoQA Pipeline</text>
+  
+  <!-- Traditional boxes -->
+  <rect x="60" y="120" width="280" height="40" rx="6" fill="#234375"/>
+  <text x="200" y="145" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="white" text-anchor="middle">User Query</text>
+  
+  <path d="M200 160 L200 175" stroke="#234375" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <polygon points="200,180 195,170 205,170" fill="#234375"/>
+  
+  <rect x="60" y="185" width="280" height="40" rx="6" fill="#4a7ab0"/>
+  <text x="200" y="210" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">Query Parsing &amp; NER</text>
+  
+  <polygon points="200,235 195,225 205,225" fill="#234375"/>
+  
+  <rect x="60" y="240" width="280" height="40" rx="6" fill="#4a7ab0"/>
+  <text x="200" y="265" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">Spatial Relation Extraction</text>
+  
+  <polygon points="200,290 195,280 205,280" fill="#234375"/>
+  
+  <rect x="60" y="295" width="280" height="40" rx="6" fill="#4a7ab0"/>
+  <text x="200" y="320" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">Database/Knowledge Base Query</text>
+  
+  <polygon points="200,345 195,335 205,335" fill="#234375"/>
+  
+  <rect x="60" y="350" width="280" height="40" rx="6" fill="#234375"/>
+  <text x="200" y="375" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="white" text-anchor="middle">Answer</text>
+
+  <!-- LLM-Based Section -->
+  <rect x="390" y="70" width="320" height="360" rx="12" fill="url(#llmGrad)" filter="url(#shadow)"/>
+  <text x="550" y="100" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="600" fill="#8b6914" text-anchor="middle">LLM-Based Approach</text>
+  
+  <rect x="420" y="120" width="260" height="40" rx="6" fill="#c9a227"/>
+  <text x="550" y="145" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="white" text-anchor="middle">User Query</text>
+  
+  <polygon points="550,180 545,170 555,170" fill="#c9a227"/>
+  
+  <rect x="420" y="200" width="260" height="120" rx="10" fill="#d4af37" filter="url(#shadow)"/>
+  <text x="550" y="240" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="600" fill="white" text-anchor="middle">Large Language Model</text>
+  <text x="550" y="265" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">Query Understanding</text>
+  <text x="550" y="282" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">Spatial Reasoning</text>
+  <text x="550" y="299" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">Answer Generation</text>
+  
+  <polygon points="550,345 545,335 555,335" fill="#c9a227"/>
+  
+  <rect x="420" y="350" width="260" height="40" rx="6" fill="#c9a227"/>
+  <text x="550" y="375" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="white" text-anchor="middle">Answer</text>
+  
+  <!-- Question marks for LLM uncertainties -->
+  <text x="695" y="250" font-family="Segoe UI, Arial, sans-serif" font-size="24" fill="#8b6914" font-weight="bold">?</text>
+  <text x="695" y="285" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#8b6914">Accuracy?</text>
+
+  <!-- Hybrid Section -->
+  <rect x="730" y="70" width="340" height="360" rx="12" fill="url(#hybridGrad)" filter="url(#shadow)"/>
+  <text x="900" y="100" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="600" fill="#2d6a2d" text-anchor="middle">Hybrid Architecture</text>
+  
+  <rect x="760" y="120" width="280" height="40" rx="6" fill="#3d8b3d"/>
+  <text x="900" y="145" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="white" text-anchor="middle">User Query</text>
+  
+  <polygon points="900,180 895,170 905,170" fill="#3d8b3d"/>
+  
+  <rect x="760" y="185" width="280" height="50" rx="8" fill="#4CAF50"/>
+  <text x="900" y="207" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">LLM: Query Understanding</text>
+  <text x="900" y="223" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="white" text-anchor="middle">&amp; Intent Recognition</text>
+  
+  <polygon points="900,245 895,235 905,235" fill="#3d8b3d"/>
+  
+  <!-- Knowledge Graph box -->
+  <rect x="760" y="250" width="130" height="60" rx="6" fill="#2e7d32"/>
+  <text x="825" y="277" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">Geographic</text>
+  <text x="825" y="293" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">Knowledge Base</text>
+  
+  <!-- Spatial Reasoner box -->
+  <rect x="910" y="250" width="130" height="60" rx="6" fill="#2e7d32"/>
+  <text x="975" y="277" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">Spatial</text>
+  <text x="975" y="293" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">Reasoner</text>
+  
+  <!-- Connecting arrows -->
+  <path d="M825 310 L825 330 L900 330" stroke="#3d8b3d" stroke-width="2" fill="none"/>
+  <path d="M975 310 L975 330 L900 330" stroke="#3d8b3d" stroke-width="2" fill="none"/>
+  <polygon points="900,345 895,335 905,335" fill="#3d8b3d"/>
+  
+  <rect x="760" y="350" width="280" height="40" rx="6" fill="#4CAF50"/>
+  <text x="900" y="372" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">LLM: Answer Synthesis</text>
+  
+  <rect x="760" y="400" width="280" height="25" rx="4" fill="#3d8b3d"/>
+  <text x="900" y="417" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="white" text-anchor="middle">Grounded Answer</text>
+</svg>

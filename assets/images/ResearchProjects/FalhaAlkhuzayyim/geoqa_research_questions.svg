@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 450">
+  <defs>
+    <linearGradient id="headerGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#234375;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3a5a8a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="centerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#234375;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a325a;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow2" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="3" stdDeviation="4" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1100" height="450" fill="#f8fafc"/>
+  
+  <!-- Title -->
+  <rect x="0" y="0" width="1100" height="50" fill="url(#headerGrad2)"/>
+  <text x="550" y="32" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="600" fill="white" text-anchor="middle">Research Questions: LLMs for Geographic Question Answering</text>
+  
+  <!-- Central circle -->
+  <circle cx="550" cy="250" r="85" fill="url(#centerGrad)" filter="url(#shadow2)"/>
+  <text x="550" y="240" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="white" text-anchor="middle">Can LLMs</text>
+  <text x="550" y="258" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="white" text-anchor="middle">Enhance/Replace</text>
+  <text x="550" y="276" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="white" text-anchor="middle">GeoQA?</text>
+  
+  <!-- Question 1: Query Understanding - Top Left -->
+  <line x1="480" y1="190" x2="350" y2="120" stroke="#5b8dc9" stroke-width="3"/>
+  <circle cx="350" cy="120" r="8" fill="#234375"/>
+  <rect x="150" y="75" width="200" height="90" rx="10" fill="#e3eaff" stroke="#234375" stroke-width="2" filter="url(#shadow2)"/>
+  <text x="250" y="100" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#234375" text-anchor="middle">Query Understanding</text>
+  <text x="250" y="120" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#3a5a8a" text-anchor="middle">Can LLMs interpret</text>
+  <text x="250" y="135" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#3a5a8a" text-anchor="middle">spatial intent, place</text>
+  <text x="250" y="150" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#3a5a8a" text-anchor="middle">references &amp; relations?</text>
+  
+  <!-- Question 2: Spatial Reasoning - Top Right -->
+  <line x1="620" y1="190" x2="750" y2="120" stroke="#5b8dc9" stroke-width="3"/>
+  <circle cx="750" cy="120" r="8" fill="#234375"/>
+  <rect x="650" y="75" width="200" height="90" rx="10" fill="#e3eaff" stroke="#234375" stroke-width="2" filter="url(#shadow2)"/>
+  <text x="750" y="100" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#234375" text-anchor="middle">Spatial Reasoning</text>
+  <text x="750" y="120" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#3a5a8a" text-anchor="middle">Can LLMs perform</text>
+  <text x="750" y="135" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#3a5a8a" text-anchor="middle">directional, topological</text>
+  <text x="750" y="150" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#3a5a8a" text-anchor="middle">&amp; distance reasoning?</text>
+  
+  <!-- Question 3: Vague Language - Left -->
+  <line x1="465" y1="250" x2="320" y2="250" stroke="#5b8dc9" stroke-width="3"/>
+  <circle cx="320" cy="250" r="8" fill="#234375"/>
+  <rect x="70" y="205" width="250" height="90" rx="10" fill="#fff8e8" stroke="#c9a227" stroke-width="2" filter="url(#shadow2)"/>
+  <text x="195" y="230" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#8b6914" text-anchor="middle">Vague Spatial Language</text>
+  <text x="195" y="250" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#a07d1a" text-anchor="middle">How do LLMs handle</text>
+  <text x="195" y="265" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#a07d1a" text-anchor="middle">"near", "around", "close to",</text>
+  <text x="195" y="280" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#a07d1a" text-anchor="middle">"in the city centre"?</text>
+  
+  <!-- Question 4: Knowledge Integration - Right -->
+  <line x1="635" y1="250" x2="780" y2="250" stroke="#5b8dc9" stroke-width="3"/>
+  <circle cx="780" cy="250" r="8" fill="#234375"/>
+  <rect x="780" y="205" width="250" height="90" rx="10" fill="#e8ffe8" stroke="#3d8b3d" stroke-width="2" filter="url(#shadow2)"/>
+  <text x="905" y="230" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#2d6a2d" text-anchor="middle">Knowledge Integration</text>
+  <text x="905" y="250" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#3d7a3d" text-anchor="middle">How can LLMs integrate</text>
+  <text x="905" y="265" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#3d7a3d" text-anchor="middle">with geographic KBs</text>
+  <text x="905" y="280" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#3d7a3d" text-anchor="middle">for grounded answers?</text>
+  
+  <!-- Question 5: Limitations - Bottom Left -->
+  <line x1="480" y1="310" x2="350" y2="380" stroke="#5b8dc9" stroke-width="3"/>
+  <circle cx="350" cy="380" r="8" fill="#234375"/>
+  <rect x="150" y="335" width="200" height="90" rx="10" fill="#ffe8e8" stroke="#c94a4a" stroke-width="2" filter="url(#shadow2)"/>
+  <text x="250" y="360" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#8b2d2d" text-anchor="middle">Limitations</text>
+  <text x="250" y="380" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#a04040" text-anchor="middle">Factual accuracy?</text>
+  <text x="250" y="395" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#a04040" text-anchor="middle">Spatial consistency?</text>
+  <text x="250" y="410" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#a04040" text-anchor="middle">Hallucination risks?</text>
+  
+  <!-- Question 6: Hybrid Architectures - Bottom Right -->
+  <line x1="620" y1="310" x2="750" y2="380" stroke="#5b8dc9" stroke-width="3"/>
+  <circle cx="750" cy="380" r="8" fill="#234375"/>
+  <rect x="650" y="335" width="200" height="90" rx="10" fill="#f0e8ff" stroke="#6b4a9e" stroke-width="2" filter="url(#shadow2)"/>
+  <text x="750" y="360" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#4a2d7a" text-anchor="middle">Hybrid Architectures</text>
+  <text x="750" y="380" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#5a3d8a" text-anchor="middle">What combinations of</text>
+  <text x="750" y="395" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#5a3d8a" text-anchor="middle">LLMs + traditional GeoQA</text>
+  <text x="750" y="410" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#5a3d8a" text-anchor="middle">work best?</text>
+</svg>
