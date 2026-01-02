@@ -48,7 +48,7 @@
     }
     .hero-section {
       width: 100%;
-      min-height: 330px; /* Increased from 220px to ~1.5x */
+      min-height: 330px;
       background: url('./assets/images/Ontologies.png') center center/cover no-repeat;
       display: flex;
       align-items: flex-end;
@@ -58,7 +58,7 @@
     .hero-overlay {
       background: linear-gradient(90deg, rgba(35,67,117,0.82) 0%, rgba(35,67,117,0.45) 70%, rgba(35,67,117,0.05) 100%);
       width: 100%;
-      min-height: 330px; /* Match hero-section */
+      min-height: 330px;
       display: flex;
       align-items: flex-end;
       padding: 2.5rem 2rem 1.5rem 2rem;
@@ -97,6 +97,13 @@
     p {
       font-size: 1.1rem;
       margin-bottom: 1.2rem;
+    }
+    .project-card {
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 20px rgba(60,42,86,0.13);
     }
     @media (max-width: 700px) {
       .site-title {
@@ -159,32 +166,24 @@
         <span style="color:#b8860b;">Reasoning with Patients' Diaries</span>,
         <span style="color:#b8860b;">Geospatial Ontologies</span>,
         <span style="color:#b8860b;">Geographic Question Answering Systems</span>
-      
       </div>
     </div>
   </main>
   <section id="related-projects" style="margin: 3rem auto 2rem auto; max-width: 900px;">
     <h2 style="color:#234375; font-size:1.45rem; font-weight:600; margin-bottom:1.3rem; letter-spacing:0.2px;">Related Projects</h2>
     <div class="projects-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
-      <a class="project-card" href="projects.html#project4" style="background:#fff; border-radius:14px; box-shadow:0 2px 8px rgba(60,42,86,0.07); text-decoration:none; color:#234375; display:flex; flex-direction:column;">
-        <div class="project-thumb" style="background-image:url('./assets/images/ResearchAreas/Ontologies.png'); background-size:cover; background-position:center; min-height:110px; border-radius:14px 14px 0 0;"></div>
+      <a class="project-card" href="project4.html" style="background:#fff; border-radius:14px; box-shadow:0 2px 8px rgba(60,42,86,0.07); text-decoration:none; color:#234375; display:flex; flex-direction:column;">
+        <div class="project-thumb" style="background-image:url('./assets/images/ResearchProjects/AreejMuhajab/obsession-compulsion-model.png'); background-size:contain; background-position:center; background-repeat:no-repeat; background-color:#fff; min-height:130px; border-radius:14px 14px 0 0;"></div>
         <div class="project-content" style="padding:1.1rem 1rem 1rem 1rem;">
-          <h3 style="margin:0 0 0.5rem 0; font-size:1.13rem; font-weight:600;">Ontology-driven Data Integration</h3>
-          <p style="margin:0; font-size:1rem;">Integrating heterogeneous data sources using semantic technologies.</p>
+          <h3 style="margin:0 0 0.5rem 0; font-size:1.13rem; font-weight:600;">OCD Ontology and Online Detection</h3>
+          <p style="margin:0; font-size:1rem;">An ontology-based framework for modelling and detecting OCD in online discourse.</p>
         </div>
       </a>
-      <a class="project-card" href="projects.html#project5" style="background:#fff; border-radius:14px; box-shadow:0 2px 8px rgba(60,42,86,0.07); text-decoration:none; color:#234375; display:flex; flex-direction:column;">
-        <div class="project-thumb" style="background-image:url('./assets/images/MentalHealth.png'); background-size:cover; background-position:center; min-height:110px; border-radius:14px 14px 0 0;"></div>
+      <a class="project-card" href="project5.html" style="background:#fff; border-radius:14px; box-shadow:0 2px 8px rgba(60,42,86,0.07); text-decoration:none; color:#234375; display:flex; flex-direction:column;">
+        <div class="project-thumb" style="background-image:url('./assets/images/ResearchAreas/Ontologies.png'); background-size:cover; background-position:center; min-height:130px; border-radius:14px 14px 0 0;"></div>
         <div class="project-content" style="padding:1.1rem 1rem 1rem 1rem;">
-          <h3 style="margin:0 0 0.5rem 0; font-size:1.13rem; font-weight:600;">Mental Health Informatics</h3>
-          <p style="margin:0; font-size:1rem;">Ontology-based representations for structured analysis in mental health domains.</p>
-        </div>
-      </a>
-      <a class="project-card" href="projects.html#project6" style="background:#fff; border-radius:14px; box-shadow:0 2px 8px rgba(60,42,86,0.07); text-decoration:none; color:#234375; display:flex; flex-direction:column;">
-        <div class="project-thumb" style="background-image:url('./assets/images/SemanticWeb.png'); background-size:cover; background-position:center; min-height:110px; border-radius:14px 14px 0 0;"></div>
-        <div class="project-content" style="padding:1.1rem 1rem 1rem 1rem;">
-          <h3 style="margin:0 0 0.5rem 0; font-size:1.13rem; font-weight:600;">Semantic Annotation Frameworks</h3>
-          <p style="margin:0; font-size:1rem;">Tools and frameworks for semantic annotation and knowledge engineering.</p>
+          <h3 style="margin:0 0 0.5rem 0; font-size:1.13rem; font-weight:600;">Place Ontologies</h3>
+          <p style="margin:0; font-size:1rem;">Geo-ontologies for modelling place concepts and spatial relationships.</p>
         </div>
       </a>
     </div>
