@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Place Ontologies and Semantic Place Modelling</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #234375;
+      background: #f4f7fb;
+    }
+    .banner {
+      background: #234375;
+      padding: 0;
+      margin: 0;
+      min-height: 84px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      z-index: 10;
+    }
+    .banner-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      min-height: 84px;
+    }
+    .banner a {
+      display: flex;
+      align-items: center;
+      margin-right: 1.2rem;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .banner img {
+      height: 44px;
+      width: auto;
+      margin-right: 1rem;
+      border-radius: 6px;
+      box-shadow: 0 1px 4px rgba(60,42,86,0.07);
+    }
+    .banner span {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: 1.55rem;
+      font-weight: 500;
+      color: #fff;
+      letter-spacing: 0.5px;
+    }
+    nav {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 1.2rem;
+      font-weight: 500;
+      font-size: 1.13rem;
+      padding: 0.45em 1em;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+    nav a:hover, nav a:focus {
+      background: #e3eaff;
+      color: #234375;
+      outline: none;
+    }
+
+    /* HERO CAROUSEL */
+    .hero-carousel {
+      position: relative;
+      height: 320px;
+      width: 100%;
+      max-width: 100%;
+      margin: 2.5rem 0 2.5rem 0;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 6px 32px rgba(35,67,117,0.13), 0 2px 8px rgba(60,42,86,0.10);
+      display: flex;
+      align-items: flex-end;
+      background: #e3eaff;
+    }
+    .carousel-slide {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 0.7s;
+      z-index: 1;
+    }
+    .carousel-slide.active {
+      opacity: 1;
+      z-index: 2;
+    }
+    .carousel-title {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: 3;
+      background: rgba(35,67,117,0.78);
+      padding: 0.85rem 1.6rem 0.85rem 1.6rem;
+      border-radius: 0 0 22px 22px;
+      width: 100%;
+      box-sizing: border-box;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: #fff;
+      display: flex;
+      align-items: flex-end;
+      min-height: unset;
+      max-height: 4.2rem;
+    }
+    .carousel-controls {
+      position: absolute;
+      right: 22px;
+      bottom: 22px;
+      z-index: 4;
+      display: flex;
+      gap: 0.7rem;
+    }
+    .carousel-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #fff;
+      opacity: 0.5;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.2s, background 0.2s;
+      box-shadow: 0 1px 4px rgba(35,67,117,0.10);
+    }
+    .carousel-dot.active {
+      opacity: 1;
+      background: #e3eaff;
+      border: 2px solid #234375;
+    }
+    @media (max-width: 950px) {
+      .hero-carousel {
+        max-width: 98vw;
+        height: 200px;
+        border-radius: 16px;
+      }
+      .carousel-title {
+        font-size: 1.08rem;
+        padding: 0.7rem 1.1rem;
+        border-radius: 0 0 16px 16px;
+        max-height: 2.7rem;
+      }
+      .carousel-controls {
+        right: 12px;
+        bottom: 12px;
+      }
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto 2.5rem auto;
+      background: linear-gradient(90deg, #f4f7fb 80%, #e3eaff 100%);
+      border-radius: 14px;
+      box-shadow: 0 2px 8px rgba(60,42,86,0.05);
+      padding: 2.2rem 2rem 2rem 2rem;
+      display: flex;
+      gap: 2.5rem;
+    }
+    .project-main {
+      flex: 2;
+      min-width: 0;
+    }
+    .project-meta {
+      flex: 1;
+      min-width: 260px;
+      max-width: 340px;
+      background: #f8fafd;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(35,67,117,0.07);
+      padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.3rem;
+      height: fit-content;
+    }
+    .project-meta h3 {
+      font-size: 1.08rem;
+      color: #234375;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+    .project-meta .project-tags {
+      font-size: 0.98rem;
+      color: #6b7a99;
+      font-style: italic;
+      margin-bottom: 0.2rem;
+    }
+    .project-meta .project-tags span {
+      margin-right: 0.7em;
+      font-size: 1em;
+      font-style: italic;
+      font-weight: 400;
+      display: inline;
+    }
+    .project-meta .project-people {
+      font-size: 1rem;
+      color: #234375;
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+    }
+    .project-meta .project-people span {
+      display: block;
+      margin-bottom: 0.3em;
+    }
+    .project-meta .project-timescale {
+      font-size: 0.97rem;
+      color: #3a4a6b;
+      margin-bottom: 0.2rem;
+    }
+    .project-meta .project-outputs {
+      font-size: 0.97rem;
+      color: #234375;
+      margin-top: 1.1rem;
+    }
+    .project-meta .project-outputs a {
+      color: #234375;
+      text-decoration: underline;
+    }
+    .project-meta .project-outputs a:hover {
+      color: #1a5276;
+    }
+    h2 {
+      color: #234375;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 2.2rem;
+      margin-bottom: 0.7rem;
+      letter-spacing: 0.1px;
+    }
+    ul {
+      padding-left: 1.3rem;
+      margin-bottom: 1.2rem;
+    }
+    .student-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 6px rgba(35,67,117,0.07);
+      border-left: 4px solid #234375;
+    }
+    .student-card h4 {
+      margin: 0 0 0.4rem 0;
+      color: #234375;
+      font-size: 1.05rem;
+    }
+    .student-card .year {
+      font-size: 0.9rem;
+      color: #6b7a99;
+      margin-bottom: 0.3rem;
+    }
+    .student-card p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #3a4a6b;
+    }
+    .student-card a {
+      color: #234375;
+      text-decoration: underline;
+    }
+    @media (max-width: 900px) {
+      main {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+      }
+      .project-meta {
+        max-width: 100%;
+        width: 100%;
+        margin: 0;
+      }
+      .hero-carousel {
+        height: 160px;
+        border-radius: 16px;
+      }
+      .carousel-title {
+        font-size: 1.2rem;
+        padding: 0.7rem 1rem;
+        border-radius: 0 0 16px 16px;
+      }
+    }
+    .main-hero-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="banner">
+    <div class="banner-inner">
+      <a href="index.html">
+        <img src="./assets/images/Cardiff_University_(logo).svg.png" alt="Cardiff University Logo">
+        <span>Alia I. Abdelmoty</span>
+      </a>
+      <nav>
+        <a href="index.html#biography">Profile</a>
+        <a href="about.html">About</a>
+        <a href="index.html#research-areas">Research Areas</a>
+        <a href="projects.html">Research Projects</a>
+        <a href="publications.html">Publications</a>
+        <a href="students.html">Students</a>
+      </nav>
+    </div>
+  </div>
+  <div class="main-hero-wrapper">
+    <div class="hero-carousel">
+      <div class="carousel-slide active" style="background-image: url('assets/images/ResearchProjects/PlaceOntologies/place_research_timeline.svg');"></div>
+      <div class="carousel-slide" style="background-image: url('assets/images/ResearchProjects/PlaceOntologies/place_dimensions.svg');"></div>
+      <div class="carousel-title">
+        Place Ontologies and Semantic Place Modelling
+      </div>
+      <div class="carousel-controls">
+        <button class="carousel-dot active" aria-label="Show image 1"></button>
+        <button class="carousel-dot" aria-label="Show image 2"></button>
+      </div>
+    </div>
+  </div>
+  <main>
+    <section class="project-main">
+      <p>
+        This research programme investigates the formal representation and semantic modelling of <strong>geographic place</strong> — extending beyond traditional gazetteers to capture the rich, multidimensional nature of how humans understand, experience, and interact with places. Spanning over 15 years, this work has developed ontologies and computational models that represent place affordance, qualitative spatial relationships, user perceptions, and social semantics of place.
+      </p>
+      <p>
+        The research addresses fundamental questions: What activities and services does a place afford? How do people qualitatively describe place location? How can we integrate formal place knowledge with vernacular understanding from social media? How can place semantics be represented on the Linked Data Web and in GIS systems?
+      </p>
+
+      <h2>Research Themes</h2>
+      <ul>
+        <li><strong>Place Affordance:</strong> Modelling the human activities, services, and functions associated with geographic place types — what places enable people to do.</li>
+        <li><strong>Qualitative Spatial Representation:</strong> Representing place location using qualitative expressions (near, north of, inside) rather than purely coordinate-based approaches.</li>
+        <li><strong>Geo-Folksonomies:</strong> Extracting place semantics from collaborative tagging and social media, capturing vernacular and experiential views of place.</li>
+        <li><strong>Linked Data and Knowledge Graphs:</strong> Representing place information on the Semantic Web, enabling integration and reasoning across distributed place resources.</li>
+        <li><strong>User and Place Profiling:</strong> Building profiles of places and users from location-based social network data, supporting personalised location services.</li>
+        <li><strong>GIS Integration:</strong> Implementing qualitative place models in Geographic Information Systems, including integration with Discrete Global Grid Systems (DGGS).</li>
+      </ul>
+
+      <h2>PhD Research Projects</h2>
+      
+      <div class="student-card">
+        <h4>Ahmed N. Makki Al-Azzawi</h4>
+        <div class="year">PhD 2011</div>
+        <p><strong>Geographical Places as a Personalisation Element:</strong> Extracting semantically rich profiles from GPS mobility logs using place affordance — the typical human activities and services provided at certain place types.</p>
+      </div>
+
+      <div class="student-card">
+        <h4>Ehab ElGindy</h4>
+        <div class="year">PhD 2013</div>
+        <p><strong>Extracting Place Semantics from Geo-Folksonomies:</strong> A framework for analysing geo-folksonomies and discovering place-related semantics, building place type and activity ontologies from collaborative tagging data.</p>
+      </div>
+
+      <div class="student-card">
+        <h4>Soha Ahmed Mohamed</h4>
+        <div class="year">PhD 2017</div>
+        <p><strong>Spatiotemporal User and Place Modelling on the Geo-Social Web:</strong> User and place modelling from Location-Based Social Networks (Foursquare), combining spatial, semantic, and temporal dimensions for location recommendation.</p>
+      </div>
+
+      <div class="student-card">
+        <h4>Khalid Obaid S. Almuzaini</h4>
+        <div class="year">PhD 2017</div>
+        <p><strong>Qualitative Modelling of Place Location on the Linked Data Web and GIS:</strong> Qualitative spatial representation and reasoning for place location, with implementations for the Linked Data Web and Qualitative GIS (QPM-QGIS).</p>
+      </div>
+
+      <div class="student-card" style="border-left-color: #b8860b;">
+        <h4>Hanan Muhajab</h4>
+        <div class="year">PhD 2020–2024 (ongoing)</div>
+        <p><strong>Global Place Knowledge Graphs:</strong> The Description-Location-Identification Graph (DLIG) ontology pattern for unified representation of vague and crisp place descriptions. <a href="project1.html">View project →</a></p>
+      </div>
+
+      <div class="student-card" style="border-left-color: #b8860b;">
+        <h4>Abdurauf M H Satoti</h4>
+        <div class="year">PhD 2021–2026 (ongoing)</div>
+        <p><strong>A GIS-Native Framework for Qualitative Place Models:</strong> Extending QPM work with DGGS integration (H3, S2) for qualitative place creation and semantic interoperability. <a href="project2.html">View project →</a></p>
+      </div>
+
+      <h2>Key Contributions</h2>
+      <ul>
+        <li>Formal ontologies for place affordance, linking place types to human activities and services</li>
+        <li>Methods for extracting place semantics from geo-folksonomies and social media</li>
+        <li>Qualitative place models for the Linked Data Web enabling spatial reasoning</li>
+        <li>QPM-QGIS: Qualitative place modelling integrated with Geographic Information Systems</li>
+        <li>The DLIG ontology pattern for global place knowledge graphs</li>
+        <li>GIS-native frameworks with DGGS integration for qualitative place representation</li>
+        <li>User and place profiling methods for location-based social networks</li>
+      </ul>
+    </section>
+    <aside class="project-meta">
+      <h3>Tags</h3>
+      <div class="project-tags">
+        <span>Place Ontologies</span>
+        <span>Geo-ontology</span>
+        <span>Place Affordance</span>
+        <span>Qualitative Spatial Reasoning</span>
+        <span>Linked Data</span>
+        <span>Knowledge Graphs</span>
+        <span>Geo-Folksonomies</span>
+        <span>GIS</span>
+        <span>DGGS</span>
+      </div>
+      <h3>People</h3>
+      <div class="project-people">
+        <span>Dr. Alia I. Abdelmoty</span>
+        <span>Prof. Chris Jones</span>
+        <span>Ahmed Al-Azzawi (2011)</span>
+        <span>Ehab ElGindy (2013)</span>
+        <span>Soha Mohamed (2017)</span>
+        <span>Khalid Almuzaini (2017)</span>
+        <span>Hanan Muhajab (current)</span>
+        <span>Abdurauf Satoti (current)</span>
+      </div>
+      <h3>Time Scale</h3>
+      <div class="project-timescale">
+        2011 – Present (ongoing research programme)
+      </div>
+      <h3>Related Projects</h3>
+      <div class="project-outputs">
+        <ul style="padding-left: 1.1rem;">
+          <li><a href="project1.html">Global Place Knowledge Graphs (DLIG)</a></li>
+          <li><a href="project2.html">Qualitative GIS Framework</a></li>
+        </ul>
+      </div>
+    </aside>
+  </main>
+  <script>
+    // Carousel JS
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.carousel-dot');
+    let current = 0;
+    function showSlide(idx) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === idx);
+        dots[i].classList.toggle('active', i === idx);
+      });
+      current = idx;
+    }
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => showSlide(i));
+    });
+    setInterval(() => {
+      showSlide((current + 1) % slides.length);
+    }, 6000);
+  </script>
+</body>
+</html>
