@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Research projects by Dr. Alia I. Abdelmoty - Linked Place Data, Audio-based Social Platforms, Privacy-aware Systems, and Location-Based Social Networks.">
+    <meta name="description" content="Research projects by Dr. Alia I. Abdelmoty - Place Modelling, Qualitative Spatial Reasoning, User Profiling, Privacy, Ontologies, and Human-Centred AI.">
     <title>Projects - Alia I. Abdelmoty</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
@@ -77,6 +76,17 @@
         margin-bottom: 2rem;
         letter-spacing: 0.2px;
       }
+      .area-section {
+        margin-bottom: 2.5rem;
+      }
+      .area-section h2 {
+        color: #234375;
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 1.2rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #e3eaff;
+      }
       .projects-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
@@ -89,10 +99,11 @@
         display: flex;
         flex-direction: column;
         padding: 0 0 1.2rem 0;
-        transition: box-shadow 0.2s;
+        transition: box-shadow 0.2s, transform 0.2s;
       }
       .project-card:hover {
         box-shadow: 0 4px 16px rgba(60,42,86,0.13);
+        transform: translateY(-3px);
       }
       .project-thumb {
         background-size: cover;
@@ -107,7 +118,7 @@
         display: flex;
         flex-direction: column;
       }
-      .project-content h2 {
+      .project-content h3 {
         margin: 0 0 0.6rem 0;
         font-size: 1.18rem;
         font-weight: 600;
@@ -157,6 +168,34 @@
         font-weight: 500;
         display: inline;
       }
+      .status-badge {
+        display: inline-block;
+        font-size: 0.75rem;
+        padding: 0.15rem 0.5rem;
+        border-radius: 10px;
+        margin-left: 0.5rem;
+        vertical-align: middle;
+        font-weight: 600;
+      }
+      .status-badge.ongoing {
+        background: #fef3c7;
+        color: #92400e;
+      }
+      .status-badge.completed {
+        background: #d1fae5;
+        color: #065f46;
+      }
+      .status-badge.umbrella {
+        background: #e0e7ff;
+        color: #3730a3;
+      }
+      footer {
+        text-align: center;
+        color: #234375;
+        font-size: 1rem;
+        margin: 2.5rem 0 1.2rem 0;
+        opacity: 0.7;
+      }
       @media (max-width: 700px) {
         main {
           padding: 1.2rem 0.7rem 1.2rem 0.7rem;
@@ -187,106 +226,192 @@
       </div>
     </div>
     <main>
-         <!-- <h1>Projects</h1> -->
-        <div class="projects-grid">
-          <a class="project-card" href="project1.html" style="text-decoration:none;">
-            <div class="project-thumb" style="background-image:url('assets/images/ResearchProjects/HananMuhajab/LA_Wales.png');"></div>
-            <div class="project-content">
-              <h2>Linked Place Data Infrastructure</h2>
-              <p>Building interoperable, semantic-rich place data for research and applications, enabling new forms of spatial analysis and knowledge integration.</p>
-              <div class="project-tags">
-                <span>Linked Data</span>
-                <span>Place Semantics</span>
-                <span>GIS</span>
+        <!-- Area 1: Qualitative Spatial Reasoning & Place Modelling -->
+        <div class="area-section">
+          <h2><a href="area1.html" style="color: inherit; text-decoration: none;">Qualitative Spatial Reasoning & Place Modelling</a></h2>
+          <div class="projects-grid">
+            <a class="project-card" href="project6.html" style="text-decoration:none;">
+              <div class="project-thumb" style="background-image:url('assets/images/ResearchAreas/PlaceSemantics2.png');"></div>
+              <div class="project-content">
+                <h3>Semantic Web Spatial Rule Language <span class="status-badge completed">Completed</span></h3>
+                <p>SWSRL — a hybrid framework integrating qualitative symbolic reasoning with quantitative geometric information for geo-ontologies on the Semantic Web.</p>
+                <div class="project-tags">
+                  <span>QSR</span>
+                  <span>Semantic Web</span>
+                  <span>Rule Languages</span>
+                </div>
+                <div class="project-people">
+                  <span>Philip Smart</span>
+                  <span>PhD 2009</span>
+                </div>
               </div>
-              <div class="project-people">
-                <span>Alia I. Abdelmoty</span>
-                <span>Collaborators</span>
+            </a>
+            <a class="project-card" href="project5.html" style="text-decoration:none;">
+              <div class="project-thumb" style="background-image:url('assets/images/ResearchProjects/PlaceOntologies/place_dimensions.svg');"></div>
+              <div class="project-content">
+                <h3>Place Ontologies & Semantic Place Modelling <span class="status-badge umbrella">Umbrella</span></h3>
+                <p>15 years of research on formal representation of geographic place — from place affordance and geo-folksonomies to qualitative place models on the Linked Data Web.</p>
+                <div class="project-tags">
+                  <span>Place Ontologies</span>
+                  <span>QSR</span>
+                  <span>Knowledge Graphs</span>
+                </div>
+                <div class="project-people">
+                  <span>6 PhD Projects</span>
+                  <span>2011–2026</span>
+                </div>
               </div>
-            </div>
-          </a>
-          <a class="project-card" href="project2.html" style="text-decoration:none;">
-            <div class="project-thumb" style="background-image:url('assets/images/ResearchAreas/Audio.png');"></div>
-            <div class="project-content">
-              <h2>Audio-based Social Platforms</h2>
-              <p>Exploring user interaction and profiling in audio-first social networks, focusing on privacy, recommendation, and user experience.</p>
-              <div class="project-tags">
-                <span>Audio Social Media</span>
-                <span>User Profiling</span>
-                <span>Privacy</span>
+            </a>
+            <a class="project-card" href="project1.html" style="text-decoration:none;">
+              <div class="project-thumb" style="background-image:url('assets/images/ResearchProjects/HananMuhajab/LA_Wales.png');"></div>
+              <div class="project-content">
+                <h3>Global Place Knowledge Graphs <span class="status-badge ongoing">Ongoing</span></h3>
+                <p>The DLIG ontology design pattern for unified representation of vague and crisp place descriptions in global-scale knowledge graphs.</p>
+                <div class="project-tags">
+                  <span>DLIG</span>
+                  <span>Linked Data</span>
+                  <span>Place Semantics</span>
+                </div>
+                <div class="project-people">
+                  <span>Hanan Muhajab</span>
+                  <span>PhD 2020–2024</span>
+                </div>
               </div>
-              <div class="project-people">
-                <span>Alia I. Abdelmoty</span>
-                <span>R. Darwish</span>
-                <span>L. Turner</span>
+            </a>
+            <a class="project-card" href="project2.html" style="text-decoration:none;">
+              <div class="project-thumb" style="background-image:url('assets/images/ResearchAreas/PlaceSemantics2.png');"></div>
+              <div class="project-content">
+                <h3>GIS-Native Qualitative Place Models <span class="status-badge ongoing">Ongoing</span></h3>
+                <p>A framework extending qualitative place modelling with DGGS integration (H3, S2) for place creation and semantic interoperability in GIS.</p>
+                <div class="project-tags">
+                  <span>Qualitative GIS</span>
+                  <span>DGGS</span>
+                  <span>Place Models</span>
+                </div>
+                <div class="project-people">
+                  <span>Abdurauf Satoti</span>
+                  <span>PhD 2021–2026</span>
+                </div>
               </div>
-            </div>
-          </a>
-          <a class="project-card" href="project3.html" style="text-decoration:none;">
-            <div class="project-thumb" style="background-image:url('assets/images/PlaceSemantics.png');"></div>
-            <div class="project-content">
-              <h2>Multimodal Profiling & Semantics</h2>
-              <p>Integrating speech, text, and context for richer user models and improved understanding of social signals in digital environments.</p>
-              <div class="project-tags">
-                <span>Multimodal Data</span>
-                <span>Semantics</span>
-                <span>AI</span>
+            </a>
+            <a class="project-card" href="project3.html" style="text-decoration:none;">
+              <div class="project-thumb" style="background-image:url('assets/images/ResearchAreas/PlaceSemantics2.png');"></div>
+              <div class="project-content">
+                <h3>Geographic Question Answering <span class="status-badge ongoing">Ongoing</span></h3>
+                <p>LLM-based approaches to answering natural language questions about geographic knowledge, bridging semantic place models with conversational AI.</p>
+                <div class="project-tags">
+                  <span>GeoQA</span>
+                  <span>LLM</span>
+                  <span>NLP</span>
+                </div>
+                <div class="project-people">
+                  <span>Falha Alkhuzayyim</span>
+                  <span>PhD 2024–ongoing</span>
+                </div>
               </div>
-              <div class="project-people">
-                <span>Alia I. Abdelmoty</span>
-                <span>Collaborators</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Area 2: Geo-Semantic User Profiling & Privacy -->
+        <div class="area-section">
+          <h2><a href="area2.html" style="color: inherit; text-decoration: none;">Geo-Semantic User Profiling & Privacy</a></h2>
+          <div class="projects-grid">
+            <a class="project-card" href="project7.html" style="text-decoration:none;">
+              <div class="project-thumb" style="background-image:url('assets/images/ResearchProjects/UserProfiling/user_profiling_timeline.svg');"></div>
+              <div class="project-content">
+                <h3>Geo-Semantic User Profiling & Privacy <span class="status-badge umbrella">Umbrella</span></h3>
+                <p>A coherent research programme: Build profiles → Enrich with semantics → Model dynamics → Protect privacy. Four PhDs addressing location-based user modelling.</p>
+                <div class="project-tags">
+                  <span>User Profiling</span>
+                  <span>Location Privacy</span>
+                  <span>LBSN</span>
+                </div>
+                <div class="project-people">
+                  <span>4 PhD Projects</span>
+                  <span>2011–2017</span>
+                </div>
               </div>
-            </div>
-          </a>
-          <a class="project-card" href="project4.html" style="text-decoration:none;">
-            <div class="project-thumb" style="background-image:url('assets/images/ResearchAreas/Audio2.png');"></div>
-            <div class="project-content">
-              <h2>Empathetic & Context-aware AI</h2>
-              <p>Designing AI systems that understand social signals and context, aiming for more empathetic and human-centric technology.</p>
-              <div class="project-tags">
-                <span>AI</span>
-                <span>Context Awareness</span>
-                <span>Social Signals</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Area 3: Ontologies & Knowledge Representation -->
+        <div class="area-section">
+          <h2><a href="area3.html" style="color: inherit; text-decoration: none;">Ontologies & Knowledge Representation</a></h2>
+          <div class="projects-grid">
+            <a class="project-card" href="project4.html" style="text-decoration:none;">
+              <div class="project-thumb" style="background-image:url('assets/images/ResearchAreas/Ontologies.png');"></div>
+              <div class="project-content">
+                <h3>OCD Ontology & Online Detection <span class="status-badge completed">Completed</span></h3>
+                <p>An ontology-based framework for modelling Obsessive Compulsive Disorder, combining biomedical ontology engineering with NLP and deep learning for online detection.</p>
+                <div class="project-tags">
+                  <span>Biomedical Ontology</span>
+                  <span>Mental Health</span>
+                  <span>NLP</span>
+                </div>
+                <div class="project-people">
+                  <span>Areej Muhajab</span>
+                  <span>PhD 2020–2024</span>
+                </div>
               </div>
-              <div class="project-people">
-                <span>Alia I. Abdelmoty</span>
-                <span>Collaborators</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Area 4: Human-Centred AI & Social Computing -->
+        <div class="area-section">
+          <h2><a href="area4.html" style="color: inherit; text-decoration: none;">Human-Centred AI & Social Computing</a></h2>
+          <div class="projects-grid">
+            <a class="project-card" href="project8.html" style="text-decoration:none;">
+              <div class="project-thumb" style="background-image:url('assets/images/ResearchAreas/Ontologies.png');"></div>
+              <div class="project-content">
+                <h3>Elderly Monitoring with Environmental Sensors <span class="status-badge completed">Completed</span></h3>
+                <p>Using household sensors and machine learning to detect anomalies in elderly residents' behaviour, providing early warning systems for carers.</p>
+                <div class="project-tags">
+                  <span>IoT Sensors</span>
+                  <span>Anomaly Detection</span>
+                  <span>Elderly Care</span>
+                </div>
+                <div class="project-people">
+                  <span>Nathan Jones</span>
+                  <span>MPhil 2022</span>
+                </div>
               </div>
-            </div>
-          </a>
-          <a class="project-card" href="project5.html" style="text-decoration:none;">
-            <div class="project-thumb" style="background-image:url('assets/images/ResearchAreas/Ontologies2.png');"></div>
-            <div class="project-content">
-              <h2>Privacy-aware User Modelling</h2>
-              <p>Developing techniques for privacy protection and secure data sharing in spatial and social applications.</p>
-              <div class="project-tags">
-                <span>Privacy</span>
-                <span>User Modelling</span>
-                <span>Security</span>
+            </a>
+            <a class="project-card" href="project9.html" style="text-decoration:none;">
+              <div class="project-thumb" style="background-image:url('assets/images/ResearchAreas/Audio.png');"></div>
+              <div class="project-content">
+                <h3>Social Network Analysis on Audio Platforms <span class="status-badge ongoing">Ongoing</span></h3>
+                <p>Analysing user connectivity and thematic engagement on X Spaces, exploring how synchronous audio interactions differ from text-based social media.</p>
+                <div class="project-tags">
+                  <span>X Spaces</span>
+                  <span>Social Networks</span>
+                  <span>Topic Modelling</span>
+                </div>
+                <div class="project-people">
+                  <span>Roba Darwish</span>
+                  <span>PhD ongoing</span>
+                </div>
               </div>
-              <div class="project-people">
-                <span>Alia I. Abdelmoty</span>
-                <span>F. Alrayes</span>
-                <span>W. El-Geresy</span>
+            </a>
+            <a class="project-card" href="project10.html" style="text-decoration:none;">
+              <div class="project-thumb" style="background-image:url('assets/images/ResearchAreas/LBSN.png');"></div>
+              <div class="project-content">
+                <h3>Gender-typed Preference Bias in RecSys <span class="status-badge ongoing">Ongoing</span></h3>
+                <p>Investigating how gender-typed preferences distort recommendations, developing frameworks for detecting and mitigating demographic bias.</p>
+                <div class="project-tags">
+                  <span>Algorithmic Bias</span>
+                  <span>Fairness</span>
+                  <span>RecSys</span>
+                </div>
+                <div class="project-people">
+                  <span>Sarah Parry</span>
+                  <span>PhD (co-supervised)</span>
+                </div>
               </div>
-            </div>
-          </a>
-          <a class="project-card" href="project6.html" style="text-decoration:none;">
-            <div class="project-thumb" style="background-image:url('assets/images/ResearchAreas/LBSN.png');"></div>
-            <div class="project-content">
-              <h2>Location-Based Social Networks</h2>
-              <p>Modelling user activity and privacy in LBSNs and geosocial platforms, with a focus on spatio-semantic user profiles.</p>
-              <div class="project-tags">
-                <span>LBSN</span>
-                <span>Geo-Social</span>
-                <span>User Profiles</span>
-              </div>
-              <div class="project-people">
-                <span>Alia I. Abdelmoty</span>
-                <span>Collaborators</span>
-              </div>
-            </div>
-          </a>
+            </a>
+          </div>
         </div>
     </main>
     <footer>
