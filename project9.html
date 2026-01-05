@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Social Network Analysis on Audio-Based Platforms</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #234375;
+      background: #f4f7fb;
+    }
+    .banner {
+      background: #234375;
+      padding: 0;
+      margin: 0;
+      min-height: 84px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      z-index: 10;
+    }
+    .banner-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      min-height: 84px;
+    }
+    .banner a {
+      display: flex;
+      align-items: center;
+      margin-right: 1.2rem;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .banner img {
+      height: 44px;
+      width: auto;
+      margin-right: 1rem;
+      border-radius: 6px;
+      box-shadow: 0 1px 4px rgba(60,42,86,0.07);
+    }
+    .banner span {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: 1.55rem;
+      font-weight: 500;
+      color: #fff;
+      letter-spacing: 0.5px;
+    }
+    nav {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 1.2rem;
+      font-weight: 500;
+      font-size: 1.13rem;
+      padding: 0.45em 1em;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+    nav a:hover, nav a:focus {
+      background: #e3eaff;
+      color: #234375;
+      outline: none;
+    }
+
+    /* HERO SECTION */
+    .hero-section {
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      margin: 2.5rem 0 2.5rem 0;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 6px 32px rgba(35,67,117,0.13), 0 2px 8px rgba(60,42,86,0.10);
+      background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 50%, #60a5fa 100%);
+      min-height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-content {
+      text-align: center;
+      padding: 2.5rem;
+      color: white;
+    }
+    .hero-content h1 {
+      font-size: 1.9rem;
+      margin: 0 0 0.8rem 0;
+      font-weight: 700;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .hero-content .subtitle {
+      font-size: 1.15rem;
+      opacity: 0.9;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .hero-icon {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      opacity: 0.9;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto 2.5rem auto;
+      background: linear-gradient(90deg, #f4f7fb 80%, #e3eaff 100%);
+      border-radius: 14px;
+      box-shadow: 0 2px 8px rgba(60,42,86,0.05);
+      padding: 2.2rem 2rem 2rem 2rem;
+      display: flex;
+      gap: 2.5rem;
+    }
+    .project-main {
+      flex: 2;
+      min-width: 0;
+    }
+    .project-meta {
+      flex: 1;
+      min-width: 260px;
+      max-width: 340px;
+      background: #f8fafd;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(35,67,117,0.07);
+      padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.3rem;
+      height: fit-content;
+    }
+    .project-meta h3 {
+      font-size: 1.08rem;
+      color: #234375;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+    .project-meta .project-tags {
+      font-size: 0.98rem;
+      color: #6b7a99;
+      font-style: italic;
+      margin-bottom: 0.2rem;
+    }
+    .project-meta .project-tags span {
+      margin-right: 0.7em;
+      font-size: 1em;
+      font-style: italic;
+      font-weight: 400;
+      display: inline;
+    }
+    .project-meta .project-people {
+      font-size: 1rem;
+      color: #234375;
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+    }
+    .project-meta .project-people span {
+      display: block;
+      margin-bottom: 0.3em;
+    }
+    .project-meta .project-timescale {
+      font-size: 0.97rem;
+      color: #3a4a6b;
+      margin-bottom: 0.2rem;
+    }
+    .project-meta .project-outputs {
+      font-size: 0.97rem;
+      color: #234375;
+      margin-top: 0.5rem;
+    }
+    .project-meta .project-outputs a {
+      color: #234375;
+      text-decoration: underline;
+    }
+    .project-meta .project-outputs a:hover {
+      color: #1a5276;
+    }
+    h2 {
+      color: #234375;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 2.2rem;
+      margin-bottom: 0.7rem;
+      letter-spacing: 0.1px;
+    }
+    ul {
+      padding-left: 1.3rem;
+      margin-bottom: 1.2rem;
+    }
+    li {
+      margin-bottom: 0.5rem;
+    }
+    .highlight-box {
+      background: #eff6ff;
+      border-left: 4px solid #3b82f6;
+      padding: 1rem 1.2rem;
+      border-radius: 0 8px 8px 0;
+      margin: 1.5rem 0;
+    }
+    .highlight-box h4 {
+      margin: 0 0 0.5rem 0;
+      color: #1d4ed8;
+    }
+    .finding-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .finding-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1.2rem;
+      box-shadow: 0 2px 6px rgba(35,67,117,0.07);
+      border-top: 3px solid #3b82f6;
+    }
+    .finding-card h5 {
+      margin: 0 0 0.5rem 0;
+      color: #234375;
+      font-size: 1rem;
+    }
+    .finding-card p {
+      margin: 0;
+      font-size: 0.92rem;
+      color: #3a4a6b;
+    }
+    .status-badge {
+      display: inline-block;
+      background: #fef3c7;
+      color: #92400e;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    @media (max-width: 900px) {
+      main {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+      }
+      .project-meta {
+        max-width: 100%;
+        width: 100%;
+        margin: 0;
+      }
+      .hero-section {
+        min-height: 200px;
+        border-radius: 16px;
+      }
+      .hero-content h1 {
+        font-size: 1.5rem;
+      }
+      .finding-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .main-hero-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="banner">
+    <div class="banner-inner">
+      <a href="index.html">
+        <img src="./assets/images/Cardiff_University_(logo).svg.png" alt="Cardiff University Logo">
+        <span>Alia I. Abdelmoty</span>
+      </a>
+      <nav>
+        <a href="index.html#biography">Profile</a>
+        <a href="about.html">About</a>
+        <a href="index.html#research-areas">Research Areas</a>
+        <a href="projects.html">Research Projects</a>
+        <a href="publications.html">Publications</a>
+        <a href="students.html">Students</a>
+      </nav>
+    </div>
+  </div>
+  <div class="main-hero-wrapper">
+    <div class="hero-section">
+      <div class="hero-content">
+        <div class="hero-icon">🎙️</div>
+        <h1>Analysing Social Network Structures on Audio-Based Platforms</h1>
+        <div class="subtitle">Understanding User Connectivity and Thematic Engagement on X Spaces</div>
+      </div>
+    </div>
+  </div>
+  <main>
+    <section class="project-main">
+      <span class="status-badge">🔬 Ongoing Research</span>
+      
+      <p>
+        The rise of audio-based platforms such as <strong>X Spaces</strong> (formerly Twitter Spaces) introduces synchronous, ephemeral modes of interaction that differ fundamentally from traditional text-based social media. This research investigates <strong>user connectivity and thematic engagement</strong> by analysing large-scale datasets of X Spaces events.
+      </p>
+      <p>
+        Unlike text-based social networks where content persists and can be analysed retrospectively, audio spaces are live, temporary events that create unique challenges and opportunities for understanding how users express interests and form communities.
+      </p>
+
+      <h2>Research Questions</h2>
+      <ul>
+        <li>How do users connect and form communities through audio-based interactions?</li>
+        <li>What structural patterns emerge in user–Space participation networks?</li>
+        <li>How do user interests align (or diverge) across audio and text modalities?</li>
+        <li>Do live audio conversations stay on topic or drift from their stated themes?</li>
+      </ul>
+
+      <h2>Technical Approach</h2>
+      
+      <div class="highlight-box">
+        <h4>Network Analysis</h4>
+        <p>User participation is modelled as a <strong>bipartite user–Space network</strong>, then projected into user–user connections to assess community structure, interaction patterns, and user influence.</p>
+      </div>
+
+      <p>The research employs multiple analytical methods:</p>
+      <ul>
+        <li><strong>Network Analysis:</strong> Examining broad-scale characteristics and local structures</li>
+        <li><strong>Topic Modelling:</strong> Extracting conversation topics from transcribed audio summaries</li>
+        <li><strong>Cross-Modal Comparison:</strong> Comparing creator-assigned topics, conversation-derived topics, and users' text posts</li>
+        <li><strong>Hybrid Alignment Method:</strong> Combining BERT embeddings, spaCy similarity, and expert validation</li>
+      </ul>
+
+      <h2>Key Findings</h2>
+      
+      <div class="finding-grid">
+        <div class="finding-card">
+          <h5>Weak Cross-Modal Alignment</h5>
+          <p>User interests are only weakly aligned across audio and text modalities, indicating distinct communicative roles for each medium.</p>
+        </div>
+        <div class="finding-card">
+          <h5>Topic Drift</h5>
+          <p>While most Spaces exhibit high topic coverage, 44% introduce additional themes beyond their predefined scope.</p>
+        </div>
+        <div class="finding-card">
+          <h5>Network Structure</h5>
+          <p>Analysis confirms broad-scale network characteristics while providing novel insights into local structures and user influence.</p>
+        </div>
+        <div class="finding-card">
+          <h5>Distinct Roles</h5>
+          <p>Audio and text platforms serve different communicative purposes, suggesting users express different aspects of their interests through each.</p>
+        </div>
+      </div>
+
+      <h2>Methodology Contributions</h2>
+      <ul>
+        <li><strong>Hybrid Topic Alignment:</strong> Novel method combining BERT embeddings with spaCy similarity and expert validation</li>
+        <li><strong>Bipartite Network Projection:</strong> Approach for modelling participation in ephemeral audio events</li>
+        <li><strong>Cross-Modal Interest Analysis:</strong> Framework for comparing user behaviour across different content modalities</li>
+      </ul>
+
+      <h2>Implications</h2>
+      <p>
+        This research contributes to understanding interest expression, structural cohesion, and topical drift in emerging audio-based social platforms. The findings have implications for:
+      </p>
+      <ul>
+        <li>Platform design for audio-based social features</li>
+        <li>Content recommendation across modalities</li>
+        <li>Understanding how users build communities through synchronous audio</li>
+        <li>Multimodal user profiling approaches</li>
+      </ul>
+    </section>
+    <aside class="project-meta">
+      <h3>Tags</h3>
+      <div class="project-tags">
+        <span>Audio Social Media</span>
+        <span>X Spaces</span>
+        <span>Social Network Analysis</span>
+        <span>Topic Modelling</span>
+        <span>BERT</span>
+        <span>User Profiling</span>
+        <span>Multimodal Analysis</span>
+        <span>Community Detection</span>
+      </div>
+      <h3>People</h3>
+      <div class="project-people">
+        <span>Roba Darwish</span>
+        <span>Dr. Alia I. Abdelmoty (Supervisor)</span>
+        <span>Dr. Liam D. Turner (Supervisor)</span>
+      </div>
+      <h3>Time Scale</h3>
+      <div class="project-timescale">
+        PhD ongoing
+      </div>
+      <h3>Affiliations</h3>
+      <div class="project-outputs">
+        <p style="margin: 0;">Cardiff University</p>
+        <p style="margin: 0.3rem 0 0 0;">Yanbu Industrial College, KSA</p>
+      </div>
+      <h3>Publications</h3>
+      <div class="project-outputs">
+        <p style="margin: 0; font-size: 0.9rem;">Darwish, Abdelmoty & Turner - "Analysing Social Network Structures and Thematic Engagement on X Audio Spaces"</p>
+      </div>
+      <h3>Related Area</h3>
+      <div class="project-outputs">
+        <a href="area4.html">Human-Centred AI & Social Computing</a>
+      </div>
+    </aside>
+  </main>
+</body>
+</html>

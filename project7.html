@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Geo-Semantic User Profiling &amp; Privacy</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #234375;
+      background: #f4f7fb;
+    }
+    .banner {
+      background: #234375;
+      padding: 0;
+      margin: 0;
+      min-height: 84px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      z-index: 10;
+    }
+    .banner-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      min-height: 84px;
+    }
+    .banner a {
+      display: flex;
+      align-items: center;
+      margin-right: 1.2rem;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .banner img {
+      height: 44px;
+      width: auto;
+      margin-right: 1rem;
+      border-radius: 6px;
+      box-shadow: 0 1px 4px rgba(60,42,86,0.07);
+    }
+    .banner span {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: 1.55rem;
+      font-weight: 500;
+      color: #fff;
+      letter-spacing: 0.5px;
+    }
+    nav {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 1.2rem;
+      font-weight: 500;
+      font-size: 1.13rem;
+      padding: 0.45em 1em;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+    nav a:hover, nav a:focus {
+      background: #e3eaff;
+      color: #234375;
+      outline: none;
+    }
+
+    /* HERO CAROUSEL */
+    .hero-carousel {
+      position: relative;
+      height: 320px;
+      width: 100%;
+      max-width: 100%;
+      margin: 2.5rem 0 2.5rem 0;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 6px 32px rgba(35,67,117,0.13), 0 2px 8px rgba(60,42,86,0.10);
+      display: flex;
+      align-items: flex-end;
+      background: #e3eaff;
+    }
+    .carousel-slide {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 0.7s;
+      z-index: 1;
+    }
+    .carousel-slide.active {
+      opacity: 1;
+      z-index: 2;
+    }
+    .carousel-title {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: 3;
+      background: rgba(35,67,117,0.78);
+      padding: 0.85rem 1.6rem 0.85rem 1.6rem;
+      border-radius: 0 0 22px 22px;
+      width: 100%;
+      box-sizing: border-box;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: #fff;
+      display: flex;
+      align-items: flex-end;
+      min-height: unset;
+      max-height: 4.2rem;
+    }
+    .carousel-controls {
+      position: absolute;
+      right: 22px;
+      bottom: 22px;
+      z-index: 4;
+      display: flex;
+      gap: 0.7rem;
+    }
+    .carousel-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #fff;
+      opacity: 0.5;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.2s, background 0.2s;
+      box-shadow: 0 1px 4px rgba(35,67,117,0.10);
+    }
+    .carousel-dot.active {
+      opacity: 1;
+      background: #e3eaff;
+      border: 2px solid #234375;
+    }
+    @media (max-width: 950px) {
+      .hero-carousel {
+        max-width: 98vw;
+        height: 200px;
+        border-radius: 16px;
+      }
+      .carousel-title {
+        font-size: 1.08rem;
+        padding: 0.7rem 1.1rem;
+        border-radius: 0 0 16px 16px;
+        max-height: 2.7rem;
+      }
+      .carousel-controls {
+        right: 12px;
+        bottom: 12px;
+      }
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto 2.5rem auto;
+      background: linear-gradient(90deg, #f4f7fb 80%, #e3eaff 100%);
+      border-radius: 14px;
+      box-shadow: 0 2px 8px rgba(60,42,86,0.05);
+      padding: 2.2rem 2rem 2rem 2rem;
+      display: flex;
+      gap: 2.5rem;
+    }
+    .project-main {
+      flex: 2;
+      min-width: 0;
+    }
+    .project-meta {
+      flex: 1;
+      min-width: 260px;
+      max-width: 340px;
+      background: #f8fafd;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(35,67,117,0.07);
+      padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.3rem;
+      height: fit-content;
+    }
+    .project-meta h3 {
+      font-size: 1.08rem;
+      color: #234375;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+    .project-meta .project-tags {
+      font-size: 0.98rem;
+      color: #6b7a99;
+      font-style: italic;
+      margin-bottom: 0.2rem;
+    }
+    .project-meta .project-tags span {
+      margin-right: 0.7em;
+      font-size: 1em;
+      font-style: italic;
+      font-weight: 400;
+      display: inline;
+    }
+    .project-meta .project-people {
+      font-size: 1rem;
+      color: #234375;
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+    }
+    .project-meta .project-people span {
+      display: block;
+      margin-bottom: 0.3em;
+    }
+    .project-meta .project-timescale {
+      font-size: 0.97rem;
+      color: #3a4a6b;
+      margin-bottom: 0.2rem;
+    }
+    .project-meta .project-outputs {
+      font-size: 0.97rem;
+      color: #234375;
+      margin-top: 0.5rem;
+    }
+    .project-meta .project-outputs a {
+      color: #234375;
+      text-decoration: underline;
+    }
+    .project-meta .project-outputs a:hover {
+      color: #1a5276;
+    }
+    h2 {
+      color: #234375;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 2.2rem;
+      margin-bottom: 0.7rem;
+      letter-spacing: 0.1px;
+    }
+    ul {
+      padding-left: 1.3rem;
+      margin-bottom: 1.2rem;
+    }
+    .student-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 6px rgba(35,67,117,0.07);
+      border-left: 4px solid #234375;
+    }
+    .student-card.blue { border-left-color: #3b82f6; }
+    .student-card.green { border-left-color: #10b981; }
+    .student-card.purple { border-left-color: #8b5cf6; }
+    .student-card.red { border-left-color: #ef4444; }
+    .student-card h4 {
+      margin: 0 0 0.4rem 0;
+      color: #234375;
+      font-size: 1.05rem;
+    }
+    .student-card .year {
+      font-size: 0.9rem;
+      color: #6b7a99;
+      margin-bottom: 0.3rem;
+    }
+    .student-card p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #3a4a6b;
+    }
+    @media (max-width: 900px) {
+      main {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+      }
+      .project-meta {
+        max-width: 100%;
+        width: 100%;
+        margin: 0;
+      }
+      .hero-carousel {
+        height: 160px;
+        border-radius: 16px;
+      }
+      .carousel-title {
+        font-size: 1.2rem;
+        padding: 0.7rem 1rem;
+        border-radius: 0 0 16px 16px;
+      }
+    }
+    .main-hero-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="banner">
+    <div class="banner-inner">
+      <a href="index.html">
+        <img src="./assets/images/Cardiff_University_(logo).svg.png" alt="Cardiff University Logo">
+        <span>Alia I. Abdelmoty</span>
+      </a>
+      <nav>
+        <a href="index.html#biography">Profile</a>
+        <a href="about.html">About</a>
+        <a href="index.html#research-areas">Research Areas</a>
+        <a href="projects.html">Research Projects</a>
+        <a href="publications.html">Publications</a>
+        <a href="students.html">Students</a>
+      </nav>
+    </div>
+  </div>
+  <div class="main-hero-wrapper">
+    <div class="hero-carousel">
+      <div class="carousel-slide active" style="background-image: url('assets/images/ResearchProjects/UserProfiling/user_profiling_timeline.svg');"></div>
+      <div class="carousel-title">
+        Geo-Semantic User Profiling &amp; Privacy
+      </div>
+    </div>
+  </div>
+  <main>
+    <section class="project-main">
+      <p>
+        This research programme investigates how <strong>location data from mobile devices and social networks</strong> can be used to build rich semantic profiles of users — and critically, how to protect user privacy when such profiles can reveal sensitive personal information.
+      </p>
+      <p>
+        Spanning from 2011 to 2017, four PhD projects progressively developed methods to extract meaningful profiles from location traces, enrich them with place semantics, model their temporal dynamics, and ultimately address the privacy implications of location disclosure on geo-social networks.
+      </p>
+
+      <h2>Research Journey</h2>
+      <p>The research follows a natural progression:</p>
+      <ul>
+        <li><strong>Build:</strong> Extract user profiles from GPS mobility logs using place affordance</li>
+        <li><strong>Enrich:</strong> Add semantic depth through geo-folksonomy analysis</li>
+        <li><strong>Model:</strong> Capture temporal dynamics and place interactions on LBSNs</li>
+        <li><strong>Protect:</strong> Develop privacy awareness tools and threat models</li>
+      </ul>
+
+      <h2>PhD Research Projects</h2>
+      
+      <div class="student-card blue">
+        <h4>Ahmed N. Makki Al-Azzawi</h4>
+        <div class="year">PhD 2011</div>
+        <p><strong>Geographical Places as a Personalisation Element:</strong> Pioneered the extraction of semantically rich profiles from GPS mobility logs using place affordance — the typical human activities and services provided at certain place types. Introduced Personal Gazetteers and the PGML markup language for encoding spatial, temporal, and thematic user information.</p>
+      </div>
+
+      <div class="student-card green">
+        <h4>Ehab ElGindy</h4>
+        <div class="year">PhD 2013</div>
+        <p><strong>Extracting Place Semantics from Geo-Folksonomies:</strong> Developed a framework for analysing geo-folksonomies (collaborative place tagging) to discover place-related semantics. Built place type and activity ontologies from social tagging data, and proposed user similarity and place similarity measures based on the extracted semantics.</p>
+      </div>
+
+      <div class="student-card purple">
+        <h4>Soha Ahmed Mohamed</h4>
+        <div class="year">PhD 2017</div>
+        <p><strong>Spatiotemporal User and Place Modelling on the Geo-Social Web:</strong> Proposed static and dynamic user models capturing how user preferences change over time. Developed semantic place models identifying user activities and relationships between places, users, and activities. Created novel location and content recommendation methods using Foursquare data.</p>
+      </div>
+
+      <div class="student-card red">
+        <h4>Fatma Sulaiman AlRayes</h4>
+        <div class="year">PhD 2017</div>
+        <p><strong>Location Privacy Awareness on Geo-Social Networks:</strong> Addressed the critical privacy implications of location sharing. Developed a privacy threat model considering shared data types, visibility by adversaries, and user awareness. Proposed privacy feedback solutions that reveal risk levels and enable users to make informed decisions about location disclosure.</p>
+      </div>
+
+      <h2>Key Contributions</h2>
+      <ul>
+        <li><strong>Place Affordance Profiling:</strong> Methods for extracting semantic profiles from GPS logs based on what activities places enable</li>
+        <li><strong>Geo-Folksonomy Analysis:</strong> Framework for discovering place semantics from collaborative tagging</li>
+        <li><strong>Place Type & Activity Ontologies:</strong> Formal representations of place semantics derived from social data</li>
+        <li><strong>User & Place Similarity:</strong> Semantic measures for comparing users and places based on interactions</li>
+        <li><strong>Dynamic User Models:</strong> Capturing temporal evolution of user preferences</li>
+        <li><strong>Location Recommendation:</strong> Methods enhanced by place semantics and temporal dimensions</li>
+        <li><strong>Privacy Threat Models:</strong> Frameworks for assessing location privacy risks</li>
+        <li><strong>Privacy Feedback Solutions:</strong> Tools enabling informed consent about location disclosure</li>
+      </ul>
+
+      <h2>Data Sources</h2>
+      <ul>
+        <li>GPS mobility traces from personal mobile devices</li>
+        <li>Geo-folksonomies (Tagzania and similar platforms)</li>
+        <li>Location-Based Social Networks (Foursquare)</li>
+        <li>User check-ins, tips, and social interactions</li>
+      </ul>
+
+      <h2>Impact</h2>
+      <p>
+        This research programme established foundational methods for understanding how location data reveals information about users, their interests, and their activities. The privacy-focused culmination ensures that as location-based services proliferate, users can be empowered to understand and control their location disclosure.
+      </p>
+    </section>
+    <aside class="project-meta">
+      <h3>Tags</h3>
+      <div class="project-tags">
+        <span>User Profiling</span>
+        <span>Location Privacy</span>
+        <span>Geo-Folksonomies</span>
+        <span>Place Affordance</span>
+        <span>LBSN</span>
+        <span>Foursquare</span>
+        <span>GPS Mobility</span>
+        <span>Recommendation Systems</span>
+        <span>Privacy Awareness</span>
+      </div>
+      <h3>People</h3>
+      <div class="project-people">
+        <span>Dr. Alia I. Abdelmoty</span>
+        <span>Prof. Chris Jones</span>
+        <span>Ahmed Al-Azzawi (2011)</span>
+        <span>Ehab ElGindy (2013)</span>
+        <span>Soha Mohamed (2017)</span>
+        <span>Fatma AlRayes (2017)</span>
+      </div>
+      <h3>Time Scale</h3>
+      <div class="project-timescale">
+        2011 – 2017 (completed research programme)
+      </div>
+      <h3>Related Areas</h3>
+      <div class="project-outputs">
+        <ul style="padding-left: 1.1rem; margin-top: 0.5rem;">
+          <li><a href="project5.html">Place Ontologies</a></li>
+          <li><a href="area4.html">Human-Centred AI</a></li>
+        </ul>
+      </div>
+    </aside>
+  </main>
+  <script>
+    // Carousel JS (single slide, but keeping for consistency)
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.carousel-dot');
+    let current = 0;
+    function showSlide(idx) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === idx);
+        if (dots[i]) dots[i].classList.toggle('active', i === idx);
+      });
+      current = idx;
+    }
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => showSlide(i));
+    });
+    if (slides.length > 1) {
+      setInterval(() => {
+        showSlide((current + 1) % slides.length);
+      }, 6000);
+    }
+  </script>
+</body>
+</html>

@@ -1,195 +1,415 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Ontologies and Knowledge Representation Across Domains | Research Area</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Research on ontologies and knowledge representation by Dr. Alia I. Abdelmoty - geo-ontologies, mental health informatics, and semantic frameworks.">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Research Area 2: Geo-Semantic User Profiling & Privacy</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
   <style>
-    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f9fafb; margin: 0; color: #222; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #234375;
+      background: #f4f7fb;
+    }
     .banner {
-      background: #fff;
-      border-bottom: 1px solid #e5e7eb;
-      box-shadow: 0 2px 8px rgba(60,42,86,0.07);
-      position: sticky;
-      top: 0;
-      z-index: 10;
+      background: #234375;
+      padding: 0;
+      margin: 0;
+      min-height: 84px;
       display: flex;
       align-items: center;
-      justify-content: center;
+      position: relative;
+      z-index: 10;
     }
-    .site-title {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #234375;
+    .banner-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      min-height: 84px;
+    }
+    .banner a {
+      display: flex;
+      align-items: center;
+      margin-right: 1.2rem;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .banner img {
+      height: 44px;
+      width: auto;
+      margin-right: 1rem;
+      border-radius: 6px;
+      box-shadow: 0 1px 4px rgba(60,42,86,0.07);
+    }
+    .banner span {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: 1.55rem;
+      font-weight: 500;
+      color: #fff;
       letter-spacing: 0.5px;
-      margin-right: 2rem;
-      margin-left: 1.5rem;
-      white-space: nowrap;
     }
     nav {
+      flex: 1;
       display: flex;
-      gap: 2rem;
-      padding: 1.2rem 0;
+      justify-content: center;
+      align-items: center;
     }
     nav a {
-      color: #234375;
+      color: #fff;
       text-decoration: none;
-      font-weight: 600;
-      padding: 0.5rem 1.2rem;
-      border-radius: 20px;
-      transition: background 0.2s;
+      margin: 0 1.2rem;
+      font-weight: 500;
+      font-size: 1.13rem;
+      padding: 0.45em 1em;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
     }
     nav a:hover, nav a:focus {
       background: #e3eaff;
       color: #234375;
       outline: none;
     }
+
+    /* HERO SECTION */
     .hero-section {
-      width: 100%;
-      min-height: 330px;
-      background: url('./assets/images/Ontologies.png') center center/cover no-repeat;
-      display: flex;
-      align-items: flex-end;
-      justify-content: flex-start;
       position: relative;
-    }
-    .hero-overlay {
-      background: linear-gradient(90deg, rgba(35,67,117,0.82) 0%, rgba(35,67,117,0.45) 70%, rgba(35,67,117,0.05) 100%);
       width: 100%;
-      min-height: 330px;
+      max-width: 100%;
+      margin: 2.5rem 0 2.5rem 0;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 6px 32px rgba(35,67,117,0.13), 0 2px 8px rgba(60,42,86,0.10);
+      background: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 50%, #a78bfa 100%);
+      min-height: 200px;
       display: flex;
-      align-items: flex-end;
-      padding: 2.5rem 2rem 1.5rem 2rem;
-      box-sizing: border-box;
+      align-items: center;
+      justify-content: center;
     }
-    .hero-title {
-      color: #fff;
-      font-size: 2.2rem;
+    .hero-content {
+      text-align: center;
+      padding: 2.5rem;
+      color: white;
+    }
+    .hero-content h1 {
+      font-size: 2rem;
+      margin: 0 0 0.8rem 0;
       font-weight: 700;
-      margin: 0;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.13);
+      text-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
+    .hero-content .subtitle {
+      font-size: 1.15rem;
+      opacity: 0.9;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .area-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
     main {
-      max-width: 900px;
-      margin: 2.5rem auto 0 auto;
+      max-width: 1100px;
+      margin: 0 auto 2.5rem auto;
       background: #fff;
       border-radius: 14px;
-      box-shadow: 0 2px 8px rgba(60,42,86,0.07);
-      padding: 2.5rem 2rem 2rem 2rem;
+      box-shadow: 0 2px 8px rgba(60,42,86,0.05);
+      padding: 2.2rem 2rem 2rem 2rem;
     }
-    .overview-title {
+    h2 {
       color: #234375;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       font-weight: 600;
+      margin-top: 2.2rem;
       margin-bottom: 1rem;
-      letter-spacing: 0.2px;
+      letter-spacing: 0.1px;
     }
-    .area-thumb {
-      width: 100%;
-      max-width: 400px;
-      border-radius: 10px;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 2px 8px rgba(60,42,86,0.07);
-      display: block;
+    h2:first-of-type {
+      margin-top: 0;
     }
     p {
-      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    ul {
+      padding-left: 1.3rem;
       margin-bottom: 1.2rem;
     }
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Project Cards Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
     .project-card {
+      background: #f8fafd;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(35,67,117,0.08);
+      text-decoration: none;
+      color: #234375;
       transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
     }
     .project-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 6px 20px rgba(60,42,86,0.13);
+      box-shadow: 0 6px 20px rgba(35,67,117,0.12);
     }
-    @media (max-width: 700px) {
-      .site-title {
-        margin-right: 1rem;
-        margin-left: 0.5rem;
-        font-size: 1.05rem;
-      }
-      nav {
-        gap: 0.7rem;
-        padding: 0 0.5rem;
-      }
-      .hero-section, .hero-overlay {
-        min-height: 120px;
-        padding: 1.2rem 1rem 1rem 1rem;
-      }
-      .hero-title {
-        font-size: 1.2rem;
-      }
+    .project-card .card-header {
+      background: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%);
+      padding: 1.2rem;
+      color: white;
+    }
+    .project-card .card-header h3 {
+      margin: 0 0 0.3rem 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    .project-card .card-header .student {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    .project-card .card-header .year {
+      font-size: 0.85rem;
+      opacity: 0.8;
+      margin-top: 0.3rem;
+    }
+    .project-card .card-body {
+      padding: 1.2rem;
+      flex: 1;
+    }
+    .project-card .card-body p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #3a4a6b;
+      line-height: 1.5;
+    }
+    .project-card.umbrella .card-header {
+      background: linear-gradient(135deg, #6d28d9 0%, #7c3aed 100%);
+    }
+
+    .keywords {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1.5rem 0;
+    }
+    .keyword {
+      background: #f3e8ff;
+      color: #6d28d9;
+      padding: 0.4rem 0.9rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    /* Timeline */
+    .timeline {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background: #f8fafd;
+      border-radius: 12px;
+      position: relative;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 10%;
+      right: 10%;
+      height: 3px;
+      background: #e3eaff;
+      z-index: 1;
+    }
+    .timeline-item {
+      text-align: center;
+      z-index: 2;
+      background: #f8fafd;
+      padding: 0 0.5rem;
+    }
+    .timeline-item .dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      margin: 0 auto 0.5rem auto;
+    }
+    .timeline-item .year {
+      font-weight: 600;
+      color: #234375;
+      font-size: 0.95rem;
+    }
+    .timeline-item .label {
+      font-size: 0.8rem;
+      color: #6b7a99;
+    }
+    .dot.blue { background: #3b82f6; }
+    .dot.green { background: #10b981; }
+    .dot.purple { background: #8b5cf6; }
+    .dot.red { background: #ef4444; }
+
+    @media (max-width: 900px) {
       main {
-        padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+        padding: 1.2rem;
+        margin: 0 0.5rem 2rem 0.5rem;
       }
+      .hero-section {
+        min-height: 160px;
+        border-radius: 16px;
+      }
+      .hero-content h1 {
+        font-size: 1.5rem;
+      }
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+      .timeline {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .timeline::before {
+        display: none;
+      }
+    }
+    .main-hero-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-left: 2rem;
+      padding-right: 2rem;
     }
   </style>
 </head>
 <body>
   <div class="banner">
-    <a href="index.html" style="display: flex; align-items: center; margin-right: 2rem; text-decoration: none; cursor: pointer;">
-      <img src="./assets/images/Cardiff_University_(logo).svg.png" alt="Cardiff University Logo" style="height: 32px; width: auto; margin-right: 0.7rem; border-radius: 6px; box-shadow: 0 1px 4px rgba(60,42,86,0.07);">
-      <span style="font-family: 'Georgia', 'Times New Roman', serif; font-size: 1.35rem; font-weight: 500; color: #234375; letter-spacing: 0.5px;">
-        Alia I. Abdelmoty
-      </span>
-    </a>
-    <nav>
-      <a href="index.html#biography">Profile</a>
-      <a href="about.html">About</a>
-      <a href="index.html#research-areas">Research Areas</a>
-      <a href="projects.html">Research Projects</a>
-      <a href="publications.html">Publications</a>
-      <a href="students.html">Students</a>
-    </nav>
-  </div>
-  <section class="hero-section">
-    <div class="hero-overlay">
-      <h1 class="hero-title">Ontologies and Knowledge Representation</h1>
+    <div class="banner-inner">
+      <a href="index.html">
+        <img src="./assets/images/Cardiff_University_(logo).svg.png" alt="Cardiff University Logo">
+        <span>Alia I. Abdelmoty</span>
+      </a>
+      <nav>
+        <a href="index.html#biography">Profile</a>
+        <a href="about.html">About</a>
+        <a href="index.html#research-areas">Research Areas</a>
+        <a href="projects.html">Research Projects</a>
+        <a href="publications.html">Publications</a>
+        <a href="students.html">Students</a>
+      </nav>
     </div>
-  </section>
-  <main>
-    <div style="background: linear-gradient(90deg, #f4f7fb 80%, #e3eaff 100%); border-radius: 14px; box-shadow: 0 2px 8px rgba(60,42,86,0.05); padding: 2.2rem 1.7rem 2rem 1.7rem; margin-bottom: 2rem;">
-      <p style="font-size:1.18rem; color:#234375; margin-bottom:1.1rem;">
-        I design and apply <strong style="color:#b8860b;">ontologies</strong> to formalize knowledge in both <strong style="color:#b8860b;">spatial</strong> and <strong style="color:#b8860b;">non-spatial domains</strong>. This includes:
-      </p>
-      <ul style="margin: 0.5em 0 0.5em 1.5em; padding: 0; color:#234375; font-size:1.09rem; line-height:1.7;">
-        <li><strong style="color:#b8860b;">Geo-ontologies</strong> and <strong style="color:#b8860b;">folksonomies</strong> to model place concepts and relationships</li>
-        <li><strong style="color:#b8860b;">Ontology-based representations</strong> for mental health conditions (e.g. <strong style="color:#b8860b;">OCD</strong>), supporting structured analysis and interoperability</li>
-        <li>Developing <strong style="color:#b8860b;">semantic frameworks</strong> that bridge qualitative reasoning, data integration, and domain knowledge</li>
-      </ul>
-      <div style="margin-top:1.2rem; font-size:1.08rem; color:#3a4a6b;">
-        <strong>Application areas:</strong>
-        <span style="color:#b8860b;">Mental Health Ontologies</span>,
-        <span style="color:#b8860b;">Reasoning with Patients' Diaries</span>,
-        <span style="color:#b8860b;">Geospatial Ontologies</span>,
-        <span style="color:#b8860b;">Geographic Question Answering Systems</span>
+  </div>
+  <div class="main-hero-wrapper">
+    <div class="hero-section">
+      <div class="hero-content">
+        <div class="area-badge">Research Area 2</div>
+        <h1>Geo-Semantic User Profiling & Privacy</h1>
+        <div class="subtitle">Building rich user profiles from location data while protecting privacy</div>
       </div>
     </div>
-  </main>
-  <section id="related-projects" style="margin: 3rem auto 2rem auto; max-width: 900px;">
-    <h2 style="color:#234375; font-size:1.45rem; font-weight:600; margin-bottom:1.3rem; letter-spacing:0.2px;">Related Projects</h2>
-    <div class="projects-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
-      <a class="project-card" href="project4.html" style="background:#fff; border-radius:14px; box-shadow:0 2px 8px rgba(60,42,86,0.07); text-decoration:none; color:#234375; display:flex; flex-direction:column;">
-        <div class="project-thumb" style="background-image:url('./assets/images/ResearchProjects/AreejMuhajab/obsession-compulsion-model.png'); background-size:cover; background-position:center; min-height:110px; border-radius:14px 14px 0 0;"></div>
-        <div class="project-content" style="padding:1.1rem 1rem 1rem 1rem;">
-          <h3 style="margin:0 0 0.5rem 0; font-size:1.13rem; font-weight:600;">OCD Ontology and Online Detection</h3>
-          <p style="margin:0; font-size:1rem;">An ontology-based framework for modelling and detecting OCD in online discourse.</p>
+  </div>
+  <main>
+    <p>
+      This research area investigates how <strong>location data from mobile devices and social networks</strong> can be used to build semantically rich profiles of users — and critically, how to protect user privacy when such profiles can reveal sensitive personal information. The work spans from 2011 to 2017 across four interconnected PhD projects.
+    </p>
+
+    <h2>Research Journey</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="dot blue"></div>
+        <div class="year">2011</div>
+        <div class="label">Build Profiles</div>
+      </div>
+      <div class="timeline-item">
+        <div class="dot green"></div>
+        <div class="year">2013</div>
+        <div class="label">Enrich Semantics</div>
+      </div>
+      <div class="timeline-item">
+        <div class="dot purple"></div>
+        <div class="year">2017</div>
+        <div class="label">Model Dynamics</div>
+      </div>
+      <div class="timeline-item">
+        <div class="dot red"></div>
+        <div class="year">2017</div>
+        <div class="label">Protect Privacy</div>
+      </div>
+    </div>
+
+    <h2>Research Themes</h2>
+    <ul>
+      <li><strong>Place Affordance Profiling:</strong> Extracting user profiles from GPS logs based on what activities places enable</li>
+      <li><strong>Geo-Folksonomy Analysis:</strong> Discovering place semantics from collaborative tagging</li>
+      <li><strong>Spatiotemporal Modelling:</strong> Capturing how user preferences evolve over time</li>
+      <li><strong>Location Recommendation:</strong> Personalised place suggestions based on semantic profiles</li>
+      <li><strong>Privacy Threat Modelling:</strong> Understanding risks of location disclosure</li>
+      <li><strong>Privacy Awareness:</strong> Enabling informed consent about location sharing</li>
+    </ul>
+
+    <div class="keywords">
+      <span class="keyword">User Profiling</span>
+      <span class="keyword">Location Privacy</span>
+      <span class="keyword">GPS Mobility</span>
+      <span class="keyword">Geo-Folksonomies</span>
+      <span class="keyword">LBSN</span>
+      <span class="keyword">Foursquare</span>
+      <span class="keyword">Place Affordance</span>
+      <span class="keyword">Recommendation Systems</span>
+      <span class="keyword">Privacy Awareness</span>
+    </div>
+
+    <h2>Research Projects</h2>
+    
+    <div class="projects-grid">
+      <a href="project7.html" class="project-card umbrella">
+        <div class="card-header">
+          <h3>Geo-Semantic User Profiling & Privacy</h3>
+          <div class="student">4 PhD Projects</div>
+          <div class="year">2011–2017 • Umbrella Project</div>
         </div>
-      </a>
-      <a class="project-card" href="project5.html" style="background:#fff; border-radius:14px; box-shadow:0 2px 8px rgba(60,42,86,0.07); text-decoration:none; color:#234375; display:flex; flex-direction:column;">
-        <div class="project-thumb" style="background-image:url('./assets/images/ResearchProjects/PlaceOntologies/place_dimensions.svg'); background-size:cover; background-position:center; min-height:110px; border-radius:14px 14px 0 0;"></div>
-        <div class="project-content" style="padding:1.1rem 1rem 1rem 1rem;">
-          <h3 style="margin:0 0 0.5rem 0; font-size:1.13rem; font-weight:600;">Place Ontologies</h3>
-          <p style="margin:0; font-size:1rem;">15 years of research on semantic place modelling, affordance, and qualitative spatial representation.</p>
+        <div class="card-body">
+          <p>A coherent research programme: Build profiles → Enrich with semantics → Model dynamics → Protect privacy. Four PhDs addressing the full lifecycle of location-based user modelling.</p>
         </div>
       </a>
     </div>
-  </section>
-  <footer style="text-align: center; color: #234375; font-size: 1rem; margin: 2.5rem 0 1.2rem 0; opacity: 0.7;">
-    <p>&copy; 2025 Alia I. Abdelmoty. All rights reserved.</p>
-  </footer>
+
+    <h2>PhD Students</h2>
+    <ul>
+      <li><strong>Ahmed Al-Azzawi (2011):</strong> Place affordance profiling from GPS mobility logs</li>
+      <li><strong>Ehab ElGindy (2013):</strong> Place semantics from geo-folksonomies</li>
+      <li><strong>Soha Mohamed (2017):</strong> Spatiotemporal user and place modelling on LBSNs</li>
+      <li><strong>Fatma AlRayes (2017):</strong> Location privacy awareness and threat modelling</li>
+    </ul>
+
+    <h2>Key Contributions</h2>
+    <ul>
+      <li>Personal Gazetteers and PGML markup language for encoding user profiles</li>
+      <li>Place type and activity ontologies derived from social tagging data</li>
+      <li>Static and dynamic user models for location-based social networks</li>
+      <li>User and place similarity measures based on semantic interactions</li>
+      <li>Privacy threat models for geo-social network data</li>
+      <li>Privacy feedback solutions enabling informed location disclosure decisions</li>
+    </ul>
+
+    <h2>Data Sources</h2>
+    <p>Research in this area utilised data from:</p>
+    <ul>
+      <li>GPS mobility traces from personal mobile devices</li>
+      <li>Geo-folksonomies (Tagzania and similar platforms)</li>
+      <li>Location-Based Social Networks (Foursquare)</li>
+      <li>User check-ins, tips, and social interactions</li>
+    </ul>
+  </main>
 </body>
 </html>

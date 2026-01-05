@@ -1,195 +1,345 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Human-Centred AI and Emerging Social Platforms | Research Area</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Research on human-centred AI by Dr. Alia I. Abdelmoty - audio-based social media analytics, multimodal user profiling, and social signal processing.">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Research Area 3: Ontologies & Knowledge Representation</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
   <style>
-    body { font-family: 'Segoe UI', Arial, sans-serif; background: #f9fafb; margin: 0; color: #222; }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #234375;
+      background: #f4f7fb;
+    }
     .banner {
-      background: #fff;
-      border-bottom: 1px solid #e5e7eb;
-      box-shadow: 0 2px 8px rgba(60,42,86,0.07);
-      position: sticky;
-      top: 0;
-      z-index: 10;
+      background: #234375;
+      padding: 0;
+      margin: 0;
+      min-height: 84px;
       display: flex;
       align-items: center;
-      justify-content: center;
+      position: relative;
+      z-index: 10;
     }
-    .site-title {
-      font-size: 1.3rem;
-      font-weight: 700;
-      color: #234375;
+    .banner-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      min-height: 84px;
+    }
+    .banner a {
+      display: flex;
+      align-items: center;
+      margin-right: 1.2rem;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .banner img {
+      height: 44px;
+      width: auto;
+      margin-right: 1rem;
+      border-radius: 6px;
+      box-shadow: 0 1px 4px rgba(60,42,86,0.07);
+    }
+    .banner span {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: 1.55rem;
+      font-weight: 500;
+      color: #fff;
       letter-spacing: 0.5px;
-      margin-right: 2rem;
-      margin-left: 1.5rem;
-      white-space: nowrap;
     }
     nav {
+      flex: 1;
       display: flex;
-      gap: 2rem;
-      padding: 1.2rem 0;
+      justify-content: center;
+      align-items: center;
     }
     nav a {
-      color: #234375;
+      color: #fff;
       text-decoration: none;
-      font-weight: 600;
-      padding: 0.5rem 1.2rem;
-      border-radius: 20px;
-      transition: background 0.2s;
+      margin: 0 1.2rem;
+      font-weight: 500;
+      font-size: 1.13rem;
+      padding: 0.45em 1em;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
     }
     nav a:hover, nav a:focus {
       background: #e3eaff;
       color: #234375;
       outline: none;
     }
+
+    /* HERO SECTION */
     .hero-section {
-      width: 100%;
-      min-height: 330px; /* Increased from 220px to ~1.5x */
-      background: url('./assets/images/Audio.png') center center/cover no-repeat;
-      display: flex;
-      align-items: flex-end;
-      justify-content: flex-start;
       position: relative;
-    }
-    .hero-overlay {
-      background: linear-gradient(90deg, rgba(35,67,117,0.82) 0%, rgba(35,67,117,0.45) 70%, rgba(35,67,117,0.05) 100%);
       width: 100%;
-      min-height: 330px; /* Match hero-section */
+      max-width: 100%;
+      margin: 2.5rem 0 2.5rem 0;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 6px 32px rgba(35,67,117,0.13), 0 2px 8px rgba(60,42,86,0.10);
+      background: linear-gradient(135deg, #0891b2 0%, #06b6d4 50%, #22d3ee 100%);
+      min-height: 200px;
       display: flex;
-      align-items: flex-end;
-      padding: 2.5rem 2rem 1.5rem 2rem;
-      box-sizing: border-box;
+      align-items: center;
+      justify-content: center;
     }
-    .hero-title {
-      color: #fff;
-      font-size: 2.2rem;
+    .hero-content {
+      text-align: center;
+      padding: 2.5rem;
+      color: white;
+    }
+    .hero-content h1 {
+      font-size: 2rem;
+      margin: 0 0 0.8rem 0;
       font-weight: 700;
-      margin: 0;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.13);
+      text-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
+    .hero-content .subtitle {
+      font-size: 1.15rem;
+      opacity: 0.9;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .area-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
     main {
-      max-width: 900px;
-      margin: 2.5rem auto 0 auto;
+      max-width: 1100px;
+      margin: 0 auto 2.5rem auto;
       background: #fff;
       border-radius: 14px;
-      box-shadow: 0 2px 8px rgba(60,42,86,0.07);
-      padding: 2.5rem 2rem 2rem 2rem;
+      box-shadow: 0 2px 8px rgba(60,42,86,0.05);
+      padding: 2.2rem 2rem 2rem 2rem;
     }
-    .overview-title {
+    h2 {
       color: #234375;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       font-weight: 600;
+      margin-top: 2.2rem;
       margin-bottom: 1rem;
-      letter-spacing: 0.2px;
+      letter-spacing: 0.1px;
     }
-    .area-thumb {
-      width: 100%;
-      max-width: 400px;
-      border-radius: 10px;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 2px 8px rgba(60,42,86,0.07);
-      display: block;
+    h2:first-of-type {
+      margin-top: 0;
     }
     p {
-      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 1rem;
+    }
+    ul {
+      padding-left: 1.3rem;
       margin-bottom: 1.2rem;
     }
-    @media (max-width: 700px) {
-      .site-title {
-        margin-right: 1rem;
-        margin-left: 0.5rem;
-        font-size: 1.05rem;
-      }
-      nav {
-        gap: 0.7rem;
-        padding: 0 0.5rem;
-      }
-      .hero-section, .hero-overlay {
-        min-height: 120px;
-        padding: 1.2rem 1rem 1rem 1rem;
-      }
-      .hero-title {
-        font-size: 1.2rem;
-      }
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Project Cards Grid */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .project-card {
+      background: #f8fafd;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(35,67,117,0.08);
+      text-decoration: none;
+      color: #234375;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 20px rgba(35,67,117,0.12);
+    }
+    .project-card .card-header {
+      background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
+      padding: 1.2rem;
+      color: white;
+    }
+    .project-card .card-header h3 {
+      margin: 0 0 0.3rem 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    .project-card .card-header .student {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+    .project-card .card-header .year {
+      font-size: 0.85rem;
+      opacity: 0.8;
+      margin-top: 0.3rem;
+    }
+    .project-card .card-body {
+      padding: 1.2rem;
+      flex: 1;
+    }
+    .project-card .card-body p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #3a4a6b;
+      line-height: 1.5;
+    }
+
+    .keywords {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1.5rem 0;
+    }
+    .keyword {
+      background: #ecfeff;
+      color: #0891b2;
+      padding: 0.4rem 0.9rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .highlight-box {
+      background: #ecfeff;
+      border-left: 4px solid #06b6d4;
+      padding: 1.2rem 1.5rem;
+      border-radius: 0 10px 10px 0;
+      margin: 1.5rem 0;
+    }
+    .highlight-box h4 {
+      margin: 0 0 0.5rem 0;
+      color: #0891b2;
+    }
+    .highlight-box p {
+      margin: 0;
+    }
+
+    @media (max-width: 900px) {
       main {
-        padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+        padding: 1.2rem;
+        margin: 0 0.5rem 2rem 0.5rem;
       }
+      .hero-section {
+        min-height: 160px;
+        border-radius: 16px;
+      }
+      .hero-content h1 {
+        font-size: 1.5rem;
+      }
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .main-hero-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-left: 2rem;
+      padding-right: 2rem;
     }
   </style>
 </head>
 <body>
   <div class="banner">
-    <a href="index.html" style="display: flex; align-items: center; margin-right: 2rem; text-decoration: none; cursor: pointer;">
-      <img src="./assets/images/Cardiff_University_(logo).svg.png" alt="Cardiff University Logo" style="height: 32px; width: auto; margin-right: 0.7rem; border-radius: 6px; box-shadow: 0 1px 4px rgba(60,42,86,0.07);">
-      <span style="font-family: 'Georgia', 'Times New Roman', serif; font-size: 1.35rem; font-weight: 500; color: #234375; letter-spacing: 0.5px;">
-        Alia I. Abdelmoty
-      </span>
-    </a>
-    <nav>
-      <a href="index.html#biography">Profile</a>
-      <a href="about.html">About</a>
-      <a href="index.html#research-areas">Research Areas</a>
-      <a href="projects.html">Research Projects</a>
-      <a href="publications.html">Publications</a>
-      <a href="students.html">Students</a>
-    </nav>
-  </div>
-  <section class="hero-section">
-    <div class="hero-overlay">
-      <h1 class="hero-title">Human-Centred AI and Emerging Social Platforms</h1>
+    <div class="banner-inner">
+      <a href="index.html">
+        <img src="./assets/images/Cardiff_University_(logo).svg.png" alt="Cardiff University Logo">
+        <span>Alia I. Abdelmoty</span>
+      </a>
+      <nav>
+        <a href="index.html#biography">Profile</a>
+        <a href="about.html">About</a>
+        <a href="index.html#research-areas">Research Areas</a>
+        <a href="projects.html">Research Projects</a>
+        <a href="publications.html">Publications</a>
+        <a href="students.html">Students</a>
+      </nav>
     </div>
-  </section>
-  <main>
-    <div style="background: linear-gradient(90deg, #f4f7fb 80%, #e3eaff 100%); border-radius: 14px; box-shadow: 0 2px 8px rgba(60,42,86,0.05); padding: 2.2rem 1.7rem 2rem 1.7rem; margin-bottom: 2rem;">
-      <p style="font-size:1.18rem; color:#234375; margin-bottom:1.1rem;">
-        I explore how emerging, <strong style="color:#b8860b;">human-centric interfaces</strong> — particularly <strong style="color:#b8860b;">audio-based platforms</strong> — change the nature of social interaction and user profiling. My work includes:
-      </p>
-      <ul style="margin: 0.5em 0 0.5em 1.5em; padding: 0; color:#234375; font-size:1.09rem; line-height:1.7;">
-        <li>Studying <strong style="color:#b8860b;">audio-based social networks</strong> and extracting user insights from speech and voice interaction</li>
-        <li>Modelling <strong style="color:#b8860b;">non-textual semantics</strong>, including ambient context and spoken cues</li>
-        <li>Investigating how <strong style="color:#b8860b;">social signal processing</strong> can inform future AI systems that are more empathetic and context-aware</li>
-      </ul>
-      <div style="margin-top:1.2rem; font-size:1.08rem; color:#3a4a6b;">
-        <strong>Themes:</strong>
-        <span style="color:#b8860b;">Audio-based Social Media Analytics</span>, 
-        <span style="color:#b8860b;">X(Twitter) Spaces and Clubhouse</span>, 
-        <span style="color:#b8860b;">Multimodal User Profiling and User Privacy</span>, 
-        <span style="color:#b8860b;">Bias in Recommendation Engines</span>
+  </div>
+  <div class="main-hero-wrapper">
+    <div class="hero-section">
+      <div class="hero-content">
+        <div class="area-badge">Research Area 3</div>
+        <h1>Ontologies & Knowledge Representation</h1>
+        <div class="subtitle">Applying ontology engineering and knowledge representation across diverse domains</div>
       </div>
     </div>
-  </main>
-  <section id="related-projects" style="margin: 3rem auto 2rem auto; max-width: 900px;">
-    <h2 style="color:#234375; font-size:1.45rem; font-weight:600; margin-bottom:1.3rem; letter-spacing:0.2px;">Related Projects</h2>
-    <div class="projects-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;">
-      <a class="project-card" href="projects.html#project7" style="background:#fff; border-radius:14px; box-shadow:0 2px 8px rgba(60,42,86,0.07); text-decoration:none; color:#234375; display:flex; flex-direction:column;">
-        <div class="project-thumb" style="background-image:url('./assets/images/ResearchAreas/Audio.png'); background-size:cover; background-position:center; min-height:110px; border-radius:14px 14px 0 0;"></div>
-        <div class="project-content" style="padding:1.1rem 1rem 1rem 1rem;">
-          <h3 style="margin:0 0 0.5rem 0; font-size:1.13rem; font-weight:600;">Audio-based Social Platforms</h3>
-          <p style="margin:0; font-size:1rem;">Exploring user interaction and profiling in audio-first social networks.</p>
+  </div>
+  <main>
+    <p>
+      This research area extends ontology engineering expertise developed in the geographic domain to other application areas. The work demonstrates how <strong>formal knowledge representation techniques</strong> can be applied to model complex domains, support reasoning, and enable intelligent systems.
+    </p>
+
+    <div class="highlight-box">
+      <h4>Cross-Domain Expertise</h4>
+      <p>While my primary expertise is in geographic ontologies, I collaborate with domain experts to apply ontology engineering methods to fields including mental health informatics, where formal knowledge representation can support diagnosis, classification, and analysis.</p>
+    </div>
+
+    <h2>Research Themes</h2>
+    <ul>
+      <li><strong>Biomedical Ontologies:</strong> Formal representation of medical and health-related knowledge</li>
+      <li><strong>Ontology Reuse Patterns:</strong> Methods for integrating existing ontologies into new domains</li>
+      <li><strong>Ontology Enrichment:</strong> Enhancing ontologies with knowledge extracted from text and data</li>
+      <li><strong>Cross-Domain Applications:</strong> Applying ontology methods beyond the geographic domain</li>
+    </ul>
+
+    <div class="keywords">
+      <span class="keyword">Biomedical Ontologies</span>
+      <span class="keyword">Mental Health Informatics</span>
+      <span class="keyword">OWL</span>
+      <span class="keyword">Ontology Reuse</span>
+      <span class="keyword">Knowledge Graphs</span>
+      <span class="keyword">Deep Learning</span>
+      <span class="keyword">NLP</span>
+      <span class="keyword">Text Classification</span>
+    </div>
+
+    <h2>Research Projects</h2>
+    
+    <div class="projects-grid">
+      <a href="project4.html" class="project-card">
+        <div class="card-header">
+          <h3>OCD Ontology & Online Detection</h3>
+          <div class="student">Areej Nasser Muhajab</div>
+          <div class="year">PhD 2020–2024</div>
         </div>
-      </a>
-      <a class="project-card" href="projects.html#project8" style="background:#fff; border-radius:14px; box-shadow:0 2px 8px rgba(60,42,86,0.07); text-decoration:none; color:#234375; display:flex; flex-direction:column;">
-        <div class="project-thumb" style="background-image:url('./assets/images/Multimodal.png'); background-size:cover; background-position:center; min-height:110px; border-radius:14px 14px 0 0;"></div>
-        <div class="project-content" style="padding:1.1rem 1rem 1rem 1rem;">
-          <h3 style="margin:0 0 0.5rem 0; font-size:1.13rem; font-weight:600;">Multimodal Profiling & Semantics</h3>
-          <p style="margin:0; font-size:1rem;">Integrating speech, text, and context for richer user models.</p>
-        </div>
-      </a>
-      <a class="project-card" href="projects.html#project9" style="background:#fff; border-radius:14px; box-shadow:0 2px 8px rgba(60,42,86,0.07); text-decoration:none; color:#234375; display:flex; flex-direction:column;">
-        <div class="project-thumb" style="background-image:url('./assets/images/SocialAI.png'); background-size:cover; background-position:center; min-height:110px; border-radius:14px 14px 0 0;"></div>
-        <div class="project-content" style="padding:1.1rem 1rem 1rem 1rem;">
-          <h3 style="margin:0 0 0.5rem 0; font-size:1.13rem; font-weight:600;">Empathetic & Context-aware AI</h3>
-          <p style="margin:0; font-size:1rem;">Designing AI systems that understand social signals and context.</p>
+        <div class="card-body">
+          <p>An ontology-based framework for modelling Obsessive Compulsive Disorder, combining biomedical ontology engineering with NLP and deep learning for online detection from forum posts.</p>
         </div>
       </a>
     </div>
-  </section>
-  <footer style="text-align: center; color: #234375; font-size: 1rem; margin: 2.5rem 0 1.2rem 0; opacity: 0.7;">
-    <p>&copy; 2025 Alia I. Abdelmoty. All rights reserved.</p>
-  </footer>
+
+    <h2>Interdisciplinary Collaboration</h2>
+    <p>
+      Research in this area involves close collaboration with domain experts. For the OCD ontology project, this included working with the School of Medicine at Cardiff University to ensure the ontology accurately represents clinical knowledge while being enriched with insights from patient-generated content online.
+    </p>
+
+    <h2>Methodological Contributions</h2>
+    <ul>
+      <li><strong>Ontology Reuse Patterns:</strong> Strategies for full equivalence (import), partial equivalence (alignment), and nominal similarity (linking)</li>
+      <li><strong>Hybrid Enrichment:</strong> Combining clinical resources (Bio_ClinicalBERT) with domain-specific corpora (forum posts)</li>
+      <li><strong>Evaluation Methods:</strong> Expert surveys, SPARQL-based queries, and reasoning with use cases</li>
+      <li><strong>Classification Integration:</strong> Linking ontological knowledge with machine learning classifiers</li>
+    </ul>
+
+    <h2>Resources</h2>
+    <p>
+      Ontologies developed in this research area are made publicly available to support further research:
+    </p>
+    <ul>
+      <li><a href="https://bioportal.bioontology.org/ontologies/OCD">OCD Ontology on BioPortal</a></li>
+    </ul>
+  </main>
 </body>
 </html>
