@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dr. Alia I. Abdelmoty - Senior Lecturer at Cardiff University, specializing in spatial reasoning, knowledge representation, and human-centred AI.">
+    <title>About - Alia I. Abdelmoty</title>
+    <style>
+      body {
+        background: #f4f7fb;
+        margin: 0;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        color: #234375;
+      }
+      .banner {
+        background: #234375;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+      }
+      .banner-inner {
+        max-width: 900px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        width: 100%;
+      }
+      .banner a.site-link {
+        display: flex;
+        align-items: center;
+        margin-right: 2rem;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .banner img {
+        height: 32px;
+        width: auto;
+        margin-right: 0.7rem;
+        border-radius: 6px;
+        box-shadow: 0 1px 4px rgba(60,42,86,0.07);
+      }
+      .banner .site-name {
+        font-family: 'Georgia', 'Times New Roman', serif;
+        font-size: 1.35rem;
+        font-weight: 500;
+        color: #fff;
+        letter-spacing: 0.5px;
+      }
+      nav {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.7rem 0;
+      }
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 1.1rem;
+        font-weight: 500;
+        font-size: 1.08rem;
+        padding: 0.35em 0.8em;
+        border-radius: 6px;
+        transition: background 0.2s, color 0.2s;
+      }
+      nav a:hover, nav a:focus {
+        background: #e3eaff;
+        color: #234375;
+        outline: none;
+      }
+      main {
+        max-width: 900px;
+        margin: 2.5rem auto 0 auto;
+        background: linear-gradient(90deg, #f4f7fb 80%, #e3eaff 100%);
+        border-radius: 14px;
+        box-shadow: 0 2px 8px rgba(60,42,86,0.05);
+        padding: 2.5rem 2rem 2rem 2rem;
+      }
+      h1 {
+        color: #234375;
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        letter-spacing: 0.2px;
+      }
+      h2 {
+        color: #234375;
+        font-size: 1.4rem;
+        font-weight: 600;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid #b8860b;
+        padding-bottom: 0.3rem;
+        display: inline-block;
+      }
+      .profile-section {
+        display: flex;
+        gap: 2rem;
+        align-items: flex-start;
+        margin-bottom: 1.5rem;
+      }
+      .profile-pic {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        object-fit: cover;
+        box-shadow: 0 2px 12px rgba(60,42,86,0.10);
+        flex-shrink: 0;
+      }
+      .profile-text {
+        flex: 1;
+      }
+      .profile-text p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: #3a4a6b;
+        margin-bottom: 1rem;
+      }
+      .career-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1rem;
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(60,42,86,0.07);
+      }
+      .career-table th, .career-table td {
+        padding: 0.9rem 1rem;
+        text-align: left;
+        border-bottom: 1px solid #e5e7eb;
+      }
+      .career-table th {
+        background: #234375;
+        color: #fff;
+        font-weight: 600;
+        font-size: 0.95rem;
+      }
+      .career-table tr:last-child td {
+        border-bottom: none;
+      }
+      .career-table tr:hover {
+        background: #f4f7fb;
+      }
+      .career-table td {
+        color: #3a4a6b;
+        font-size: 1rem;
+      }
+      .degree-list {
+        list-style: none;
+        padding: 0;
+        margin: 1rem 0;
+      }
+      .degree-list li {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(60,42,86,0.07);
+        padding: 1.1rem 1.2rem;
+        margin-bottom: 1rem;
+      }
+      .degree-list li strong {
+        color: #234375;
+        font-size: 1.1rem;
+      }
+      .degree-list li span {
+        display: block;
+        color: #3a4a6b;
+        font-size: 1rem;
+        margin-top: 0.3rem;
+      }
+      .degree-list li .distinction {
+        color: #b8860b;
+        font-weight: 500;
+        font-style: italic;
+      }
+      footer {
+        text-align: center;
+        color: #234375;
+        font-size: 1rem;
+        margin: 2.5rem 0 1.2rem 0;
+        opacity: 0.7;
+      }
+      @media (max-width: 700px) {
+        main {
+          padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+        }
+        .profile-section {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+        .profile-pic {
+          width: 140px;
+          height: 140px;
+        }
+        nav a {
+          margin: 0 0.5rem;
+          font-size: 1rem;
+        }
+        .career-table th, .career-table td {
+          padding: 0.6rem 0.5rem;
+          font-size: 0.9rem;
+        }
+      }
+    </style>
+</head>
+<body>
+    <div class="banner">
+      <div class="banner-inner">
+        <a href="index.html" class="site-link">
+          <img src="./assets/images/Cardiff_University_(logo).svg.png" alt="Cardiff University Logo">
+          <span class="site-name">Alia I. Abdelmoty</span>
+        </a>
+        <nav>
+          <a href="index.html#biography">Profile</a>
+          <a href="about.html">About</a>
+          <a href="index.html#research-areas">Research Areas</a>
+          <a href="projects.html">Research Projects</a>
+          <a href="publications.html">Publications</a>
+          <a href="students.html">Students</a>
+        </nav>
+      </div>
+    </div>
+    <main>
+        <h1>About Me</h1>
+        <section class="profile-section">
+            <img src="assets/images/4July1025.png" alt="Dr. Alia I. Abdelmoty" class="profile-pic">
+            <div class="profile-text">
+                <p>
+                    Dr. Alia I. Abdelmoty is a <strong>Senior Lecturer</strong> at the School of Computer Science and Informatics, Cardiff University, Wales, UK. With over <strong>35 years of experience</strong> in academia and research, she has made significant contributions to the fields of spatial reasoning, knowledge representation, geographic information systems, and human-centred AI.
+                </p>
+                <p>
+                    Her research focuses on how people perceive and interact with places, developing qualitative approaches to spatial modelling, and building intelligent systems that understand geographic and social contexts. She has published extensively in leading journals and conferences, and has supervised numerous PhD students to completion.
+                </p>
+            </div>
+        </section>
+
+        <h2>Academic Qualifications</h2>
+        <ul class="degree-list">
+            <li>
+                <strong>PhD in Computer Science</strong>
+                <span>Heriot-Watt University, Edinburgh, UK (1995)</span>
+            </li>
+            <li>
+                <strong>MSc in Computer Science</strong>
+                <span>Heriot-Watt University, Edinburgh, UK (1990)</span>
+                <span class="distinction">Awarded with Merit</span>
+            </li>
+            <li>
+                <strong>BEng in Biomedical Engineering</strong>
+                <span>Cairo University, Egypt (1987)</span>
+                <span class="distinction">First Class Honours with Distinction</span>
+            </li>
+        </ul>
+
+        <h2>Professional Experience</h2>
+        <table class="career-table">
+            <thead>
+                <tr>
+                    <th>Position</th>
+                    <th>Institution</th>
+                    <th>Period</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Senior Lecturer</strong></td>
+                    <td>Cardiff University, School of Computer Science & Informatics</td>
+                    <td>2018 - Present</td>
+                </tr>
+                <tr>
+                    <td><strong>Lecturer</strong></td>
+                    <td>Cardiff University, School of Computer Science & Informatics</td>
+                    <td>2000 - 2018</td>
+                </tr>
+                <tr>
+                    <td><strong>Senior Lecturer</strong></td>
+                    <td>University of Glamorgan, School of Computing</td>
+                    <td>1995 - 2000</td>
+                </tr>
+                <tr>
+                    <td><strong>Research Associate</strong></td>
+                    <td>Heriot-Watt University, Computing and Electrical Engineering</td>
+                    <td>1990 - 1994</td>
+                </tr>
+                <tr>
+                    <td><strong>Research Assistant</strong></td>
+                    <td>Cairo University, Biomedical Engineering</td>
+                    <td>1987 - 1989</td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+    <footer>
+        <p>&copy; 2025 Alia I. Abdelmoty. All rights reserved.</p>
+    </footer>
+</body>
+</html>

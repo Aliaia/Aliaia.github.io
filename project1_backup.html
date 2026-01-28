@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Unified Management of Place Information on the Web</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #234375;
+      background: #f4f7fb;
+    }
+    .banner {
+      background: #234375;
+      padding: 0;
+      margin: 0;
+      min-height: 84px;           /* Increased height for consistency */
+      display: flex;
+      align-items: center;
+    }
+    .banner-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      min-height: 84px;           /* Ensures inner content is vertically centered */
+    }
+    .banner a {
+      display: flex;
+      align-items: center;
+      margin-right: 1.2rem;       /* Slightly more space for a balanced look */
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .banner img {
+      height: 44px;               /* Larger logo for visual balance */
+      width: auto;
+      margin-right: 1rem;
+      border-radius: 6px;
+      box-shadow: 0 1px 4px rgba(60,42,86,0.07);
+    }
+    .banner span {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: 1.55rem;         /* Slightly larger name */
+      font-weight: 500;
+      color: #fff;
+      letter-spacing: 0.5px;
+    }
+    nav {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 1.2rem;
+      font-weight: 500;
+      font-size: 1.13rem;
+      padding: 0.45em 1em;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+    nav a:hover, nav a:focus {
+      background: #e3eaff;
+      color: #234375;
+      outline: none;
+    }
+
+    /* HERO CAROUSEL - Adjusted to match project11.html style */
+    .hero-carousel {
+      position: relative;
+      height: 320px;
+      width: 100%;
+      max-width: 100%;
+      margin: 2.5rem 0 2.5rem 0;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 6px 32px rgba(35,67,117,0.13), 0 2px 8px rgba(60,42,86,0.10);
+      display: flex;
+      align-items: flex-end;
+      background: #e3eaff;
+    }
+    .carousel-slide {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 0.7s;
+      z-index: 1;
+    }
+    .carousel-slide.active {
+      opacity: 1;
+      z-index: 2;
+    }
+    .carousel-title {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: 3;
+      background: rgba(35,67,117,0.78);
+      padding: 0.85rem 1.6rem 0.85rem 1.6rem; /* Slightly increased padding */
+      border-radius: 0 0 22px 22px;
+      width: 100%;
+      box-sizing: border-box;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+      font-size: 1.35rem; /* Slightly bigger font size */
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      color: #fff;
+      display: flex;
+      align-items: flex-end;
+      min-height: unset;
+      max-height: 4.2rem;
+    }
+    .carousel-controls {
+      position: absolute;
+      right: 22px;
+      bottom: 22px;
+      z-index: 4;
+      display: flex;
+      gap: 0.7rem;
+    }
+    .carousel-dot {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #fff;
+      opacity: 0.5;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.2s, background 0.2s;
+      box-shadow: 0 1px 4px rgba(35,67,117,0.10);
+    }
+    .carousel-dot.active {
+      opacity: 1;
+      background: #e3eaff;
+      border: 2px solid #234375;
+    }
+    @media (max-width: 950px) {
+      .hero-carousel {
+        max-width: 98vw;
+        height: 200px;
+        border-radius: 16px;
+      }
+      .carousel-title {
+        font-size: 1.08rem;
+        padding: 0.7rem 1.1rem;
+        border-radius: 0 0 16px 16px;
+        max-height: 2.7rem;
+        background: rgba(255, 255, 255, 0.85); /* Light background for readability */
+      }
+      .carousel-controls {
+        right: 12px;
+        bottom: 12px;
+      }
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto 2.5rem auto;
+      background: linear-gradient(90deg, #f4f7fb 80%, #e3eaff 100%);
+      border-radius: 14px;
+      box-shadow: 0 2px 8px rgba(60,42,86,0.05);
+      padding: 2.2rem 2rem 2rem 2rem;
+      display: flex;
+      gap: 2.5rem;
+    }
+    .project-main {
+      flex: 2;
+      min-width: 0;
+    }
+    .project-meta {
+      flex: 1;
+      min-width: 260px;
+      max-width: 340px;
+      background: #f8fafd;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(35,67,117,0.07);
+      padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.3rem;
+      height: fit-content;
+    }
+    .project-meta h3 {
+      font-size: 1.08rem;
+      color: #234375;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+    .project-meta .project-tags {
+      font-size: 0.98rem;
+      color: #6b7a99;
+      font-style: italic;
+      margin-bottom: 0.2rem;
+    }
+    .project-meta .project-tags span {
+      margin-right: 0.7em;
+      font-size: 1em;
+      font-style: italic;
+      font-weight: 400;
+      display: inline;
+    }
+    .project-meta .project-people {
+      font-size: 1rem;
+      color: #234375;
+      font-weight: 500;
+      margin-bottom: 0.2rem;
+    }
+    .project-meta .project-people span {
+      margin-right: 0.7em;
+      font-size: 1em;
+      font-weight: 500;
+      display: inline;
+    }
+    .project-meta .project-timescale {
+      font-size: 0.97rem;
+      color: #3a4a6b;
+      margin-bottom: 0.2rem;
+    }
+    .project-meta .project-outputs {
+      font-size: 0.97rem;
+      color: #234375;
+      margin-top: 1.1rem;
+    }
+    h2 {
+      color: #234375;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 2.2rem;
+      margin-bottom: 0.7rem;
+      letter-spacing: 0.1px;
+    }
+    ul {
+      padding-left: 1.3rem;
+      margin-bottom: 1.2rem;
+    }
+    @media (max-width: 900px) {
+      main {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+      }
+      .project-meta {
+        max-width: 100%;
+        width: 100%;
+        margin: 0;
+      }
+      .hero-carousel {
+        height: 160px;
+        border-radius: 16px;
+      }
+      .carousel-title {
+        font-size: 1.2rem;
+        padding: 0.7rem 1rem;
+        border-radius: 0 0 16px 16px;
+      }
+    }
+    .main-hero-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="banner">
+    <div class="banner-inner">
+      <a href="index.html">
+        <img src="./assets/images/Cardiff_University_(logo).svg.png" alt="Cardiff University Logo">
+        <span>Alia I. Abdelmoty</span>
+      </a>
+      <nav>
+        <a href="index.html#biography">Profile</a>
+        <a href="about.html">About</a>
+        <a href="index.html#research-areas">Research Areas</a>
+        <a href="projects.html">Research Projects</a>
+        <a href="publications.html">Publications</a>
+        <a href="students.html">Students</a>
+      </nav>
+    </div>
+  </div>
+  <div class="main-hero-wrapper">
+    <div class="hero-carousel">
+      <div class="carousel-slide active" style="background-image: url('assets/images/ResearchProjects/HananMuhajab/DLIGS_Linked.png');"></div>
+      <div class="carousel-slide" style="background-image: url('assets/images/ResearchProjects/HananMuhajab/Abstract_dlig.png');"></div>
+      <div class="carousel-slide" style="background-image: url('assets/images/ResearchProjects/HananMuhajab/constraints_2.png');"></div>
+      <div class="carousel-title">
+        Unified Management of Place Information
+      </div>
+      <div class="carousel-controls">
+        <button class="carousel-dot active" aria-label="Show image 1"></button>
+        <button class="carousel-dot" aria-label="Show image 2"></button>
+        <button class="carousel-dot" aria-label="Show image 3"></button>
+      </div>
+    </div>
+  </div>
+  <main>
+    <section class="project-main">
+      <p>
+        This project introduces the Discrete Local Irregular Grid (DLIG) — a novel ontology design pattern to represent and integrate geographic information semantically on the Web of Data. It focuses on overcoming heterogeneity in authoritative geographic ontologies by enhancing their interoperability, spatial reasoning, and semantic richness. Existing geographic datasets often lack semantic uniformity and structural consistency, which hinders effective reasoning and integration. The project seeks to address inconsistencies in administrative and topographic representations across mapping agencies and proposes a uniform model to support scalable, structured, and semantically enriched geospatial data.
+      </p>
+
+      <h2>Research Questions</h2>
+      <ul>
+        <li>What are the limitations of current geospatial ontologies representing authoritative geographic datasets?</li>
+        <li>How can a uniform geospatial ontology be developed for complete and scalable representation?</li>
+        <li>Can this ontology support global geographic knowledge graph construction?</li>
+        <li>How can the model address gaps in under-represented regions lacking RDF-based frameworks?</li>
+        <li>What approach enables integration of volunteered geographic data with authoritative models?</li>
+      </ul>
+
+      <h2>Key Contributions</h2>
+      <ul>
+        <li>Design of the DLIG ontology pattern for spatial hierarchy and semantic completeness</li>
+        <li>Proposal of a spatial semantic completeness metric</li>
+        <li>Integration framework for authoritative datasets using DLIG</li>
+        <li>Case studies with global datasets including GADM and regional data (e.g., Saudi Arabia)</li>
+        <li>Enrichment of volunteered geographic information using the DLIG model</li>
+      </ul>
+    </section>
+    <aside class="project-meta">
+      <h3>Tags</h3>
+      <div class="project-tags">
+        <span>Linked Data</span>
+        <span>Place Semantics</span>
+        <span>GIS</span>
+        <span>Ontology</span>
+      </div>
+      <h3>People</h3>
+      <div class="project-people">
+        <span>Dr. Alia I. Abdelmoty</span>
+        <span>Hanan Muhajab</span>
+      </div>
+      <h3>Time Scale</h3>
+      <div class="project-timescale">
+        2021 – 2024 (PhD Project)
+      </div>
+      <h3>Research Outputs</h3>
+      <div class="project-outputs">
+        <ul>
+          <li>Publications will be added here</li>
+        </ul>
+      </div>
+    </aside>
+  </main>
+  <script>
+    // Carousel JS
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.carousel-dot');
+    let current = 0;
+    function showSlide(idx) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === idx);
+        dots[i].classList.toggle('active', i === idx);
+      });
+      current = idx;
+    }
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => showSlide(i));
+    });
+    setInterval(() => {
+      showSlide((current + 1) % slides.length);
+    }, 6000);
+  </script>
+</body>
+</html>
