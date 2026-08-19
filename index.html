@@ -210,6 +210,53 @@
       margin: 0;
       flex: 1;
     }
+    #research-areas {
+      max-width: 1300px;
+    }
+    .research-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 2rem;
+      align-items: start;
+    }
+    .research-layout .projects-grid {
+      margin-bottom: 0;
+    }
+    /* News Sidebar Styling */
+    .news-sidebar {
+      position: sticky;
+      top: 5.5rem;
+    }
+    .news-sidebar h2 {
+      font-size: 1.4rem;
+    }
+    .news-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      padding: 1.2rem 1.4rem;
+    }
+    .news-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+    .news-item {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+      border-left: 3px solid var(--accent);
+    }
+    .news-item:last-child {
+      margin-bottom: 0;
+    }
+    .news-date {
+      font-weight: 700;
+      color: var(--primary);
+      margin-right: 0.5rem;
+    }
+
     /* Call for Papers Section */
     .cfp-section {
       max-width: 900px;
@@ -325,6 +372,12 @@
       .project-thumb {
         min-height: 90px;
       }
+      .research-layout {
+        grid-template-columns: 1fr;
+      }
+      .news-sidebar {
+        position: static;
+      }
     }
   </style>
 </head>
@@ -333,6 +386,7 @@
     <nav>
       <a href="#biography">Profile</a>
       <a href="about.html">About</a>
+      <a href="#news">News</a>
       <a href="#research-areas">Research Areas</a>
       <a href="projects.html">Research Projects</a>
       <a href="publications.html">Publications</a>
@@ -360,7 +414,7 @@
   </header>
 
   <!-- Call for Papers Section -->
-  <section class="cfp-section">
+  <section class="cfp-section" id="cfp">
     <div class="cfp-card">
       <div class="cfp-header">
         <span>📢</span> Call for Papers — Special Issue
@@ -380,39 +434,56 @@
   </section>
 
   <section id="research-areas">
-    <div class="projects-grid">
-      <!-- Area 1: Qualitative Spatial Reasoning & Place Modelling -->
-      <a class="project-card" href="area1.html">
-        <div class="project-thumb" style="background-image:url('./assets/images/ResearchAreas/PlaceSemantics2.png');"></div>
-        <div class="project-content">
-          <h3>Qualitative Spatial Reasoning & Place Modelling</h3>
-          <p>Qualitative GIS, Qualitative Spatial Reasoning, Place Ontologies, Linked Geospatial Data, Place Knowledge Graphs, Digital Gazetteers, Geographic Question Answering</p>
-        </div>
-      </a>
-      <!-- Area 2: Geo-Semantic User Profiling & Privacy -->
-      <a class="project-card" href="area2.html">
-        <div class="project-thumb" style="background-image:url('./assets/images/ResearchAreas/LBSN.png');"></div>
-        <div class="project-content">
-          <h3>Geo-Semantic User Profiling & Privacy</h3>
-          <p>Place Affordance, Geo-Folksonomies, Spatiotemporal User Modelling, Location-Based Social Networks, Location Privacy Awareness, Privacy Threat Models</p>
-        </div>
-      </a>
-      <!-- Area 3: Ontologies & Knowledge Representation -->
-      <a class="project-card" href="area3.html">
-        <div class="project-thumb" style="background-image:url('./assets/images/ResearchAreas/Ontologies.png');"></div>
-        <div class="project-content">
-          <h3>Ontologies & Knowledge Representation</h3>
-          <p>Biomedical Ontologies, Mental Health Informatics, Ontology Reuse Patterns, Knowledge Graphs, Cross-Domain Applications</p>
-        </div>
-      </a>
-      <!-- Area 4: Human-Centred AI & Social Computing -->
-      <a class="project-card" href="area4.html">
-        <div class="project-thumb" style="background-image:url('./assets/images/ResearchAreas/Audio.png');"></div>
-        <div class="project-content">
+    <div class="research-layout">
+      <div class="projects-grid">
+        <!-- Area 1: Qualitative Spatial Reasoning & Place Modelling -->
+        <a class="project-card" href="area1.html">
+          <div class="project-thumb" style="background-image:url('./assets/images/ResearchAreas/PlaceSemantics2.png');"></div>
+          <div class="project-content">
+            <h3>Qualitative Spatial Reasoning & Place Modelling</h3>
+            <p>Qualitative GIS, Qualitative Spatial Reasoning, Place Ontologies, Linked Geospatial Data, Place Knowledge Graphs, Digital Gazetteers, Geographic Question Answering</p>
+          </div>
+        </a>
+        <!-- Area 2: Geo-Semantic User Profiling & Privacy -->
+        <a class="project-card" href="area2.html">
+          <div class="project-thumb" style="background-image:url('./assets/images/ResearchAreas/LBSN.png');"></div>
+          <div class="project-content">
+            <h3>Geo-Semantic User Profiling & Privacy</h3>
+            <p>Place Affordance, Geo-Folksonomies, Spatiotemporal User Modelling, Location-Based Social Networks, Location Privacy Awareness, Privacy Threat Models</p>
+          </div>
+        </a>
+        <!-- Area 3: Ontologies & Knowledge Representation -->
+        <a class="project-card" href="area3.html">
+          <div class="project-thumb" style="background-image:url('./assets/images/ResearchAreas/Ontologies.png');"></div>
+          <div class="project-content">
+            <h3>Ontologies & Knowledge Representation</h3>
+            <p>Biomedical Ontologies, Mental Health Informatics, Ontology Reuse Patterns, Knowledge Graphs, Cross-Domain Applications</p>
+          </div>
+        </a>
+        <!-- Area 4: Human-Centred AI & Social Computing -->
+        <a class="project-card" href="area4.html">
+          <div class="project-thumb" style="background-image:url('./assets/images/ResearchAreas/Audio.png');"></div>
+          <div class="project-content">
           <h3>Human-Centred AI & Social Computing</h3>
           <p>Audio-based Social Media Analytics, Assistive Technology for Elderly Care, Algorithmic Fairness, Bias in Recommender Systems</p>
         </div>
       </a>
+      </div>
+
+      <!-- News Sidebar -->
+      <aside class="news-sidebar" id="news">
+        <h2>News & Updates</h2>
+        <div class="news-card">
+          <ul class="news-list">
+            <li class="news-item">
+              <span class="news-date">[Aug 2026]</span> 📢 Co-chairing the Special Issue on <em>Accessible Knowledge-Enhanced Web Intelligence</em>. <a href="#cfp">See Call for Papers above</a>.
+            </li>
+            <li class="news-item">
+              <span class="news-date">[Jul 2026]</span> 📄 New research updates added to the Human-Centred AI & Place Knowledge Graphs projects.
+            </li>
+          </ul>
+        </div>
+      </aside>
     </div>
   </section>
   <footer style="text-align: center; color: #234375; font-size: 1rem; margin: 2.5rem 0 1.2rem 0; opacity: 0.7;">
