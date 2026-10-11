@@ -259,13 +259,13 @@
       margin-right: 0.5rem;
     }
 
-    /* Call for Papers Section */
-    .cfp-section {
+    /* PhD Opportunity Section */
+    .phd-section {
       max-width: 900px;
       margin: 2rem auto;
       padding: 0 1rem;
     }
-    .cfp-card {
+    .phd-card {
       background: linear-gradient(135deg, #f4f7fb 0%, #e3eaff 100%);
       border: 2px solid #234375;
       border-radius: 14px;
@@ -273,11 +273,11 @@
       overflow: hidden;
       transition: transform 0.2s, box-shadow 0.2s;
     }
-    .cfp-card:hover {
+    .phd-card:hover {
       transform: translateY(-3px);
       box-shadow: 0 8px 24px rgba(35,67,117,0.18);
     }
-    .cfp-header {
+    .phd-header {
       background: #234375;
       color: #fff;
       padding: 0.8rem 1.2rem;
@@ -287,20 +287,43 @@
       align-items: center;
       gap: 0.5rem;
     }
-    .cfp-header span {
+    .phd-header span {
       font-size: 1.2rem;
     }
-    .cfp-banner-link {
-      display: block;
-      width: 100%;
+    .phd-body {
+      padding: 1.2rem 1.4rem;
+      background: #fff;
     }
-    .cfp-banner-img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-bottom: 1px solid var(--border);
+    .phd-body h3 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.15rem;
+      color: #234375;
     }
-    .cfp-actions {
+    .phd-body p {
+      margin: 0.4rem 0;
+      font-size: 0.97rem;
+      color: #3a4a6b;
+      line-height: 1.55;
+    }
+    .phd-body .phd-deadline {
+      color: #e74c3c;
+      font-weight: 600;
+    }
+    .phd-body .phd-tags {
+      margin-top: 0.7rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .phd-body .phd-tags span {
+      background: #e3eaff;
+      color: #234375;
+      font-size: 0.82rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 10px;
+      font-weight: 500;
+    }
+    .phd-actions {
       padding: 1rem 1.2rem;
       display: flex;
       flex-wrap: wrap;
@@ -308,8 +331,9 @@
       align-items: center;
       justify-content: center;
       background: #fff;
+      border-top: 1px solid var(--border);
     }
-    .cfp-btn {
+    .phd-btn {
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
@@ -320,20 +344,20 @@
       text-decoration: none;
       transition: background 0.2s, transform 0.15s;
     }
-    .cfp-btn-primary {
+    .phd-btn-primary {
       background: #234375;
       color: #fff;
     }
-    .cfp-btn-primary:hover {
+    .phd-btn-primary:hover {
       background: #1a3259;
       transform: scale(1.03);
     }
-    .cfp-btn-secondary {
+    .phd-btn-secondary {
       background: #e3eaff;
       color: #234375;
       border: 1px solid #234375;
     }
-    .cfp-btn-secondary:hover {
+    .phd-btn-secondary:hover {
       background: #d0dbf5;
       transform: scale(1.03);
     }
@@ -415,21 +439,32 @@
     </div>
   </header>
 
-  <!-- Call for Papers Section -->
-  <section class="cfp-section" id="cfp">
-    <div class="cfp-card">
-      <div class="cfp-header">
-        <span>📢</span> Call for Papers — Special Issue
+  <!-- PhD Opportunity Section -->
+  <section class="phd-section" id="phd-opportunity">
+    <div class="phd-card">
+      <div class="phd-header">
+        <span>🎓</span> PhD Opportunity — October 2027 Entry
       </div>
-      <a href="https://www.mdpi.com/si/265691" target="_blank" class="cfp-banner-link">
-        <img src="./assets/images/cfp/Banner.png" alt="Special Issue: Accessible Knowledge-Enhanced Web Intelligence" class="cfp-banner-img">
-      </a>
-      <div class="cfp-actions">
-        <a href="https://www.mdpi.com/si/265691" target="_blank" class="cfp-btn cfp-btn-primary">
-          📄 Submit Paper
+      <div class="phd-body">
+        <h3>Neurosymbolic Spatial Reasoning</h3>
+        <p><em>Teaching language models to plan over qualitative geographic knowledge</em></p>
+        <p>This project investigates whether language models can generate abstract, verifiable reasoning programs over qualitative spatial relations — containment, adjacency, proximity and direction — with a symbolic engine that executes and checks every answer. The work combines current research on language models with knowledge representation and qualitative spatial reasoning.</p>
+        <p>Funded by <strong>Cardiff University &amp; China Scholarship Council (CSC)</strong> Research Excellence Scholarships. Self-funded applicants also welcome.</p>
+        <p class="phd-deadline">CSC application deadline: 3 November 2026</p>
+        <div class="phd-tags">
+          <span>Large Language Models</span>
+          <span>Neurosymbolic AI</span>
+          <span>Spatial Reasoning</span>
+          <span>Knowledge Graphs</span>
+          <span>Question Answering</span>
+        </div>
+      </div>
+      <div class="phd-actions">
+        <a href="phd-neurosymbolic.html" class="phd-btn phd-btn-primary">
+          📄 Full Details &amp; How to Apply
         </a>
-        <a href="./assets/docs/cfp/Flyer.pdf" target="_blank" class="cfp-btn cfp-btn-secondary">
-          📥 Download Flyer
+        <a href="mailto:abdelmotyai@cardiff.ac.uk" class="phd-btn phd-btn-secondary">
+          ✉️ Get in Touch
         </a>
       </div>
     </div>
@@ -484,7 +519,7 @@
               <span class="news-date">[Aug 2026]</span> 🎉 Awarded <strong>H-IAA funding</strong> to work with WISERD and ADR on the project: <em>Spatial Reasoning for Understanding Welsh Places</em>, starting Autumn 2026.
             </li>
             <li class="news-item">
-              <span class="news-date">[Aug 2026]</span> 📢 Co-chairing the Special Issue on <em>Accessible Knowledge-Enhanced Web Intelligence</em>. <a href="#cfp">See Call for Papers above</a>.
+              <span class="news-date">[Aug 2026]</span> 📢 Co-chairing the Special Issue on <em>Accessible Knowledge-Enhanced Web Intelligence</em>. <a href="https://www.mdpi.com/si/265691" target="_blank">Submit a paper</a>.
             </li>
             <li class="news-item">
               <span class="news-date">[Jul 2026]</span> 📄 Roba Darwish's paper accepted in <em>Social Network Analysis and Mining</em> (SNAM): <em>From Intended Topics to Emergent Discourse: A Duration-Weighted Framework for Quantifying Conversational Drift in X Spaces</em>. To be presented at <strong>ASONAM 2026</strong>.
