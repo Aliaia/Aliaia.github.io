@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PhD Opportunity: Neurosymbolic Spatial Reasoning</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      color: #234375;
+      background: #f4f7fb;
+    }
+    .banner {
+      background: #234375;
+      padding: 0;
+      margin: 0;
+      min-height: 84px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      z-index: 10;
+    }
+    .banner-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      min-height: 84px;
+    }
+    .banner a {
+      display: flex;
+      align-items: center;
+      margin-right: 1.2rem;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .banner img {
+      height: 44px;
+      width: auto;
+      margin-right: 1rem;
+      border-radius: 6px;
+      box-shadow: 0 1px 4px rgba(60,42,86,0.07);
+    }
+    .banner span {
+      font-family: 'Georgia', 'Times New Roman', serif;
+      font-size: 1.55rem;
+      font-weight: 500;
+      color: #fff;
+      letter-spacing: 0.5px;
+    }
+    nav {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 1.2rem;
+      font-weight: 500;
+      font-size: 1.13rem;
+      padding: 0.45em 1em;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+    }
+    nav a:hover, nav a:focus {
+      background: #e3eaff;
+      color: #234375;
+      outline: none;
+    }
+    main {
+      max-width: 1100px;
+      margin: 2.5rem auto 2.5rem auto;
+      background: linear-gradient(90deg, #f4f7fb 80%, #e3eaff 100%);
+      border-radius: 14px;
+      box-shadow: 0 2px 8px rgba(60,42,86,0.05);
+      padding: 2.2rem 2rem 2rem 2rem;
+      display: flex;
+      gap: 2.5rem;
+    }
+    .project-main {
+      flex: 2;
+      min-width: 0;
+    }
+    .project-meta {
+      flex: 1;
+      min-width: 260px;
+      max-width: 340px;
+      background: #f8fafd;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(35,67,117,0.07);
+      padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.3rem;
+      height: fit-content;
+    }
+    .project-meta h3 {
+      font-size: 1.08rem;
+      color: #234375;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+    .project-meta .project-tags {
+      font-size: 0.98rem;
+      color: #6b7a99;
+      font-style: italic;
+      margin-bottom: 0.2rem;
+    }
+    .project-meta .project-tags span {
+      margin-right: 0.7em;
+      font-size: 1em;
+      font-style: italic;
+      font-weight: 400;
+      display: inline;
+    }
+    h1.page-title {
+      font-size: 1.6rem;
+      color: #234375;
+      margin: 0 0 0.3rem 0;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+    .subtitle {
+      font-size: 1.1rem;
+      color: #3a4a6b;
+      font-style: italic;
+      margin-bottom: 1.5rem;
+    }
+    h2 {
+      color: #234375;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 2.2rem;
+      margin-bottom: 0.7rem;
+      letter-spacing: 0.1px;
+    }
+    ul {
+      padding-left: 1.3rem;
+      margin-bottom: 1.2rem;
+    }
+    li {
+      margin-bottom: 0.5rem;
+    }
+    a {
+      color: #234375;
+      text-decoration: underline;
+    }
+    a:hover {
+      color: #1a5276;
+    }
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.5rem;
+    }
+    .info-table td {
+      padding: 0.5rem 0.7rem;
+      border-bottom: 1px solid #e3eaff;
+      vertical-align: top;
+    }
+    .info-table td:first-child {
+      font-weight: 600;
+      white-space: nowrap;
+      width: 180px;
+      color: #234375;
+    }
+    .apply-btn {
+      display: inline-block;
+      background: #234375;
+      color: #fff;
+      padding: 0.7rem 1.8rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.05rem;
+      margin-top: 1rem;
+      transition: background 0.2s;
+    }
+    .apply-btn:hover {
+      background: #1a5276;
+      color: #fff;
+    }
+    .ref-list {
+      font-size: 0.95rem;
+      color: #3a4a6b;
+    }
+    .ref-list li {
+      margin-bottom: 0.6rem;
+    }
+    @media (max-width: 900px) {
+      main {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+      }
+      .project-meta {
+        max-width: 100%;
+        width: 100%;
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="banner">
+    <div class="banner-inner">
+      <a href="index.html">
+        <img src="./assets/images/Cardiff_University_(logo).svg.png" alt="Cardiff University Logo">
+        <span>Alia I. Abdelmoty</span>
+      </a>
+      <nav>
+        <a href="index.html#biography">Profile</a>
+        <a href="about.html">About</a>
+        <a href="index.html#research-areas">Research Areas</a>
+        <a href="projects.html">Research Projects</a>
+        <a href="publications.html">Publications</a>
+        <a href="students.html">Students</a>
+      </nav>
+    </div>
+  </div>
+  <main>
+    <section class="project-main">
+      <h1 class="page-title">PhD Opportunity: Neurosymbolic Spatial Reasoning</h1>
+      <p class="subtitle">Teaching language models to plan over qualitative geographic knowledge</p>
+
+      <table class="info-table">
+        <tr><td>School</td><td>School of Computational and Mathematical Sciences, Cardiff University</td></tr>
+        <tr><td>Supervisors</td><td>Dr Alia I. Abdelmoty</td></tr>
+        <tr><td>Start date</td><td>October 2027</td></tr>
+        <tr><td>Funding</td><td>Cardiff University and China Scholarship Council (CSC) Research Excellence Scholarships. Self-funded applicants and applicants with other funding are also welcome.</td></tr>
+        <tr><td>CSC deadline</td><td>3 November 2026</td></tr>
+        <tr><td>Contact</td><td><a href="mailto:abdelmotyai@cardiff.ac.uk">abdelmotyai@cardiff.ac.uk</a></td></tr>
+      </table>
+
+      <h2>About the Project</h2>
+      <p>Large language models are fluent but unreliable at spatial reasoning. Given a geographic knowledge graph, they recall isolated facts well, yet they struggle with questions that require several spatial relationships to be chained together. They also cannot reliably write the formal spatial queries that would let a database reason on their behalf.</p>
+      <p>Part of the difficulty lies in how geographic knowledge is represented. In most geographic knowledge graphs, spatial relationships are computed in advance from geometry and stored as flat facts. Systems built on them are therefore tested on retrieving stored answers, not on reasoning.</p>
+      <p>This project takes a different route. It does not ask the model to compute geometry or to write database queries. It investigates whether a model can generate abstract, verifiable reasoning programs over a compact vocabulary of qualitative spatial relations (containment, adjacency, proximity and direction). A symbolic engine then executes each program and checks its result, so that every answer can be traced to the relations that support it.</p>
+      <p>The central question is whether a small, closed and compositional target language makes spatial reasoning at inference time tractable where general query generation has failed. The work combines current research on language models with knowledge representation and qualitative spatial reasoning, and its results are relevant wherever people need trustworthy answers to questions about places.</p>
+
+      <h2>Research Questions</h2>
+      <ul>
+        <li>Can a language model translate unseen natural-language questions about places into valid, executable qualitative reasoning programs at inference time?</li>
+        <li>Does a compact, closed relational vocabulary yield more reliable program generation than full geospatial query languages such as GeoSPARQL?</li>
+        <li>How does reliability change with compositional depth, from single-relation questions to nested and multi-hop reasoning across different families of relations?</li>
+      </ul>
+
+      <h2>What You Will Do</h2>
+      <p>You will design the target reasoning language and the methods by which a language model produces programs in it. You will build the symbolic component that executes and verifies those programs over geographic knowledge graphs, and you will evaluate the combined system against established geographic question-answering approaches. There is room to shape the direction of the project around your own strengths, whether these lie in machine learning, in knowledge graphs or in formal reasoning.</p>
+      <p>You will join a research group with a long record in qualitative spatial reasoning, place ontologies and geographic knowledge graphs, and you will be able to draw on its existing work as a starting point.</p>
+
+      <h2>Candidate Profile</h2>
+      <p>We are looking for a candidate with a strong background in computer science, artificial intelligence or a related quantitative discipline. Solid programming skills in Python and familiarity with machine learning are expected. Experience with large language models, knowledge graphs, semantic web technologies or symbolic reasoning is an advantage. An interest in combining neural and symbolic methods is essential. No prior training in geography is required.</p>
+
+      <h2>Where This Project Sits in Our Research</h2>
+      <p>The project builds on a long line of research at Cardiff on qualitative spatial representation and reasoning, place ontologies and geographic knowledge graphs. Our current work centres on the Qualitative Place Model (QPM), an ontology that represents the location of a place through relations of containment, adjacency, proximity and direction, without relying on coordinate geometry. The ontology is openly available at <a href="https://github.com/Aliaia/qpm" target="_blank">github.com/Aliaia/qpm</a>.</p>
+      <p>The PhD project is not tied to this model. QPM is one example of the class of qualitative relational representations the project studies, and it offers a published ontology and evaluation instrument to start from.</p>
+
+      <h2>Funding</h2>
+      <p>This project is available under the Cardiff University and China Scholarship Council (CSC) Research Excellence Scholarships for entry in October 2027. Successful applicants receive CSC funding that covers airfares and living costs, and Cardiff University provides a tuition fee waiver. Candidates are nominated by the School and the University and are then reviewed by the CSC.</p>
+      <p>The project is also open to self-funded applicants and to applicants who hold, or are applying for, funding from other sources.</p>
+
+      <h2>Eligibility for the CSC Scholarship</h2>
+      <p>Applicants must be Chinese nationals without permanent residency in a foreign country and must not be over 35 years of age. Students already registered on a PhD pathway or programme at Cardiff University are not eligible.</p>
+      <p>Applicants should hold, or be about to obtain, a first class or upper second class (2:1) bachelor's degree or a master's degree in a relevant discipline. The School applies the following additional expectations:</p>
+      <ul>
+        <li>A UK master's degree should be at Merit level at minimum.</li>
+        <li>An applicant currently taking a UK master's degree who has completed the taught phase should have achieved a Merit mark (60 or above) for that phase.</li>
+        <li>An applicant taking or holding a UK conversion degree in computer science should have an undergraduate degree in a STEM subject.</li>
+        <li>A current undergraduate at a Chinese university should be studying at a Tier 1 (985/211) university with an overall mark of 85% or above.</li>
+      </ul>
+      <p>These additional expectations can be relaxed for exceptional applicants, for example those with strong publications, strong industry experience or prestigious awards.</p>
+      <p>CSC applicants need IELTS 6.5 overall with at least 6.0 in each subskill, or an equivalent score in another test accepted by the University. A degree taught in English and awarded by a UK institution may exempt an applicant from the test. A test certificate must still be valid at the start of the programme in October 2027. Evidence should be submitted by 8 December 2026 where possible and no later than 5 January 2027.</p>
+
+      <h2>How to Apply</h2>
+      <p>Please contact Dr Abdelmoty at <a href="mailto:abdelmotyai@cardiff.ac.uk">abdelmotyai@cardiff.ac.uk</a> before applying, with your CV, transcripts and a short note on why this topic appeals to you.</p>
+      <p>Submit a PhD application through the <a href="https://www.cardiff.ac.uk/study/postgraduate/research/programmes/programme/computer-science-and-informatics" target="_blank">Cardiff University Computer Science and Informatics programme page</a>, choosing Doctor of Philosophy and Full-Time. Name this project title and Dr Abdelmoty as the proposed supervisor.</p>
+      <p>CSC applicants should choose the October 2027 start date and state in the funding section that they wish to be considered for the Cardiff University China Scholarship Council funding. The application must include an academic CV and a personal statement that sets out your research interest, the preparation you have undertaken and your understanding of the significance of the research. The deadline for CSC applications is <strong>3 November 2026</strong>, and nominated applicants will be interviewed by a School panel.</p>
+      <p>Self-funded applicants and applicants with other funding should state their source of funding in the funding section. Please get in touch to discuss entry requirements and start dates.</p>
+
+      <h2>Selected Publications from the Group</h2>
+      <ul class="ref-list">
+        <li>Satoti, A. and Abdelmoty, A. I. (2025). A GIS-Native Framework for Qualitative Place Models: Implementation and Evaluation. <em>ISPRS International Journal of Geo-Information</em>, 14(12), 474. <a href="https://doi.org/10.3390/ijgi14120474" target="_blank">DOI</a></li>
+        <li>Abdelmoty, A. I. and Satoti, A. (2024). A Homogeneous Approach to Reasoning Over Global Geographic Data. <em>Artificial Intelligence XLI (AI-2024)</em>, LNCS 15446, 285-298. <a href="https://doi.org/10.1007/978-3-031-77915-2_20" target="_blank">DOI</a></li>
+        <li>Abdelmoty, A. I., Muhajab, H. and Satoti, A. (2024). Spatial Semantics for the Evaluation of Administrative Geospatial Ontologies. <em>ISPRS International Journal of Geo-Information</em>, 13(8), 291. <a href="https://doi.org/10.3390/ijgi13080291" target="_blank">DOI</a></li>
+        <li>Smart, P. D., Abdelmoty, A. I. and El-Geresy, B. A. (2014). Spatial Reasoning with Place Information on the Semantic Web. <em>International Journal on Artificial Intelligence Tools</em>, 23(5), 1450011. <a href="https://doi.org/10.1142/S0218213014500110" target="_blank">DOI</a></li>
+        <li>Abdelmoty, A. I. and El-Geresy, B. A. (2002). Towards a General Theory for Modelling Qualitative Space. <em>International Journal on Artificial Intelligence Tools</em>, 11(3), 347-367. <a href="https://doi.org/10.1142/S0218213002000939" target="_blank">DOI</a></li>
+      </ul>
+
+      <h2>References</h2>
+      <ul class="ref-list">
+        <li>Cohn, A. G. and Blackwell, R. E. (2024). Evaluating the Ability of Large Language Models to Reason about Cardinal Directions. <em>16th International Conference on Spatial Information Theory (COSIT 2024)</em>, LIPIcs 315, 28:1-28:9.</li>
+        <li>Ji, Y., Gao, S., Nie, Y., Majić, I. and Janowicz, K. (2025). Foundation Models for Geospatial Reasoning: Assessing the Capabilities of Large Language Models in Understanding Geometries and Topological Spatial Relations. <em>International Journal of Geographical Information Science</em>, 39(9), 1866-1903. <a href="https://doi.org/10.1080/13658816.2025.2511227" target="_blank">DOI</a></li>
+        <li>Khalid, I., Nourollah, A. M. and Schockaert, S. (2025). Large Language and Reasoning Models are Shallow Disjunctive Reasoners. <em>Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics</em>, 8843-8869.</li>
+        <li>Mai, G., Janowicz, K., Zhu, R., Cai, L. and Lao, N. (2021). Geographic Question Answering: Challenges, Uniqueness, Classification, and Future Directions. <em>AGILE: GIScience Series</em>, 2, 8.</li>
+        <li>Abdelmoty, A. I., Muhajab, H. and Satoti, A. (2024). Spatial Semantics for the Evaluation of Administrative Geospatial Ontologies. <em>ISPRS International Journal of Geo-Information</em>, 13(8), 291. <a href="https://doi.org/10.3390/ijgi13080291" target="_blank">DOI</a></li>
+      </ul>
+    </section>
+    <aside class="project-meta">
+      <h3>Keywords</h3>
+      <div class="project-tags">
+        <span>Large Language Models</span>
+        <span>Neurosymbolic AI</span>
+        <span>Spatial Reasoning</span>
+        <span>Knowledge Graphs</span>
+        <span>Question Answering</span>
+        <span>Semantic Web</span>
+      </div>
+      <h3>Supervisor</h3>
+      <div style="font-size: 1rem; color: #234375; font-weight: 500;">
+        Dr Alia I. Abdelmoty
+      </div>
+      <h3>Start Date</h3>
+      <div style="font-size: 0.97rem; color: #3a4a6b;">
+        October 2027
+      </div>
+      <h3>Funding</h3>
+      <div style="font-size: 0.97rem; color: #3a4a6b;">
+        Cardiff University &amp; CSC Research Excellence Scholarships
+      </div>
+      <h3>CSC Deadline</h3>
+      <div style="font-size: 0.97rem; color: #e74c3c; font-weight: 600;">
+        3 November 2026
+      </div>
+      <div style="margin-top: 1.5rem; text-align: center;">
+        <a class="apply-btn" href="mailto:abdelmotyai@cardiff.ac.uk">Get in Touch</a>
+      </div>
+    </aside>
+  </main>
+  <footer style="text-align: center; color: #234375; font-size: 1rem; margin: 2.5rem 0 1.2rem 0; opacity: 0.7;">
+    <p>&copy; 2026 Alia I. Abdelmoty. All rights reserved.</p>
+  </footer>
+</body>
+</html>
